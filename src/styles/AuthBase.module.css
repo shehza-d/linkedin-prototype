@@ -1,0 +1,61 @@
+.authScreen {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 819.87px;
+  height: 1200px;
+  left: 0px;
+  top: 0px;
+  background-image: url("../assets/Rectangle-7126.png");
+  opacity: 0.99;
+  /* background: linear-gradient(180deg, #1a5cb0 0%, #00ffff 100%); */
+}
+
+.heading {
+  color: white;
+  position: absolute;
+  width: 628px;
+  height: 96px;
+  left: 71px;
+  top: 401px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 48px;
+}
+.subHeading {
+  margin-top: 25px;
+  color: white;
+  position: absolute;
+  width: 323px;
+  height: 28px;
+  left: 71px;
+  top: 522px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  /* identical to box height, or 117% */
+}
+
+/* .logo1 {
+  position: absolute;
+  left: 35.94%;
+  right: 4.26%;
+  top: 4.69%;
+  bottom: 35.51%;
+  background: #ffffff;
+}
+.logo2 {
+  position: absolute;
+  left: 5%;
+  right: 54%;
+  top: 54.01%;
+  bottom: 5%;
+  background: #ffffff;
+} */
+.authSection {
+  height: 80vh;
+  width: 400px;
+  border: 2px solid red;
+}

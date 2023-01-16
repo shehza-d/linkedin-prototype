@@ -1,0 +1,12 @@
+PAGES
+auth=login signup
+welcome
+base = 4
+congratulations
+searching =4 
+
+MUI use karna hy
+component structure?
+
+figma se kya copy aur import hoga
+kya ye client ky liye hy ya test hy

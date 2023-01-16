@@ -1,23 +1,40 @@
-import './App.css';
+import { useState } from "react";
+import "./styles/App.css";
+import { Routes, Route, Link, Navigate } from "react-router-dom";
+import Home from './pages/Home.jsx'
+import Login from './pages/AuthPages/Login.jsx'
+import Signup from './pages/AuthPages/Signup.jsx'
+import AuthBase from "./pages/AuthPages/Authbase";
+export default function App(props) {
+  const [isLogin, setIsLogin] = useState(true);
 
-function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {isLogin ? (
+        <Routes>
+          <Route path="/" element={<AuthBase />} />
+
+          {/* <Route path="attendance" element={<Attendance />} />
+          <Route path="courses" element={<Courses />} />
+          <Route path="students" element={<Students />} /> */}
+          {/* <Route path="profile" element={<Profile />} /> */}
+
+          <Route path="*" element={<Navigate to="/" replace={true} />} />
+        </Routes>
+      ) : (
+        <Routes>
+          <Route
+            path="/login"
+            element={<Login />}
+          />
+          {/* <Route
+            path="/login"
+            element={<Login isLogin={isLogin} setIsLogin={setIsLogin} />}
+          /> */}
+          <Route path="signup" element={<Signup />} />
+          <Route path="*" element={<Navigate to="/login" replace={true} />} />
+        </Routes>
+      )}
     </div>
   );
 }
-
-export default App;
