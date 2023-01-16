@@ -5,14 +5,18 @@ import Home from './pages/Home.jsx'
 import Login from './pages/AuthPages/Login.jsx'
 import Signup from './pages/AuthPages/Signup.jsx'
 import AuthBase from "./pages/AuthPages/Authbase";
-export default function App(props) {
+import Welcome from "./pages/Welcome";
+import BaseSetupBackground from "./pages/BaseSetupPages/BaseSetupBackground";
+
+
+export default function App() {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
     <div className="App">
       {isLogin ? (
         <Routes>
-          <Route path="/" element={<Signup />} />
+          <Route path="/" element={<BaseSetupBackground />} />
 
           {/* <Route path="attendance" element={<Attendance />} />
           <Route path="courses" element={<Courses />} />

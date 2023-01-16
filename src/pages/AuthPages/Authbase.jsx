@@ -5,6 +5,7 @@ import bgImg from "../../assets/Rectangle-7126.png";
 import Login from "./Login";
 import logoWhite from "../../assets/logoWhite.svg";
 import logoBlue from "../../assets/logoBlue.svg";
+import Signup from "./Signup";
 export default function AuthBase() {
   return (
     <div className={`${styles.authScreen}`}>
@@ -18,6 +19,7 @@ export default function AuthBase() {
       </div>
       <div className={styles.authSection}>
         <Login />
+        {/* <Signup/> */}
       </div>
       <img src={logoBlue} className={styles.logoBlue} alt="" />
     </div>

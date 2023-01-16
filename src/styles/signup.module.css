@@ -17,7 +17,7 @@
     margin-top: 10px;
     margin-bottom: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
   }
   .formOption>a{
@@ -28,8 +28,8 @@
   display: block;
     font-family: "Outfit";
     font-style: normal;
-    font-weight: 600;
-    font-size: 40px;
+    font-weight: 800;
+    font-size: 30px;
     color: #171717;
   }
   .subtitle {

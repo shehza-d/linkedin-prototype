@@ -1,4 +1,4 @@
-import styles from '../../styles/signup.module.css'
+import styles from "../../styles/signup.module.css";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -13,14 +13,19 @@ import Typography from "@mui/material/Typography";
 import { FcGoogle } from "react-icons/fc";
 
 export default function Signup() {
-
-     const { values, errors, handleBlur, handleChange, handleSubmit, touched } =
+  const { values, errors, handleBlur, handleChange, handleSubmit, touched } =
     useFormik({
       initialValues: {
+        userName: "",
         email: "",
         password: "",
       },
       validationSchema: yup.object({
+        userName: yup
+          .string("Enter your name")
+          .required("Name is required")
+          .min(4, "Please enter more then 4 characters ")
+          .max(15, "Please enter within 15 characters "),
         email: yup
           .string("Enter your email")
           .email("Enter valid email")
@@ -56,12 +61,16 @@ export default function Signup() {
   return (
     <>
       <ToastContainer />
-      <div className={styles.container}>
-        <Typography variant="h3" className={styles.title}>
-          Welcome Back!
+      {/* <div className={styles.container}> */}
+        <Typography
+          variant="h3"
+          sx={{ fontSize: "38px" }}
+          className={styles.title}
+        >
+          Welcome to Product!
         </Typography>
         <Typography variant="p" className={styles.subtitle}>
-          Sign In to your Account
+          Let's get started!
         </Typography>
         <form className={styles.form} onSubmit={handleSubmit}>
           <TextField
@@ -69,6 +78,26 @@ export default function Signup() {
               backgroundColor: "#EFEFEF",
               marginBottom: "32px",
               marginTop: "52px",
+            }}
+            autoComplete="on"
+            name="username"
+            margin="dense"
+            variant="outlined"
+            type="text"
+            // placeholder="Enter your email"
+            id="userName"
+            label="Name"
+            value={values.userName}
+            onBlur={handleBlur}
+            onChange={handleChange}
+            error={touched.userName && Boolean(errors.userName)}
+            helperText={touched.userName && errors.userName}
+          />
+
+          <TextField
+            sx={{
+              backgroundColor: "#EFEFEF",
+              marginBottom: "32px",
             }}
             autoComplete="on"
             name="email"
@@ -101,12 +130,12 @@ export default function Signup() {
             helperText={touched.password && errors.password}
           />
           <div className={styles.formOption}>
+            {/* <Checkbox label="Remember me" sx={{ color: "#422D6F" }} /> */}
             <FormControlLabel
               control={<Checkbox sx={{ color: "#422D6F" }} />}
-              label="Remember me"
+              label="I agree to the"
             />
-            {/* <Checkbox label="Remember" /> */}
-            <a href="www.facebook.com">Forgot Password?</a>
+            <a href="www.facebook.com">Terms & Conditions</a>
           </div>
           <Button
             type="submit"
@@ -114,31 +143,25 @@ export default function Signup() {
             sx={{ mb: "30px", py: "15px" }}
             variant="contained"
           >
-            Sign In
+            Sign Up
           </Button>
           <Button
             variant="outlined"
             sx={{ mb: "23px", py: "15px" }}
             startIcon={<FcGoogle />}
           >
-            Login with Google
+            Sign up with Google
           </Button>
         </form>
 
         <div className="">
-          <span>Don't have an account? </span>
-          
-      <Link to="/login" className="submitBtn">
-        LogIn
-      </Link>
+          <span>Already have an account? </span>
+
+          <Link to="/login" className="submitBtn">
+            LogIn
+          </Link>
         </div>
-      </div>
+      {/* </div> */}
     </>
-
-
-
-
-
-
   );
 }
