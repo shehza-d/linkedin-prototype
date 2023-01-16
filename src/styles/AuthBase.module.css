@@ -51,13 +51,8 @@
 }
 .logoBlue {
   position: absolute;
-  /* left: 7.07%;
-  right: 2.93%;
-  top: 70.71%;
-  bottom: -60.71%; */
   top: 0;
-  left: 0px;
-  right: 1000px;
+  right: 0;
   border: 2px solid red;
   /* transform: rotate(-45deg); */
 }

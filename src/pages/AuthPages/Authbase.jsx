@@ -1,6 +1,6 @@
+import styles from "../../styles/AuthBase.module.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import styles from "../../styles/AuthBase.module.css";
 import bgImg from "../../assets/Rectangle-7126.png";
 import Login from "./Login";
 import logoWhite from "../../assets/logoWhite.svg";

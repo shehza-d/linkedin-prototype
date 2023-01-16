@@ -12,7 +12,7 @@ export default function App(props) {
     <div className="App">
       {isLogin ? (
         <Routes>
-          <Route path="/" element={<AuthBase />} />
+          <Route path="/" element={<Signup />} />
 
           {/* <Route path="attendance" element={<Attendance />} />
           <Route path="courses" element={<Courses />} />
