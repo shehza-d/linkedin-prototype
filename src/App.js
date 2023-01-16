@@ -16,7 +16,7 @@ export default function App() {
     <div className="App">
       {isLogin ? (
         <Routes>
-          <Route path="/" element={<BaseSetupBackground />} />
+          <Route path="/" element={<AuthBase />} />
 
           {/* <Route path="attendance" element={<Attendance />} />
           <Route path="courses" element={<Courses />} />

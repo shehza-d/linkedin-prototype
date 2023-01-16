@@ -8,20 +8,24 @@ import logoBlue from "../../assets/logoBlue.svg";
 import Signup from "./Signup";
 export default function AuthBase() {
   return (
-    <div className={`${styles.authScreen}`}>
-      <ToastContainer />
-      <div>
+    <div className={styles.container}>
+
+      <div className={`${styles.authScreen}`}>
+        {/* <ToastContainer /> */}
         <img src={logoWhite} className={styles.logoWhite} alt="" />
-        <p className={styles.heading}>
-          Advanced Search-Find your smartest way to the buyer.
-        </p>
-        <span className={styles.subHeading}>Start your company in minutes</span>
+        <div className={styles.leftContainer}>
+          <p className={styles.heading}>
+            Advanced Search-Find your smartest way to the buyer.
+          </p>
+          <span className={styles.subHeading}>Start your company in minutes</span>
+        </div>
+        <div className={styles.authSection}>
+          <Login />
+          {/* <Signup /> */}
+        </div>
+        <img src={logoBlue} className={styles.logoBlue} alt="" />
       </div>
-      <div className={styles.authSection}>
-        <Login />
-        {/* <Signup/> */}
-      </div>
-      <img src={logoBlue} className={styles.logoBlue} alt="" />
     </div>
+
   );
 }

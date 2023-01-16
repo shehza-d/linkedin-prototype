@@ -1,40 +1,62 @@
-.authScreen {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
   display: flex;
-  flex-direction: row;
+  /* margin-top: 10%; */
+  /* align-items: center; */
+  /* flex-direction: row; */
   height: 100vh;
-  width: 100vw;
-  /* position: absolute; */
-  /* width: 819.87px;
-  height: 1200px; */
-  /* left: 0px;
-  top: 0px; */
   background-image: url("../assets/Rectangle-7126.png");
-  background-size: cover;
+  background-size: contain;
+  background-position: left;
   opacity: 0.99;
   background-repeat: no-repeat;
   /* background: linear-gradient(180deg, #1a5cb0 0%, #00ffff 100%); */
 }
 
+.authScreen {
+  margin-top: 1.5%;
+  /* border: 1px solid blue; */
+  display: flex;
+
+  /* justify-content: center; */
+  /* flex-direction: row; */
+  height: 80%;
+  /* background-image: url("../assets/Rectangle-7126.png"); */
+  /* background-size: contain; */
+  /* background-position: left; */
+  /* opacity: 0.99; */
+  /* background-repeat: no-repeat; */
+  /* background: linear-gradient(180deg, #1a5cb0 0%, #00ffff 100%); */
+}
+
 .heading {
   color: white;
-  position: absolute;
-  width: 628px;
-  height: 96px;
-  left: 71px;
-  top: 401px;
+  /* position: absolute; */
+  /* width: 628px; */
+  /* height: 10%; */
+  padding-right: 40%;
+  padding-left: 2%;
+  /* left: 71px; */
+  /* top: 401px; */
   font-style: normal;
   font-weight: 400;
   font-size: 38px;
   line-height: 48px;
 }
+
 .subHeading {
-  margin-top: 25px;
+  margin-top: 15px;
+  padding-left: 2%;
   color: white;
-  position: absolute;
+  /* position: absolute; */
   width: 323px;
   height: 28px;
-  left: 71px;
-  top: 522px;
+  /* left: 71px; */
+  /* top: 522px; */
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -49,6 +71,7 @@
   top: 4.69%;
   bottom: 5%;
 }
+
 .logoBlue {
   position: absolute;
   top: 0;
@@ -56,9 +79,44 @@
   /* border: 2px solid red; */
   /* transform: rotate(-45deg); */
 }
+
+.leftContainer {
+
+
+
+  /* border: 2px solid red; */
+  width: 50%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
 .authSection {
-  height: 90vh;
+
+  /* height:80%; */
+  /* width: 50%; */
   width: 400px;
-  border: 2px solid red;
-  border: 3px solid green;
+  /* border: 2px solid red; */
+  /* border: 3px solid green; */
+}
+
+@media screen and (max-width: 430px) {
+.leftContainer{
+  width: 100%;
+  padding-top: 17%;
+}
+.heading{
+  padding-right: 20%;
+}
+  .authScreen{
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+.authSection{
+  margin-top: 30px;
+}
 }

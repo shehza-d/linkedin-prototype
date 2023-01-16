@@ -76,8 +76,8 @@ export default function Signup() {
           <TextField
             sx={{
               backgroundColor: "#EFEFEF",
-              marginBottom: "32px",
-              marginTop: "52px",
+              marginBottom: "22px",
+              marginTop: "42px",
             }}
             autoComplete="on"
             name="username"
@@ -97,7 +97,7 @@ export default function Signup() {
           <TextField
             sx={{
               backgroundColor: "#EFEFEF",
-              marginBottom: "32px",
+              marginBottom: "22px",
             }}
             autoComplete="on"
             name="email"
