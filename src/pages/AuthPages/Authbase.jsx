@@ -3,14 +3,14 @@ import "react-toastify/dist/ReactToastify.css";
 import styles from "../../styles/AuthBase.module.css";
 import bgImg from "../../assets/Rectangle-7126.png";
 import Login from "./Login";
-import logo1 from '../../assets/logoWhite.svg'
-import logoBlue from '../../assets/logoBlue.svg'
+import logoWhite from "../../assets/logoWhite.svg";
+import logoBlue from "../../assets/logoBlue.svg";
 export default function AuthBase() {
   return (
     <div className={`${styles.authScreen}`}>
       <ToastContainer />
       <div>
-        <img src={logo1} className={styles.logo1} alt="" />
+        <img src={logoWhite} className={styles.logoWhite} alt="" />
         <p className={styles.heading}>
           Advanced Search-Find your smartest way to the buyer.
         </p>
@@ -19,7 +19,7 @@ export default function AuthBase() {
       <div className={styles.authSection}>
         <Login />
       </div>
-        <img src={logoBlue} className={styles.logo2} alt="" />
+      <img src={logoBlue} className={styles.logoBlue} alt="" />
     </div>
   );
 }
