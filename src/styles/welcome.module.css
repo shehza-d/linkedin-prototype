@@ -12,17 +12,15 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  box-sizing: border-box;  /* what is does */
+  box-sizing: border-box; /* what is does */
   /* position: absolute; */
   width: 777px;
   height: 447px;
   /* left: 0px; */
   /* top: 0px; */
-
+  border: 2px solid #ffffff;
   background: rgba(232, 232, 232, 0.3);
   backdrop-filter: blur(10px);
-  /* Note: backdrop-filter has minimal browser support */
-
   border-radius: 40px;
 }
 .aiSkull {
@@ -39,7 +37,7 @@
   top: 0;
   right: 0;
 }
-.logo2{
-    height: 92px;
-    width: 92px;
+.logo2 {
+  height: 92px;
+  width: 92px;
 }
