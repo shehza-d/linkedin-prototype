@@ -9,15 +9,13 @@ export default function DropDown(props) {
     { label: "Option three" },
     { label: "Option four" },
   ];
-  console.log(props.disable);
   return (
     <Autocomplete
       sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" }}
       // sx={{ width: "180px", mr: 1 }}
       disablePortal
       id=""
-      // (props.disable)?disabled:null
-
+      disabled={props?.disable}
       options={dropdownOptions}
       renderInput={(params) => <TextField {...params} label={props.label} />}
       size="small"

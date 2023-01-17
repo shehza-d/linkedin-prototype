@@ -11,9 +11,7 @@ export default function Setup2() {
     <>
       <div className={styles.container}>
         <div className={styles.form}>
-          <Typography>
-            Define your target market segments?           
-          </Typography>
+          <Typography>Define your target market segments?</Typography>
 
           <div style={{ display: "flex" }}>
             <DropDown label="Industry" />
@@ -29,12 +27,12 @@ export default function Setup2() {
           </Typography>
 
           <div style={{ display: "flex" }}>
-            <DropDown label="Role of person" disable={true}/>
-            <DropDown label="Designation" disable={false}/>
+            <DropDown label="Role of person" disable={true} />
+            <DropDown label="Designation" disable={true} />
           </div>
           <div style={{ display: "flex" }}>
-            <DropDown label="Span of control" disable={true}/>
-            <DropDown label="Decision Maker" />
+            <DropDown label="Span of control" disable={true} />
+            <DropDown label="Decision Maker" disable={true} />
           </div>
         </div>
         {/* <div className={styles.alignn}> */}
