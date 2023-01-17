@@ -1,4 +1,4 @@
-import styles from "../../styles/login.module.css";
+import styles from "../../styles/authPage/login.module.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useFormik } from "formik";

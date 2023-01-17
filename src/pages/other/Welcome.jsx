@@ -1,7 +1,7 @@
-import styles from "../styles/welcome.module.css";
-import aiSkull from "../assets/welcome/aiSkull.svg";
-import logo1 from "../assets/welcome/logo1.svg";
-import logo2 from "../assets/welcome/logo2.svg";
+import styles from "../../styles/welcome.module.css";
+import aiSkull from "../../assets/welcome/aiSkull.svg";
+import logo1 from "../../assets/welcome/logo1.svg";
+import logo2 from "../../assets/welcome/logo2.svg";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { AiOutlineArrowRight } from "react-icons/ai";

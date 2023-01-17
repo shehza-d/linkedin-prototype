@@ -1,4 +1,4 @@
-import styles from "../../styles/BaseSetupBackground.module.css";
+import styles from "../../styles/BasePages/BaseSetupBackground.module.css"
 // import styles from "../styles/welcome.module.css";
 // import aiSkull from "../assets/welcome/aiSkull.svg";
 import logo1 from "../../assets/basePages/logo1.png";
@@ -12,6 +12,7 @@ import Setup3 from "./Setup3";
 // import Setup from "./Setup";
 // import Setup from "./Setup";
 import arrow from "../../assets/basePages/arrow.svg";
+
 export default function BaseSetupBackground() {
   return (
     <>

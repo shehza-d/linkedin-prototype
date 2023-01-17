@@ -29,11 +29,11 @@ export default function Setup2() {
           </Typography>
 
           <div style={{ display: "flex" }}>
-            <DropDown label="Role of person" />
-            <DropDown label="Designation" />
+            <DropDown label="Role of person" disable={true}/>
+            <DropDown label="Designation" disable={false}/>
           </div>
           <div style={{ display: "flex" }}>
-            <DropDown label="Span of control" />
+            <DropDown label="Span of control" disable={true}/>
             <DropDown label="Decision Maker" />
           </div>
         </div>

@@ -1,15 +1,14 @@
-import styles from "../../styles/AuthBase.module.css";
+import styles from "../../styles/authPage/AuthBase.module.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import bgImg from "../../assets/Rectangle-7126.png";
+// import bgImg from "../../assets/authPage/Rectangle-7126.png";
+import logoWhite from "../../assets/authPage/logoWhite.svg";
+import logoBlue from "../../assets/authPage/logoBlue.svg";
 import Login from "./Login";
-import logoWhite from "../../assets/logoWhite.svg";
-import logoBlue from "../../assets/logoBlue.svg";
 import Signup from "./Signup";
 export default function AuthBase() {
   return (
     <div className={styles.container}>
-
       <div className={`${styles.authScreen}`}>
         {/* <ToastContainer /> */}
         <img src={logoWhite} className={styles.logoWhite} alt="" />
