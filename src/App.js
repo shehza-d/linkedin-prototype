@@ -8,6 +8,7 @@ import AuthBase from "./pages/AuthPages/Authbase";
 import Welcome from "./pages/other/Welcome.jsx";
 import BaseSetupBackground from "./pages/BaseSetupPages/BaseSetupBackground";
 import Congrats from "./pages/other/Congrats";
+import Dashboard from "./pages/dashboard";
 
 export default function App() {
   const [isLogin, setIsLogin] = useState(true);
@@ -19,9 +20,10 @@ export default function App() {
           <Route path="auth" element={<AuthBase />} />
           <Route path="welcome" element={<Welcome />} />
           <Route path="setup" element={<BaseSetupBackground />} />
-          {/* <Route path="profile" element={<Profile />} /> */}
           <Route path="congrats" element={<Congrats />} />
-          <Route path="/" element={<Congrats />} />
+          {/* <Route path="profile" element={<Profile />} /> */}
+          {/* <Route path="dashboard" element={<Congrats />} /> */}
+          <Route path="/" element={<Dashboard />} />
 
           <Route path="*" element={<Navigate to="/" replace={true} />} />
         </Routes>

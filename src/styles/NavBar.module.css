@@ -1,0 +1,38 @@
+.nav {
+  padding: 10px;
+  margin-bottom: 7px;
+  height: 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
+    90.27deg,
+    #1a5cb0 27.62%,
+    #1a5cb0 74.5%,
+    #00ffff 99.82%
+  );
+}
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  opacity: 0.7;
+  margin-left: 25px;
+}
+.userImg {
+  margin-left: 35px;
+  margin-right: 45px;
+}
+
+@media screen and (max-width: 430px) {
+  .logo {
+    width: 40px;
+    margin-left: 8px;
+  }
+  .userImg {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
