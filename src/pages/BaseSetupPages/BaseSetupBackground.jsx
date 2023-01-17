@@ -17,8 +17,8 @@ export default function BaseSetupBackground() {
         <div className={styles.leftSection}>
           <img src={diamond} className={styles.diamond} alt="" />
           <div className={styles.headings}>
-            <Typography variant="h2" align="left">Base Setup</Typography>
-            <Typography variant="h6" align="left">Complete your profile</Typography>
+            <Typography variant="h2" align="left" color={"#4D5659"}>Base Setup</Typography>
+            <Typography variant="h6" align="left" color={"#A8A8A8"} gutterBottom>Complete your profile</Typography>
           </div>
           <div className={styles.card}>
             <img src={arrow} className={styles.arrow} alt="" />
