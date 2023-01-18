@@ -1,8 +1,8 @@
 import styles from "../../styles/authPage/signup.module.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
+// import axios from "axios";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import TextField from "@mui/material/TextField";
@@ -11,8 +11,11 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Typography from "@mui/material/Typography";
 import { FcGoogle } from "react-icons/fc";
+import { useNavigate } from "react-router-dom";
 
-export default function Signup() {
+export default function Signup(props) {
+  const navigate = useNavigate();
+  
   const { values, errors, handleBlur, handleChange, handleSubmit, touched } =
     useFormik({
       initialValues: {
@@ -40,6 +43,7 @@ export default function Signup() {
       }),
       onSubmit: async (values) => {
         console.log(values);
+        navigate("/welcome");
         // try {
         //   const res = await axios.post(
         //     `${baseURI}/login`,
@@ -62,105 +66,105 @@ export default function Signup() {
     <>
       <ToastContainer />
       {/* <div className={styles.container}> */}
-        <Typography
-          variant="h3"
-          sx={{ fontSize: "38px" }}
-          className={styles.title}
-        >
-          Welcome to Product!
-        </Typography>
-        <Typography variant="p" className={styles.subtitle}>
-          Let's get started!
-        </Typography>
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <TextField
-            sx={{
-              backgroundColor: "#EFEFEF",
-              marginBottom: "22px",
-              marginTop: "42px",
-            }}
-            autoComplete="on"
-            name="username"
-            margin="dense"
-            variant="outlined"
-            type="text"
-            // placeholder="Enter your email"
-            id="userName"
-            label="Name"
-            value={values.userName}
-            onBlur={handleBlur}
-            onChange={handleChange}
-            error={touched.userName && Boolean(errors.userName)}
-            helperText={touched.userName && errors.userName}
-          />
+      <Typography
+        variant="h3"
+        sx={{ fontSize: "38px" }}
+        className={styles.title}
+      >
+        Welcome to Product!
+      </Typography>
+      <Typography variant="p" className={styles.subtitle}>
+        Let's get started!
+      </Typography>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <TextField
+          sx={{
+            backgroundColor: "#EFEFEF",
+            marginBottom: "22px",
+            marginTop: "42px",
+          }}
+          autoComplete="on"
+          name="userName"
+          margin="dense"
+          variant="outlined"
+          type="text"
+          // placeholder="Enter your email"
+          id="userName"
+          label="Name"
+          value={values.userName}
+          onBlur={handleBlur}
+          onChange={handleChange}
+          error={touched.userName && Boolean(errors.userName)}
+          helperText={touched.userName && errors.userName}
+        />
 
-          <TextField
-            sx={{
-              backgroundColor: "#EFEFEF",
-              marginBottom: "22px",
-            }}
-            autoComplete="on"
-            name="email"
-            margin="dense"
-            variant="outlined"
-            type="email"
-            // placeholder="Enter your email"
-            id="email"
-            label="Email"
-            value={values.email}
-            onBlur={handleBlur}
-            onChange={handleChange}
-            error={touched.email && Boolean(errors.email)}
-            helperText={touched.email && errors.email}
+        <TextField
+          sx={{
+            backgroundColor: "#EFEFEF",
+            marginBottom: "22px",
+          }}
+          autoComplete="on"
+          name="email"
+          margin="dense"
+          variant="outlined"
+          type="email"
+          // placeholder="Enter your email"
+          id="email"
+          label="Email"
+          value={values.email}
+          onBlur={handleBlur}
+          onChange={handleChange}
+          error={touched.email && Boolean(errors.email)}
+          helperText={touched.email && errors.email}
+        />
+        <TextField
+          sx={{ backgroundColor: "#EFEFEF" }}
+          autoComplete="on"
+          name="password"
+          margin="dense"
+          variant="outlined"
+          type="password"
+          // placeholder="Enter your password"
+          id="password"
+          label="Password"
+          value={values.password}
+          onBlur={handleBlur}
+          onChange={handleChange}
+          error={touched.password && Boolean(errors.password)}
+          helperText={touched.password && errors.password}
+        />
+        <div className={styles.formOption}>
+          {/* <Checkbox label="Remember me" sx={{ color: "#422D6F" }} /> */}
+          <FormControlLabel
+            control={<Checkbox sx={{ color: "#422D6F" }} />}
+            label="I agree to the"
           />
-          <TextField
-            sx={{ backgroundColor: "#EFEFEF" }}
-            autoComplete="on"
-            name="password"
-            margin="dense"
-            variant="outlined"
-            type="password"
-            // placeholder="Enter your password"
-            id="password"
-            label="Password"
-            value={values.password}
-            onBlur={handleBlur}
-            onChange={handleChange}
-            error={touched.password && Boolean(errors.password)}
-            helperText={touched.password && errors.password}
-          />
-          <div className={styles.formOption}>
-            {/* <Checkbox label="Remember me" sx={{ color: "#422D6F" }} /> */}
-            <FormControlLabel
-              control={<Checkbox sx={{ color: "#422D6F" }} />}
-              label="I agree to the"
-            />
-            <a href="www.facebook.com">Terms & Conditions</a>
-          </div>
-          <Button
-            type="submit"
-            className="submitBtn"
-            sx={{ mb: "30px", py: "15px" }}
-            variant="contained"
-          >
-            Sign Up
-          </Button>
-          <Button
-            variant="outlined"
-            sx={{ mb: "23px", py: "15px" }}
-            startIcon={<FcGoogle />}
-          >
-            Sign up with Google
-          </Button>
-        </form>
-
-        <div className="">
-          <span>Already have an account? </span>
-
-          <Link to="/login" className="submitBtn">
-            LogIn
-          </Link>
+          <a href="www.facebook.com">Terms & Conditions</a>
         </div>
+        <Button
+          type="submit"
+          className="submitBtn"
+          sx={{ mb: "30px", py: "15px" }}
+          variant="contained"
+        >
+          Sign Up
+        </Button>
+        <Button
+          variant="outlined"
+          sx={{ mb: "23px", py: "15px" }}
+          startIcon={<FcGoogle />}
+        >
+          Sign up with Google
+        </Button>
+      </form>
+
+      <div className={styles.footer}>
+        <span>Already have an account? </span>
+
+        <button onClick={() => props.setLoginOrSignup(true)}>
+          LogIn
+        </button>
+      </div>
       {/* </div> */}
     </>
   );

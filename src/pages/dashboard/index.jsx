@@ -10,6 +10,7 @@ import mail from "../../assets/dashboard/mail.png";
 import samsung from "../../assets/dashboard/samsung.png";
 // import earth from '../../assets/dashboard'
 import rock from "../../assets/dashboard/Rock.png";
+import SearchSuggestion from "./searchSuggestionBox";
 const dataObj = [
   {
     img: earth,
@@ -44,7 +45,7 @@ export default function Dashboard() {
         <img src={searchIcon} alt="" />
         <input type="search" placeholder="Search" />
       </div>
-      <div className="flex" style={{display:'flex'}}>
+      <div className="flex" style={{ display: "flex" }}>
         <div className={styles.cardContainer}>
           {dataObj?.map((eachData, i) => (
             <SearchCard
@@ -58,16 +59,71 @@ export default function Dashboard() {
               // postDate={eachData?.createdOn}
             />
           ))}
-          <SearchCard />
-          <SearchCard />
-          <SearchCard />
-          <SearchCard />
-          <SearchCard />
+          {/* <SearchCard /> */}
+          <SearchSuggestion />
+          {/* to remove */}
+          <p></p>
+          <br />
+          <p></p>
+          <br />
+          <p></p>
+          <br />
+          {/* to remove */}
         </div>
 
         <div className={styles.rightCompanyContainer}>
-          <button className={styles.btn1}>Company</button>
-          <button className={styles.btn2}>Executive</button>
+          <div>
+            <button className={styles.btn1}>Company</button>
+            <button className={styles.btn2}>Executive</button>
+          </div>
+
+          <div className={styles.formOptions}>
+            <p>Industry</p>
+            <button>Clear</button>
+          </div>
+
+          <div className={styles.searchBarDiv2}>
+            <img src={searchIcon} alt="" />
+            <input type="search" placeholder="Search industries" />
+          </div>
+
+          <div className={styles.allBtns}>
+            <button className={`${styles.btn} ${styles.blueBtn}`}>
+              AeroSpace
+            </button>
+            <button className={`${styles.btn} ${styles.blueBtn}`}>
+              Retail
+            </button>
+            <button className={`${styles.btn} ${styles.blueBtn}`}>Media</button>
+            <button className={`${styles.btn} ${styles.blueBtn}`}>
+              Computer
+            </button>
+            <button className={`${styles.btn} ${styles.whiteBtn}`}>
+              Mobile
+            </button>
+            <button className={`${styles.btn} ${styles.whiteBtn}`}>
+              Insurance
+            </button>
+            <button className={`${styles.btn} ${styles.whiteBtn}`}>
+              Computer IT
+            </button>
+            <button className={`${styles.btn} ${styles.whiteBtn}`}>
+              Media
+            </button>
+            <button className={styles.btn} style={{ border: "none" }}>
+              View all
+            </button>
+          </div>
+          <div className={styles.formOptions}>
+            <p>Revenue of a company</p>
+            <button>Clear</button>
+          </div>
+          <input type="range" name="revenue" id="" />
+          <div className={styles.formOptions}>
+            <p>Employee</p>
+            <button>Clear</button>
+          </div>
+          <input type="range" name="employeeCount" id="" />
         </div>
       </div>
     </>

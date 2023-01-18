@@ -1,9 +1,9 @@
 import styles from "../../styles/authPage/login.module.css";
-import { Link } from "react-router-dom";
-import axios from "axios";
+// import { Link } from "react-router-dom";
+// import axios from "axios";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import Box from "@mui/material/Box";
+// import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -129,11 +129,11 @@ export default function Login(props) {
         </Button>
       </form>
 
-      <div className="">
+      <div className={styles.footer}>
         <span>Don't have an account? </span>
-        <Link to="/signup" className="submitBtn">
-     propo.loginOrSignup     Sign-Up
-        </Link>
+        <button onClick={() => props.setLoginOrSignup(false)}>
+          Sign-Up
+        </button>
       </div>
       {/* </div> */}
     </>

@@ -13,19 +13,19 @@
   /* align-items: center; */
   flex-direction: column;
 }
-.formOption{
+.formOption {
   margin-top: 10px;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.formOption>a{
-text-decoration: none;
-color: #171717;
+.formOption > a {
+  text-decoration: none;
+  color: #171717;
 }
 .title {
-display: block;
+  display: block;
   font-family: "Outfit";
   font-style: normal;
   font-weight: 600;
@@ -40,4 +40,14 @@ display: block;
   font-size: 25px;
   color: #171717;
   margin-bottom: 55px;
+}
+.footer {
+  text-align: center;
+}
+.footer > button {
+  padding-left: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
 }
