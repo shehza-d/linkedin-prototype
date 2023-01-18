@@ -5,8 +5,11 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import enterArrow from "../../assets/basePages/enterArrow.svg";
 import DropDown from "../../components/muiDropDown";
+import { useNavigate } from "react-router-dom";
 
 export default function Setup2() {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className={styles.container}>
@@ -37,7 +40,12 @@ export default function Setup2() {
         </div>
         {/* <div className={styles.alignn}> */}
         <div className={styles.btn}>
-          <Button variant="contained" size="large" sx={{ pl: 6, pr: 6, mr: 1 }}>
+          <Button
+            variant="contained"
+            size="large"
+            sx={{ pl: 6, pr: 6, mr: 1 }}
+            onClick={() => navigate("/congrats")}
+          >
             Continue
           </Button>
           <div className={styles.pressEnter}>

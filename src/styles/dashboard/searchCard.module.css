@@ -1,7 +1,7 @@
 .card {
   display: flex;
   margin-top: 45px;
-  border: 2px solid green;
+  /* border: 2px solid green; */
   width: 80%;
   padding: 20px;
   height: 280px;
@@ -9,9 +9,15 @@
   box-shadow: 0px 4px 21px rgba(244, 244, 244, 0.19);
   border-radius: 30px;
   /* position: absolute; */
+  /* background-image: url("../../assets/authPage/Rectangle-7126.png"); */
+  background-size: contain;
+  background-position: right;
+  opacity: 0.99;
+  background-repeat: no-repeat;
 }
 .content{
     height: 90%;
+    width: 60%;
 }
 .bgImg{
     position: relative;

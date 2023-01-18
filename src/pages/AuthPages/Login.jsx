@@ -12,8 +12,11 @@ import Typography from "@mui/material/Typography";
 import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function Login(props) {
+  const navigate = useNavigate();
+
   const { values, errors, handleBlur, handleChange, handleSubmit, touched } =
     useFormik({
       initialValues: {
@@ -35,6 +38,7 @@ export default function Login() {
       }),
       onSubmit: async (values) => {
         console.log(values);
+        navigate("/welcome");
         // try {
         //   const res = await axios.post(
         //     `${baseURI}/login`,
@@ -128,7 +132,7 @@ export default function Login() {
       <div className="">
         <span>Don't have an account? </span>
         <Link to="/signup" className="submitBtn">
-          Sign-Up
+     propo.loginOrSignup     Sign-Up
         </Link>
       </div>
       {/* </div> */}

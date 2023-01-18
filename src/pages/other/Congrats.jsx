@@ -3,8 +3,10 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import logoWhite from "../../assets/authPage/logoWhite.svg";
 import ellipse from "../../assets/congratsPage-Ellipse.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Congrats() {
+  const navigate = useNavigate();
   return (
     <div className={styles.container}>
       <img src={logoWhite} className={styles.logoWhite} alt="" />
@@ -46,6 +48,7 @@ export default function Congrats() {
             textTransform: "none",
             fontWeight: "600",
           }}
+          onClick={() => navigate("/dashboard")}
         >
           Continue
         </Button>

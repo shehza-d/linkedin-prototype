@@ -1,17 +1,37 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './styles/index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./styles/index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import ContextProvider from "./context/context.js"
+import ContextProvider from "./context/context.js";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      "Outfit",
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
+  },
+});
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
- <React.StrictMode> 
-   <ContextProvider>
+  <React.StrictMode>
+    <ContextProvider>
       <BrowserRouter>
-        <App />
+        <ThemeProvider theme={theme}>
+          <App />
+        </ThemeProvider>
       </BrowserRouter>
     </ContextProvider>
   </React.StrictMode>

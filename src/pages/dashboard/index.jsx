@@ -44,25 +44,31 @@ export default function Dashboard() {
         <img src={searchIcon} alt="" />
         <input type="search" placeholder="Search" />
       </div>
+      <div className="flex" style={{display:'flex'}}>
+        <div className={styles.cardContainer}>
+          {dataObj?.map((eachData, i) => (
+            <SearchCard
+              key={i}
+              heading={eachData?.heading}
+              text={eachData?.text}
+              img={eachData?.img}
+              logo={eachData?.logo}
+              phoneNumber={eachData?.number}
+              address={eachData?.address}
+              // postDate={eachData?.createdOn}
+            />
+          ))}
+          <SearchCard />
+          <SearchCard />
+          <SearchCard />
+          <SearchCard />
+          <SearchCard />
+        </div>
 
-      <div className={styles.cardContainer}>
-        {dataObj?.map((eachData, i) => (
-          <SearchCard
-            key={i}
-            heading={eachData?.heading}
-            text={eachData?.text}
-            img={eachData?.img}
-            logo={eachData?.logo}
-            phoneNumber={eachData?.number}
-            address={eachData?.address}
-            // postDate={eachData?.createdOn}
-          />
-        ))}
-        <SearchCard />
-        <SearchCard />
-        <SearchCard />
-        <SearchCard />
-        <SearchCard />
+        <div className={styles.rightCompanyContainer}>
+          <button className={styles.btn1}>Company</button>
+          <button className={styles.btn2}>Executive</button>
+        </div>
       </div>
     </>
   );

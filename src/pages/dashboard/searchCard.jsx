@@ -11,7 +11,7 @@ export default function SearchCard({
 }) {
   return (
     <div className={styles.card} 
-    // style={{ backgroundImage: `url(${img}` }}
+    style={{ backgroundImage: `url(${img}` }}
     >
       <div className={styles.content}>
         <div className={styles.cardHeader}>
@@ -35,7 +35,7 @@ export default function SearchCard({
         </div>
       </div>
       <div className={styles.imgDiv}>
-        <img src={img} className={styles.bgImg} alt="" />
+        {/* <img src={img} className={styles.bgImg} alt="" /> */}
       </div>
     </div>
   );
