@@ -1,0 +1,70 @@
+.homeBtnDiv {
+  height: 43px;
+  width: 123px;
+  display: flex;
+  align-items: center;
+  margin-top: 45px;
+  margin-left: 75px;
+  /* margin-left: 75px;
+  margin-left: 75px; */
+  border-radius: 50px;
+  border-radius: 23px;
+  background-color: #f1f1f1;
+}
+.homeCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 23px;
+  background-color: #1a5cb0;
+}
+.homeCircle > svg {
+  height: 25px;
+  width: 25px;
+  color: white;
+  fill: #f1f1f1;
+}
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 8px;
+  border-radius: 50px;
+  height: inherit;
+}
+.searchBarDiv {
+  width: 45%;
+  height: 50px;
+  margin-top: 35px;
+  margin-left: 95px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 30px;
+  background-color: #f1f1f1;
+  box-shadow: 0px 4px 21px rgba(244, 244, 244, 0.19);
+}
+.searchBarDiv > input {
+  width: 80%;
+  height: 50px;
+  font-size: 25px;
+  font-family: inherit;
+  background-color: transparent;
+  border: none;
+}
+.searchBarDiv > input:focus {
+  border: none;
+  background-color: green;
+}
+.cardContainer {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 55%;
+  border: 2px solid red;
+}
+

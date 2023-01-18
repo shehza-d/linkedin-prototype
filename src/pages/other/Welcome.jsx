@@ -1,5 +1,5 @@
 import styles from "../../styles/welcome.module.css";
-import aiSkull from "../../assets/welcome/aiSkull.svg";
+import aiSkull from "../../assets/welcome/aiSkull.png";
 import logo1 from "../../assets/welcome/logo1.svg";
 import logo2 from "../../assets/welcome/logo2.svg";
 import Typography from "@mui/material/Typography";
