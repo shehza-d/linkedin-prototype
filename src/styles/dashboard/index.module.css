@@ -65,6 +65,6 @@
   align-items: center;
   flex-direction: column;
   width: 55%;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 

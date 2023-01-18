@@ -6,11 +6,13 @@ export default function SearchCard({
   text,
   img,
   logo,
-  number,
+  phoneNumber,
   address,
 }) {
   return (
-    <div className={styles.card}>
+    <div className={styles.card} 
+    // style={{ backgroundImage: `url(${img}` }}
+    >
       <div className={styles.content}>
         <div className={styles.cardHeader}>
           <img src={logo} alt="" />
@@ -26,12 +28,14 @@ export default function SearchCard({
         </div>
         <p>{text}</p>
         <div className={styles.cardFooter}>
-          <span>{number}</span>
-          <span>{address}</span>
+          <span>{phoneNumber}</span>
+          <span style={{ color: "#1A5CB0", paddingLeft: "7px" }}>
+            Address: {address}
+          </span>
         </div>
       </div>
-      <div className={styles.img}>
-        <img src={img} alt="" />
+      <div className={styles.imgDiv}>
+        <img src={img} className={styles.bgImg} alt="" />
       </div>
     </div>
   );

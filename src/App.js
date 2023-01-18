@@ -28,10 +28,11 @@ export default function App() {
           <Route path="auth" element={<AuthBase />} />
           <Route path="welcome" element={<Welcome />} />
           <Route path="setup" element={<BaseSetupBackground />} />
-          <Route path="congrats" element={<Congrats />} />
+          {/* <Route path="congrats" element={<Congrats />} /> */}
           {/* <Route path="profile" element={<Profile />} /> */}
-          {/* <Route path="dashboard" element={<Congrats />} /> */}
-          <Route path="/" element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          {/* <Route path="/" element={<Dashboard />} /> */}
+          <Route path="/" element={<Congrats />} />
 
           <Route path="*" element={<Navigate to="/" replace={true} />} />
         </Routes>
