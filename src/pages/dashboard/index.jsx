@@ -7,6 +7,7 @@ import searchIcon from "../../assets/dashboard/search.svg";
 // import SearchSuggestion from "./searchSuggestionBox";
 import AllContent from "./allContent";
 import CompanyDetails from "./companyDetails";
+import Screen3 from "./Screen3";
 
 export default function Dashboard() {
   return (
@@ -24,7 +25,8 @@ export default function Dashboard() {
         <input type="search" placeholder="Search" />
       </div>
       {/* <AllContent /> */}
-      <CompanyDetails />
+      {/* <CompanyDetails /> */}
+      <Screen3/>
     </>
   );
 }

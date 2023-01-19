@@ -82,7 +82,7 @@ export default function AllContent() {
             className={styles.bgRockImg}
             style={{ backgroundImage: `url(${rock}` }}
           >
-            s
+            
           </div>
           <button className={`${styles.btn} ${styles.blueBtn}`}>
             Computer

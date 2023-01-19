@@ -1,0 +1,20 @@
+.textGroup {
+  margin: 25px;
+}
+.statsHeading {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 167%;
+  /* identical to box height, or 30px */
+  color: #171717;
+  opacity: 0.6;
+}
+.stats {
+    font-family: 'Outfit';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 167%;
+/* or 33px */
+color: #262626;
+}

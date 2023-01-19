@@ -106,7 +106,8 @@
   background-repeat: no-repeat;
   /* position: right; */
   /* size: contain; */
-
+  width: 100px;
+  height: 100px;
   background-size: contain;
   background-position: right;
 }

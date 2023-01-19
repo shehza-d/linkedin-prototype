@@ -39,7 +39,7 @@ export default function CompanyDetails() {
           <Box sx={{ pl: 4, pr: 1 }}>
             <Typography
               variant="h3"
-              sx={{ fontWeight: 400, fontSize: "50px", color: "" }}
+              sx={{ fontWeight: 400, fontSize: "50px" }}
             >
               Huawei
             </Typography>
@@ -116,15 +116,12 @@ export default function CompanyDetails() {
       <Box
         sx={{
           width: "30%",
-          height: "100vh",
-          bgcolor: "secondary.dark",
-          bgcolor: "#F7F7F7",
+        //   height: "100vh",
+        //   bgcolor: "#F7F7F7",
+          bgcolor: "#F1F1F1",
           boxShadow: "4px 4px 21px rgba(244, 244, 244, 0.19)",
           borderRadius: "20px 0px 0px 0",
-          border: 1,
-          "&:hover": {
-            opacity: [0.9, 0.8, 0.7],
-          },
+         p:4
         }}
       >
        <Typography
@@ -132,27 +129,68 @@ export default function CompanyDetails() {
 
       Company overview
           </Typography>
-    
+    <div className={styles.textGroup}>
+        <p className={styles.statsHeading}>
+
           Operates manufacturing plants
+        </p>
+        <p className={styles.stats}>
+
 
           Eight countries
-
+        </p>
+    </div>
+  <div className={styles.textGroup}>
+        <p className={styles.statsHeading}>
+            
           Founded on 
+        </p>
+        <p className={styles.stats}>
 
           September 15, 1987
-    
+        </p>
+    </div>
+          <div className={styles.textGroup}>
+        <p className={styles.statsHeading}>
+            
           Products and services
+        </p>
+        <p className={styles.stats}>
 
           20+
+        </p>
+    </div> 
 
+          <div className={styles.textGroup}>
+        <p className={styles.statsHeading}>
+            
           Employees
-          5000+
+        </p>
+        <p className={styles.stats}>
 
+          5000+
+        </p>
+    </div>
+          <div className={styles.textGroup}>
+        <p className={styles.statsHeading}>
+            
           Revenue
+        </p>
+        <p className={styles.stats}>
           ¥636.8 billion (US$99.9 billion)
 
+        </p>
+    </div>
+          <div className={styles.textGroup}>
+        <p className={styles.statsHeading}>
+            
           Stock price on today
+        </p>
+        <p className={styles.stats}>
+
           3.5900 (+2.57%)
+        </p>
+    </div>
 
     
     
