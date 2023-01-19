@@ -1,6 +1,6 @@
 import "./styles/App.css";
 import { useState, useContext } from "react";
-// import { GlobalContext } from "./context/context.js";
+import { GlobalContext } from "./context/context.js";
 import { Routes, Route, Link, Navigate } from "react-router-dom";
 // import Home from "./pages/other/Home.jsx";
 // import Login from "./pages/AuthPages/Login.jsx";
@@ -15,11 +15,11 @@ import Signup from "./pages/AuthPages/Signup";
 
 export default function App() {
   const [isLogin, setIsLogin] = useState(true);
-  // let { state, dispatch } = useContext(GlobalContext);
+  let { state, dispatch } = useContext(GlobalContext);
 
   // dispatch({
-    // type: 'USER_LOGIN',
-    // payload: "response.data.profile"
+  //   type: 'USER_LOGIN',
+  //   payload: "response.data.profile"
   // })
   // console.log(state.testi);
   return (

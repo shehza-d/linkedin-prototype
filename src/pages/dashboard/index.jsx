@@ -8,8 +8,10 @@ import searchIcon from "../../assets/dashboard/search.svg";
 import AllContent from "./allContent";
 import CompanyDetails from "./companyDetails";
 import Screen3 from "./Screen3";
+import { useState } from "react";
 
 export default function Dashboard() {
+  const [counter,setCounter]=useState(1)
   return (
     <>
       <NavBar />
@@ -24,9 +26,9 @@ export default function Dashboard() {
         <img src={searchIcon} alt="" />
         <input type="search" placeholder="Search" />
       </div>
-      {/* <AllContent /> */}
-      {/* <CompanyDetails /> */}
-      <Screen3/>
+      <AllContent  setCounter={setCounter}/>
+      <CompanyDetails  setCounter={setCounter}/>
+      <Screen3 setCounter={setCounter}/>
     </>
   );
 }

@@ -10,3 +10,7 @@ component structure?
 
 figma se kya copy aur import hoga
 kya ye client ky liye hy ya test hy
+
+screens complete
+navigation
+responsive
