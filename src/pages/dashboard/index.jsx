@@ -23,8 +23,8 @@ export default function Dashboard() {
         <img src={searchIcon} alt="" />
         <input type="search" placeholder="Search" />
       </div>
-      <AllContent />
-      {/* <CompanyDetails /> */}
+      {/* <AllContent /> */}
+      <CompanyDetails />
     </>
   );
 }
