@@ -1,6 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
+    // #1A5CB0
   typography: {
     fontFamily: [
       "Outfit",
