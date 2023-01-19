@@ -11,7 +11,9 @@ import Screen3 from "./Screen3";
 import { useState } from "react";
 
 export default function Dashboard() {
-  const [counter,setCounter]=useState(1)
+  const [counter, setCounter] = useState(1);
+  console.log(counter);
+
   return (
     <>
       <NavBar />
@@ -21,14 +23,14 @@ export default function Dashboard() {
         </div>
         <span className={styles.options}>Home</span>
       </div>
-
       <div className={styles.searchBarDiv}>
         <img src={searchIcon} alt="" />
         <input type="search" placeholder="Search" />
       </div>
-      <AllContent  setCounter={setCounter}/>
-      <CompanyDetails  setCounter={setCounter}/>
-      <Screen3 setCounter={setCounter}/>
+
+      {counter === 1 ? <AllContent setCounter={setCounter} /> : null}
+      {counter === 2 ? <CompanyDetails setCounter={setCounter} /> : null}
+      {counter === 3 ? <Screen3 setCounter={setCounter} /> : null}
     </>
   );
 }

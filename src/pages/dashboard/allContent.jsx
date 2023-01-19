@@ -28,13 +28,14 @@ const dataObj = [
   },
 ];
 
-export default function AllContent() {
+export default function AllContent({ setCounter }) {
   return (
     <div style={{ display: "flex" }}>
       <div className={styles.cardContainer}>
         {dataObj?.map((eachData, i) => (
           <SearchCard
             key={i}
+            setCounter={setCounter}
             heading={eachData?.heading}
             text={eachData?.text}
             img={eachData?.img}
@@ -81,9 +82,7 @@ export default function AllContent() {
           <div
             className={styles.bgRockImg}
             style={{ backgroundImage: `url(${rock}` }}
-          >
-            
-          </div>
+          ></div>
           <button className={`${styles.btn} ${styles.blueBtn}`}>
             Computer
           </button>

@@ -8,9 +8,14 @@ export default function SearchCard({
   logo,
   phoneNumber,
   address,
+  setCounter,
 }) {
   return (
-    <div className={styles.card} style={{ backgroundImage: `url(${img}` }}>
+    <div
+      className={styles.card}
+      style={{ backgroundImage: `url(${img}` }}
+      onClick={() => setCounter((prev) => prev + 1)}
+    >
       <div className={styles.content}>
         <div className={styles.cardHeader}>
           <img src={logo} alt="" />

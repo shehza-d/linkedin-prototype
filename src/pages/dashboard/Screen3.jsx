@@ -111,11 +111,6 @@ export default function Screen3() {
         </div>
 
         <div className={styles.allBtns}>
-          {/* <button className={`${styles.btn} ${styles.blueBtn}`}>Media</button> */}
-          {/* <div
-            className={styles.bgRockImg}
-            style={{ backgroundImage: `url(${rock}` }}
-          >          </div> */}
           <button className={`${styles.btn} ${styles.blueBtn}`}>
             Business Executives
           </button>

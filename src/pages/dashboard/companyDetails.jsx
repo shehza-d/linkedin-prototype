@@ -10,7 +10,7 @@ import Rating from "@mui/material/Rating";
 import { MdStarOutline } from "react-icons/md";
 import phone from "../../assets/dashboard/phone.svg";
 import map from "../../assets/dashboard/map-pin2.svg";
-export default function CompanyDetails() {
+export default function CompanyDetails({ setCounter }) {
   return (
     <div style={{ display: "flex", margin: 0 }}>
       <Box
@@ -36,11 +36,11 @@ export default function CompanyDetails() {
           }}
         >
           <img src={huawei} alt="" />
-          <Box sx={{ pl: 4, pr: 1 }}>
-            <Typography
-              variant="h3"
-              sx={{ fontWeight: 400, fontSize: "50px" }}
-            >
+          <Box
+            sx={{ pl: 4, pr: 1 }}
+            onClick={() => setCounter((prev) => prev + 1)}
+          >
+            <Typography variant="h3" sx={{ fontWeight: 400, fontSize: "50px" }}>
               Huawei
             </Typography>
             <a
@@ -80,7 +80,7 @@ export default function CompanyDetails() {
             lineHeight: "182%",
             letterSpacing: "0.01em",
             color: "#171717",
-        mb:3,
+            mb: 3,
           }}
         >
           Huawei Technologies Co., Ltd. is a Chinese multinational technology
@@ -98,17 +98,37 @@ export default function CompanyDetails() {
           quarter of 2020, owing to the impact of the COVID-19 pandemic.
         </Typography>
         {/* rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} */}
-        <Grid container>
-          <Grid item sm={2} l={2.4}>ORG Structure</Grid>
-          <Grid item sm={2} l={2.4}>Financial Profile</Grid>
-          <Grid item sm={2} l={2.4}>News & Update</Grid>
-          <Grid item sm={2} l={2.4}>Product & services</Grid>
-          <Grid item sm={2} l={2.4}>Vendors & Partnerships</Grid>
-          <Grid item sm={2} l={2.4}>Technology stack</Grid>
-          <Grid item sm={2} l={2.4}>Contact center operations</Grid>
-          <Grid item sm={2} l={2.4}>Back office</Grid>
-          <Grid item sm={2} l={2.4}>Pain points & priorities</Grid>
-          <Grid item sm={2} l={2.4}>Pandora's box</Grid>
+        <Grid container spacing={2}>
+          <Grid item xs={6} sm={3} md={2.4} sx={{ color: "#1A5CB0" }}>
+            ORG Structure
+          </Grid>
+          <Grid item xs={6} sm={3} md={2.4} sx={{ color: "#1A5CB0" }}>
+            Financial Profile
+          </Grid>
+          <Grid item xs={6} sm={3} md={2.4} sx={{ color: "#1A5CB0" }}>
+            News & Update
+          </Grid>
+          <Grid item xs={6} sm={3} md={2.4} sx={{ color: "#1A5CB0" }}>
+            Product & services
+          </Grid>
+          <Grid item xs={6} sm={3} md={2.4} sx={{ color: "#1A5CB0" }}>
+            Vendors & Partnerships
+          </Grid>
+          <Grid item xs={6} sm={3} md={2.4} sx={{ color: "#1A5CB0" }}>
+            Technology stack
+          </Grid>
+          <Grid item xs={6} sm={3} md={2.4} sx={{ color: "#1A5CB0" }}>
+            Contact center operations
+          </Grid>
+          <Grid item xs={6} sm={3} md={2.4} sx={{ color: "#1A5CB0" }}>
+            Back office
+          </Grid>
+          <Grid item xs={6} sm={3} md={2.4} sx={{ color: "#1A5CB0" }}>
+            Pain points & priorities
+          </Grid>
+          <Grid item xs={6} sm={3} md={2.4} sx={{ color: "#1A5CB0" }}>
+            Pandora's box
+          </Grid>
         </Grid>
         {/* <Box sx={{}}></Box>
         <Box sx={{}}></Box> */}
@@ -116,91 +136,46 @@ export default function CompanyDetails() {
       <Box
         sx={{
           width: "30%",
-        //   height: "100vh",
-        //   bgcolor: "#F7F7F7",
+          //   height: "100vh",
+          //   bgcolor: "#F7F7F7",
           bgcolor: "#F1F1F1",
           boxShadow: "4px 4px 21px rgba(244, 244, 244, 0.19)",
           borderRadius: "20px 0px 0px 0",
-         p:4
+          p: 4,
         }}
       >
-       <Typography
-          component="p" variant="h2" sx={{fontSize: "30px",  color: "#3C69A4"        }}>
+        <Typography
+          component="p"
+          variant="h2"
+          sx={{ fontSize: "30px", color: "#3C69A4" }}
+        >
+          Company overview
+        </Typography>
+        <div className={styles.textGroup}>
+          <p className={styles.statsHeading}>Operates manufacturing plants</p>
+          <p className={styles.stats}>Eight countries</p>
+        </div>
+        <div className={styles.textGroup}>
+          <p className={styles.statsHeading}>Founded on</p>
+          <p className={styles.stats}>September 15, 1987</p>
+        </div>
+        <div className={styles.textGroup}>
+          <p className={styles.statsHeading}>Products and services</p>
+          <p className={styles.stats}>20+</p>
+        </div>
 
-      Company overview
-          </Typography>
-    <div className={styles.textGroup}>
-        <p className={styles.statsHeading}>
-
-          Operates manufacturing plants
-        </p>
-        <p className={styles.stats}>
-
-
-          Eight countries
-        </p>
-    </div>
-  <div className={styles.textGroup}>
-        <p className={styles.statsHeading}>
-            
-          Founded on 
-        </p>
-        <p className={styles.stats}>
-
-          September 15, 1987
-        </p>
-    </div>
-          <div className={styles.textGroup}>
-        <p className={styles.statsHeading}>
-            
-          Products and services
-        </p>
-        <p className={styles.stats}>
-
-          20+
-        </p>
-    </div> 
-
-          <div className={styles.textGroup}>
-        <p className={styles.statsHeading}>
-            
-          Employees
-        </p>
-        <p className={styles.stats}>
-
-          5000+
-        </p>
-    </div>
-          <div className={styles.textGroup}>
-        <p className={styles.statsHeading}>
-            
-          Revenue
-        </p>
-        <p className={styles.stats}>
-          ¥636.8 billion (US$99.9 billion)
-
-        </p>
-    </div>
-          <div className={styles.textGroup}>
-        <p className={styles.statsHeading}>
-            
-          Stock price on today
-        </p>
-        <p className={styles.stats}>
-
-          3.5900 (+2.57%)
-        </p>
-    </div>
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        <div className={styles.textGroup}>
+          <p className={styles.statsHeading}>Employees</p>
+          <p className={styles.stats}>5000+</p>
+        </div>
+        <div className={styles.textGroup}>
+          <p className={styles.statsHeading}>Revenue</p>
+          <p className={styles.stats}>¥636.8 billion (US$99.9 billion)</p>
+        </div>
+        <div className={styles.textGroup}>
+          <p className={styles.statsHeading}>Stock price on today</p>
+          <p className={styles.stats}>3.5900 (+2.57%)</p>
+        </div>
       </Box>
 
       {/* <div className={styles.leftSection}></div> */}
