@@ -5,7 +5,8 @@ import photo3 from "../../assets/dashboard/userFace3.png";
 import photo4 from "../../assets/dashboard/userFace4.png";
 import star from "../../assets/dashboard/Star.svg";
 import mail from "../../assets/dashboard/mail.svg";
-import phone from "../../assets/dashboard/phone2.svg";
+import phone from "../../assets/dashboard/phone2.svg"; 
+import searchIcon from '../../assets/dashboard/search.svg'
 // import profilePhoto from "../../assets/dashboard/userFace1.png";
 // import profilePhoto from "../../assets/dashboard/userFace1.png";
 // import profilePhoto from "../../assets/dashboard/userFace1.png";
@@ -75,7 +76,7 @@ function Users({ profilePhoto, userName, rank, company, text, number, email }) {
 export default function Screen3() {
   return (
     <div className={styles.container}>
-      <div className={styles.rightUsersSection}>
+      <div className={styles.leftUsersSection}>
         {dataObj?.map((eachData, i) => (
           <Users
             key={i}
@@ -91,6 +92,53 @@ export default function Screen3() {
         <Users />
         <Users />
         {/*<Users /> */}
+      </div>
+
+      <div className={styles.rightSection}>
+        <div>
+          <button className={styles.btn2}>Company</button>
+          <button className={styles.btn1}>Executive</button>
+        </div>
+
+        <div className={styles.formOptions}>
+          <p>Target Executive Profile</p>
+          <button>Clear</button>
+        </div>
+
+        <div className={styles.searchBarDiv2}>
+          <img src={searchIcon} alt="" />
+          <input type="search" placeholder="Search industries" />
+        </div>
+
+        <div className={styles.allBtns}>
+          {/* <button className={`${styles.btn} ${styles.blueBtn}`}>Media</button> */}
+          {/* <div
+            className={styles.bgRockImg}
+            style={{ backgroundImage: `url(${rock}` }}
+          >          </div> */}
+          <button className={`${styles.btn} ${styles.blueBtn}`}>
+            Business Executives
+          </button>
+          <button className={`${styles.btn} ${styles.whiteBtn}`}>
+            Human Resources
+          </button>
+        </div>
+        <div className={styles.formOptions}>
+          <p>Alumni of </p>
+          <button>Clear</button>
+        </div>
+        <div className={styles.searchBarDiv2}>
+          <img src={searchIcon} alt="" />
+          <input type="search" placeholder="Search industries" />
+        </div>
+        <div className={styles.formOptions}>
+          <p>Industry</p>
+          <button>Clear</button>
+        </div>
+        <div className={styles.searchBarDiv2}>
+          <img src={searchIcon} alt="" />
+          <input type="search" placeholder="Search industries" />
+        </div>
       </div>
     </div>
   );

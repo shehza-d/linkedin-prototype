@@ -10,9 +10,7 @@ export default function SearchCard({
   address,
 }) {
   return (
-    <div className={styles.card} 
-    style={{ backgroundImage: `url(${img}` }}
-    >
+    <div className={styles.card} style={{ backgroundImage: `url(${img}` }}>
       <div className={styles.content}>
         <div className={styles.cardHeader}>
           <img src={logo} alt="" />
