@@ -2,7 +2,7 @@ import styles from "../../styles/BasePages/BaseSetupBackground.module.css"
 // import styles from "../styles/welcome.module.css";
 // import aiSkull from "../assets/welcome/aiSkull.svg";
 import logo1 from "../../assets/basePages/logo1.png";
-import diamond from "../../assets/basePages/diamond.svg";
+import diamond from "../../assets/basePages/Rock2.png";
 import circle from "../../assets/basePages/circle.png";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
