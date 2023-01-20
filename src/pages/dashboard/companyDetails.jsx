@@ -23,6 +23,7 @@ export default function CompanyDetails({ setCounter }) {
           //   },
         }}
       >
+      
         <Box
           sx={{
             display: "flex",
