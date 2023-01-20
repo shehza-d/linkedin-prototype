@@ -8,6 +8,7 @@ import samsung from "../../assets/dashboard/samsung.png";
 // import earth from '../../assets/dashboard'
 import rock from "../../assets/dashboard/Rock.png";
 import searchIcon from "../../assets/dashboard/search.svg";
+import React, { useState, useEffect } from "react";
 
 const dataObj = [
   {
@@ -29,6 +30,17 @@ const dataObj = [
 ];
 
 export default function AllContent({ setCounter }) {
+  const [matches, setMatches] = useState(
+    window.matchMedia("(min-width: 768px)").matches
+  );
+  useEffect(() => {
+    window
+      .matchMedia("(min-width: 768px)")
+      .addEventListener("change", (e) => setMatches(e.matches));
+  }, []);
+  // let mediaQuery = window.matchMedia('(max-width: 768px)').matches
+  console.log(matches);
+
   return (
     <div style={{ display: "flex" }}>
       <div className={styles.cardContainer}>
@@ -46,7 +58,7 @@ export default function AllContent({ setCounter }) {
           />
         ))}
         {/* <SearchCard /> */}
-        <SearchSuggestion />
+        {matches ? <SearchSuggestion /> : null}
         {/* to remove */}
         <p></p>
         <br />

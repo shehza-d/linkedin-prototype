@@ -111,3 +111,10 @@
   background-size: contain;
   background-position: right;
 }
+
+@media (max-device-width: 650px) {
+  .rightCompanyContainer {
+    display: none;
+  }
+  .cardContainer {
+  width: 90%;}}

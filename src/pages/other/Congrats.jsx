@@ -13,7 +13,15 @@ export default function Congrats() {
       <img src={ellipse} className={styles.ellipse} alt="" />
 
       <div className={styles.card}>
-        <Typography variant="h2" sx={{ color: "#1A5CB0", fontWeight: "600" }}>
+        <Typography
+          variant="h2"
+          sx={{
+            color: "#1A5CB0",
+            fontWeight: "600",
+            fontSize: { xs: 34 },
+            pb: { xs: 2 },
+          }}
+        >
           Congratulations!
         </Typography>
         <Typography

@@ -10,20 +10,21 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Setup1 from "./Setup1";
 import Setup2 from "./Setup2";
-import Setup3 from "./Setup3"; 
+import Setup3 from "./Setup3";
 // import Setup from "./Setup";
 // import Setup from "./Setup";
 import arrow from "../../assets/basePages/arrow.svg";
 
 export default function BaseSetupBackground() {
   let { state, dispatch } = useContext(GlobalContext);
+  const [myVar, setMyVar] = useState(state.setupScreenCounter);
   // dispatch({
   //   type: 'USER_LOGIN',
   //   payload: "response.data.profile"
   // })
   // console.log(state.testing);
   console.log(state.setupScreenCounter);
-
+  console.log(myVar);
   return (
     <>
       <img src={logo1} className={styles.logo1} alt="" />

@@ -37,3 +37,17 @@
   top: 4.69%;
   bottom: 5%;
 }
+
+@media (max-device-width:650px){
+  .container{
+    height: 100vh;
+    /* width: 100vw; */
+  }
+  .card{
+    width:95%;
+    width:auto;
+    height: auto;
+  }
+.ellipse {
+display: none;}
+}

@@ -56,7 +56,7 @@
 }
 .searchBarDiv > input:focus {
   border: none;
-  background-color: green;
+  /* background-color: green; */
 }
 .cardContainer {
   /* margin-top: 70px; */
@@ -66,4 +66,14 @@
   flex-direction: column;
   width: 60%;
   /* border: 2px solid red; */
+}
+
+@media (max-device-width: 650px) {
+  .searchBarDiv {
+    width: 85%;
+    height: 50px;
+    margin-top: 30px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+  }
 }
