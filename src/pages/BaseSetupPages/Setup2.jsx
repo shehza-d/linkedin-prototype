@@ -8,7 +8,10 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Autocomplete from "@mui/material/Autocomplete";
 import enterArrow from "../../assets/basePages/enterArrow.svg";
+
 export default function Setup2() {
+  let { state, dispatch } = useContext(GlobalContext);
+
   const dropdownOptions = [
     { label: "Option one" },
     { label: "Option two" },
@@ -35,9 +38,9 @@ export default function Setup2() {
           <Typography sx={{ color: "#C0C0C0", mb: 1 }}>
             Define your target market segments?
           </Typography>
-          <div style={{display:'flex'}}>
+          <div className={styles.flex}>
             <Autocomplete
-              sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" , }}
+              sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" }}
               // sx={{ width: "180px", mr: 1, mb: 1 }}
               disablePortal
               id=""
@@ -59,34 +62,42 @@ export default function Setup2() {
               size="small"
             />
           </div>
-          <div style={{display:'flex'}}>
-          <Autocomplete
+          <div className={styles.flex}>
+            <Autocomplete
               sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" }}
               // sx={{ width: "180px", mr: 1 }}
               disablePortal
               id=""
+              disabled
               options={dropdownOptions}
               renderInput={(params) => (
                 <TextField {...params} label="Employee" />
               )}
               size="small"
             />
-             <Autocomplete
+            <Autocomplete
               sx={{ bgcolor: "#ffffffda", width: "180px" }}
               disablePortal
               id=""
               options={dropdownOptions}
+              disabled
               renderInput={(params) => (
                 <TextField {...params} label="Geography" />
               )}
               size="small"
             />
-        
           </div>
         </div>
         {/* <div className={styles.alignn}> */}
         <div className={styles.btn}>
-          <Button variant="contained" size="large" sx={{ pl: 6, pr: 6, mr: 1 }}>
+          <Button
+            variant="contained"
+            size="large"
+            sx={{ pl: 6, pr: 6, mr: 1, mt: { xs: 2 } }}
+            onClick={() => {
+            state.setupScreenCounter++;
+            }}
+          >
             Continue
           </Button>
           <div className={styles.pressEnter}>

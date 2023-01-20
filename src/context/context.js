@@ -4,7 +4,7 @@ import { reducer } from './reducer.js';
 export const GlobalContext = createContext("Initial Value");
 
 let data = {
-  setupScreen:0,
+  setupScreenCounter:1,
   testing:"context is working globally",
   darkTheme: true,
   user: {},

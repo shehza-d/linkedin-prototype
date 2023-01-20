@@ -12,3 +12,14 @@
     width: 100%;
     position:relative; */
 }
+.flex{
+  display: flex;
+  }
+  @media (max-device-width: 650px) {
+    /* .container { */
+      /* flex-direction: column; */
+    /* } */
+    .flex{
+      flex-direction: column;
+      }
+  }

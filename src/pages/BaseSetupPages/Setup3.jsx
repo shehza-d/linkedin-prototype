@@ -10,6 +10,7 @@ import DropDown from "../../components/muiDropDown";
 import { useNavigate } from "react-router-dom";
 
 export default function Setup2() {
+  let { state, dispatch } = useContext(GlobalContext);
   const navigate = useNavigate();
 
   return (
@@ -18,11 +19,11 @@ export default function Setup2() {
         <div className={styles.form}>
           <Typography>Define your target market segments?</Typography>
 
-          <div style={{ display: "flex" }}>
+          <div className={styles.flex}>
             <DropDown label="Industry" />
             <DropDown label="Revenue Size" />
           </div>
-          <div style={{ display: "flex" }}>
+          <div className={styles.flex}>
             <DropDown label="Employee" />
             <DropDown label="Geography" />
           </div>
@@ -31,12 +32,14 @@ export default function Setup2() {
             Define your target profile?
           </Typography>
 
-          <div style={{ display: "flex" }}>
+          <div className={styles.flex}>
             <DropDown label="Role of person" disable={true} />
             <DropDown label="Designation" disable={true} />
           </div>
-          <div style={{ display: "flex" }}>
-            <DropDown label="Span of control" disable={true} />
+          <div className={styles.flex}>
+            <DropDown label="Span of control" disable={true}
+            // sx={{display:{sm:"none"}}}
+             />
             <DropDown label="Decision Maker" disable={true} />
           </div>
         </div>
@@ -46,7 +49,11 @@ export default function Setup2() {
             variant="contained"
             size="large"
             sx={{ pl: 6, pr: 6, mr: 1 }}
-            onClick={() => navigate("/congrats")}
+            // onClick={() =>
+            onClick={async () => {
+              // await state.setupScreenCounter++;
+              navigate("/congrats");
+            }}
           >
             Continue
           </Button>

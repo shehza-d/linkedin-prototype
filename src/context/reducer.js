@@ -10,7 +10,9 @@ export const reducer = (state, action) => {
     case "TOGGLE_THEME": {
       return { ...state, darkTheme: !state.darkTheme }; // set this to null on purpose, do not change
     }
-
+    // case "COUNTER": {
+    //   return { ...state, darkTheme: !state.darkTheme }; // set this to null on purpose, do not change
+    // }
     default: {
       return state;
     }

@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Setup1 from "./Setup1";
 import Setup2 from "./Setup2";
-import Setup3 from "./Setup3";
+import Setup3 from "./Setup3"; 
 // import Setup from "./Setup";
 // import Setup from "./Setup";
 import arrow from "../../assets/basePages/arrow.svg";
@@ -21,7 +21,8 @@ export default function BaseSetupBackground() {
   //   type: 'USER_LOGIN',
   //   payload: "response.data.profile"
   // })
-  console.log(state.testing);
+  // console.log(state.testing);
+  console.log(state.setupScreenCounter);
 
   return (
     <>
@@ -55,11 +56,19 @@ export default function BaseSetupBackground() {
           </div>
           <div className={styles.card}>
             <img src={arrow} className={styles.arrow} alt="" />
-            <Setup1 />
+            {/* <Setup1 /> */}
             {/* <Setup2/> */}
             {/* <Setup3/> */}
             {/* <Setup4/> */}
             {/* <Setup5/> */}
+
+            {state.setupScreenCounter === 1 ? <Setup1 /> : null}
+            {state.setupScreenCounter === 2 ? <Setup2 /> : null}
+            {state.setupScreenCounter === 3 ? <Setup3 /> : null}
+            {state.setupScreenCounter > 3 ? <Setup1 /> : null}
+            {/*               
+      {state.setupScreenCounter === 5 ? <Setup5 /> : null}
+   */}
           </div>
         </div>
         <div className={styles.rightBlueBar}>

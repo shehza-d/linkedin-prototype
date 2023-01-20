@@ -7,7 +7,11 @@ import Button from "@mui/material/Button";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import enterArrow from "../../assets/basePages/enterArrow.svg";
+
 export default function Setup1() {
+  let { state, dispatch } = useContext(GlobalContext);
+  console.log(state.setupScreenCounter);
+
   return (
     <div className={styles.container}>
       <div className={styles.form}>
@@ -78,6 +82,13 @@ export default function Setup1() {
           variant="contained"
           size="large"
           sx={{ pl: 6, pr: 6, mr: 1, mt: { xs: 2 } }}
+          onClick={() => {
+            state.setupScreenCounter++;
+            // dispatch({
+            //      type: 'COUNTER',
+            //      payload: "response.data.profile"
+            //    })
+          }}
         >
           Continue
         </Button>

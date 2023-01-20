@@ -9,9 +9,14 @@
   display: flex;
   align-items: center;
 }
+.flex{
+display: flex;
+}
 @media (max-device-width: 650px) {
-  /* .container {
+  .container {
     flex-direction: column;
   }
- */
+  .flex{
+    flex-direction: column;
+    }
 }
