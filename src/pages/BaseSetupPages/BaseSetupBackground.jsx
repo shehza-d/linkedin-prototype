@@ -66,7 +66,7 @@ export default function BaseSetupBackground() {
             {state.setupScreenCounter === 1 ? <Setup1 /> : null}
             {state.setupScreenCounter === 2 ? <Setup2 /> : null}
             {state.setupScreenCounter === 3 ? <Setup3 /> : null}
-            {state.setupScreenCounter > 3 ? <Setup1 /> : null}
+            {state.setupScreenCounter > 3 ? <Setup3 /> : null}
             {/*               
       {state.setupScreenCounter === 5 ? <Setup5 /> : null}
    */}
