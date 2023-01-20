@@ -10,11 +10,21 @@
   opacity: 0.6;
 }
 .stats {
-    font-family: 'Outfit';
-font-style: normal;
-font-weight: 500;
-font-size: 20px;
-line-height: 167%;
-/* or 33px */
-color: #262626;
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 167%;
+  /* or 33px */
+  color: #262626;
+}
+.flex {
+  display: flex;
+  margin: 0;
+}
+@media (max-device-width: 650px) {
+  .flex {
+    flex-direction: column;
+    margin: 0;
+  }
 }

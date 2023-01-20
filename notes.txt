@@ -14,3 +14,7 @@ kya ye client ky liye hy ya test hy
 screens complete
 navigation
 responsive
+
+total screens-14
+made 11
+responsive 8

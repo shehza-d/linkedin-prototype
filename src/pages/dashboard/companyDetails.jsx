@@ -12,13 +12,11 @@ import phone from "../../assets/dashboard/phone.svg";
 import map from "../../assets/dashboard/map-pin2.svg";
 export default function CompanyDetails({ setCounter }) {
   return (
-    <div style={{ display: "flex", margin: 0 }}>
+    <div className={styles.flex}>
       <Box
         sx={{
-          width: "70%",
-          //   height: 300,
-          p: 8,
-          //   bgcolor: "primary.dark",
+          width: { xs: "92%", md: "70%" },
+          p: { xs: "12px", md: 4, l: 8 },
           //   "&:hover": {
           //     backgroundColor: "primary.main",
           //     opacity: [0.9, 0.8, 0.7],
@@ -28,16 +26,15 @@ export default function CompanyDetails({ setCounter }) {
         <Box
           sx={{
             display: "flex",
-            // border: 2,
             p: 2,
-            // justifyContent: "space-between",
             alignItems: "center",
-            mb: 6,
+            justifyContent: "space-between",
+            flexWrap: "wrap",
           }}
         >
           <img src={huawei} alt="" />
           <Box
-            sx={{ pl: 4, pr: 1 }}
+            sx={{ pl: { xs: "8px", md: 4 }, pr: { xs: "4px", md: 1 } }}
             onClick={() => setCounter((prev) => prev + 1)}
           >
             <Typography variant="h3" sx={{ fontWeight: 400, fontSize: "50px" }}>
@@ -49,7 +46,6 @@ export default function CompanyDetails({ setCounter }) {
             >
               www.huawei.com
             </a>
-            {/* <Typography variant="a"></Typography> */}
           </Box>
           <Rating
             value={3}
@@ -60,7 +56,14 @@ export default function CompanyDetails({ setCounter }) {
             emptyIcon={<MdStarOutline style={{ opacity: 0 }} />}
           />
           <Box sx={{}}>
-            <Box sx={{ display: "flex", alignItems: "center !important" }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center !important",
+                width: 300,
+                mt: 1,
+              }}
+            >
               <img src={map} alt="" style={{ margin: "8px" }} />
               <Typography variant="span">
                 Huawei Base, Bantian, Longgang District, Shenzhen, China
@@ -81,6 +84,8 @@ export default function CompanyDetails({ setCounter }) {
             letterSpacing: "0.01em",
             color: "#171717",
             mb: 3,
+            textAlign: "justify",
+            textJustify: "inter-word",
           }}
         >
           Huawei Technologies Co., Ltd. is a Chinese multinational technology
@@ -130,14 +135,11 @@ export default function CompanyDetails({ setCounter }) {
             Pandora's box
           </Grid>
         </Grid>
-        {/* <Box sx={{}}></Box>
-        <Box sx={{}}></Box> */}
       </Box>
       <Box
         sx={{
-          width: "30%",
-          //   height: "100vh",
-          //   bgcolor: "#F7F7F7",
+          width: { xs: "auto", md: "30%" },
+          p: { xs: "12px", md: 4, l: 8 },
           bgcolor: "#F1F1F1",
           boxShadow: "4px 4px 21px rgba(244, 244, 244, 0.19)",
           borderRadius: "20px 0px 0px 0",

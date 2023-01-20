@@ -37,9 +37,9 @@ export default function SearchCard({
           </span>
         </div>
       </div>
-      <div className={styles.imgDiv}>
-        {/* <img src={img} className={styles.bgImg} alt="" /> */}
-      </div>
+      {/* <div className={styles.imgDiv}>
+        <img src={img} className={styles.bgImg} alt="" />
+      </div> */}
     </div>
   );
 }
