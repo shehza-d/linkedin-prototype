@@ -1,5 +1,7 @@
-import Typography from "@mui/material/Typography";
+import { useState, useContext } from "react";
+import { GlobalContext } from "../../context/context.js";
 import styles from "../../styles/BasePages/setup2.module.css";
+import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";

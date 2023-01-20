@@ -7,21 +7,24 @@
   position: relative;
 }
 .card {
-  /* border: 2px solid red; */
+  width: 60%;
+  height: 350px;
+  box-shadow: 2px 5px 30px 1px #1b1b1b;
+  padding: 20px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   box-sizing: border-box; /* what is does */
-  /* position: absolute; */
-  width: 777px;
   height: 447px;
-  /* left: 0px; */
-  /* top: 0px; */
   border: 2px solid #ffffff;
   background: rgba(232, 232, 232, 0.3);
   backdrop-filter: blur(10px);
   border-radius: 40px;
+  /* border: 2px solid red; */
 }
 .aiSkull {
   height: 500px;
@@ -40,4 +43,36 @@
 .logo2 {
   height: 92px;
   width: 92px;
+}
+@media (max-device-width: 650px) {
+  .card {
+    width: 90%;
+    height: 75%;
+    padding: 10px;
+  }
+  .aiSkull {
+    height: 200px;
+  }
+  form > input {
+    width: 200px;
+  }
+  form > button {
+    width: 200px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  main {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  form > input {
+    background: #1b1b1b;
+    color: #fff;
+    border: 1px solid #fcfcfc;
+  }
+  form > button {
+    background: #1b1b1b;
+    color: #fff;
+    border: 1px solid #f3f3f3;
+  }
 }

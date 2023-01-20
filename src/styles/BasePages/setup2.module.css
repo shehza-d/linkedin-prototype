@@ -6,9 +6,12 @@
   justify-content: space-around;
 }
 .btn {
-    display: flex;
-    align-items: center;
-    /* height: 100%;
-    width: 100%;
-    position:relative; */
+  display: flex;
+  align-items: center;
+}
+@media (max-device-width: 650px) {
+  /* .container {
+    flex-direction: column;
+  }
+ */
 }

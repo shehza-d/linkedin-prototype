@@ -16,7 +16,16 @@ export default function Welcome() {
       <img src={logo1} className={styles.logo1} alt="" />
       <div className={styles.card}>
         <img src={logo2} className={styles.logo2} alt="" />
-        <Typography variant="h2" sx={{ color: "#1A5CB0", fontWeight: "600" }}>
+        <Typography
+          variant="h2"
+          sx={{
+            color: "#1A5CB0",
+            fontWeight: "600",
+            textAlign:"center",
+            fontSize: { xs: 40, md: 80 },
+          }}
+          // sm={{ fontSize: "10px" ,color:'red'}}
+        >
           Welcome to Product
         </Typography>
         <Typography
@@ -29,7 +38,7 @@ export default function Welcome() {
           variant="contained"
           sx={{
             backgroundColor: "#1A5CB0",
-            mt: "72px",
+            mt: {xs:"25px",md:"72px"},
             py: "10px",
             px: "24px",
           }}

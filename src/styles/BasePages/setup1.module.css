@@ -6,18 +6,14 @@
   justify-content: space-around;
 }
 .btn {
-    display: flex;
-    align-items: center;
-    /* height: 100%;
-    width: 100%;
-    position:relative; */
-    /* border: 3px solid green; */
-}
-
-/* .pressEnter {
-}
-.alignn{
-border: 1px solid red;
   display: flex;
-  align-items: flex-start;
-} */
+  align-items: center;
+}
+.form {
+  /* display: flex; */
+}
+@media (max-device-width: 650px) {
+  .container {
+    flex-direction: column;
+  }
+}

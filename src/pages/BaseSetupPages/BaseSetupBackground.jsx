@@ -1,4 +1,6 @@
-import styles from "../../styles/BasePages/BaseSetupBackground.module.css"
+import styles from "../../styles/BasePages/BaseSetupBackground.module.css";
+import { useState, useContext } from "react";
+import { GlobalContext } from "../../context/context.js";
 // import styles from "../styles/welcome.module.css";
 // import aiSkull from "../assets/welcome/aiSkull.svg";
 import logo1 from "../../assets/basePages/logo1.png";
@@ -14,6 +16,13 @@ import Setup3 from "./Setup3";
 import arrow from "../../assets/basePages/arrow.svg";
 
 export default function BaseSetupBackground() {
+  let { state, dispatch } = useContext(GlobalContext);
+  // dispatch({
+  //   type: 'USER_LOGIN',
+  //   payload: "response.data.profile"
+  // })
+  console.log(state.testing);
+
   return (
     <>
       <img src={logo1} className={styles.logo1} alt="" />
@@ -22,10 +31,20 @@ export default function BaseSetupBackground() {
         <div className={styles.leftSection}>
           <img src={diamond} className={styles.diamond} alt="" />
           <div className={styles.headings}>
-            <Typography variant="h2" align="left" color={"#4D5659"}>
+            <Typography
+              variant="h2"
+              sx={{
+                align: "left",
+                textAlign: "left",
+                fontSize: { xs: 60 },
+                ml: 2,
+              }}
+              color={"#4D5659"}
+            >
               Base Setup
             </Typography>
             <Typography
+              sx={{ ml: 2 }}
               variant="h6"
               align="left"
               color={"#A8A8A8"}
@@ -36,9 +55,9 @@ export default function BaseSetupBackground() {
           </div>
           <div className={styles.card}>
             <img src={arrow} className={styles.arrow} alt="" />
-            {/* <Setup1 /> */}
+            <Setup1 />
             {/* <Setup2/> */}
-            <Setup3/>
+            {/* <Setup3/> */}
             {/* <Setup4/> */}
             {/* <Setup5/> */}
           </div>
