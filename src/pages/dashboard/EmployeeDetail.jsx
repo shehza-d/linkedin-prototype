@@ -1,8 +1,12 @@
-import NavBar from "../../components/NavBar";
+// CSS
 import styles from "../../styles/dashboard/EmployeeDetail.module.css";
-import { RiHome5Line } from "react-icons/ri";
+// Components
+import NavBar from "../../components/NavBar";
+// MUI
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+// Assests
 import userSearch from "../../assets/dashboard/userSearch.svg";
 import arrow from "../../assets/dashboard/arrow.svg";
 import linkedIn from "../../assets/dashboard/linkedIn.svg";
@@ -14,6 +18,8 @@ import userFace5 from "../../assets/dashboard/userFace5.png";
 import userFace6 from "../../assets/dashboard/userFace6.png";
 import userFace7 from "../../assets/dashboard/userFace7.png";
 import userFace8 from "../../assets/dashboard/userFace8.png";
+// Icons
+import { RiHome5Line } from "react-icons/ri";
 
 function UserProfile({
   profilePic,
@@ -78,13 +84,63 @@ export default function EmployeeDetail() {
           userNumber="9"
           buyer={true}
         />
-        <UserProfile
-          userName="Maryam Tariq"
-          profilePic={userFace1}
-          userPosition="Chair and CEO"
-          userNumber="9"
-        />
-        <div className={styles.employeeContainer}>ssds</div>
+        <div className={styles.employeeContainer}>
+          <div className={styles.column}>
+            <Button variant="contained" sx={{mx:4}}>GM Financial</Button>
+            <Button variant="contained" sx={{mx:4}}>Global Communications</Button>
+            <Button variant="contained" sx={{mx:4}}>Global Manufacturing</Button>
+          </div>
+          <div className={styles.column}>
+            <UserProfile
+              userName="Maryam Tariq"
+              profilePic={userFace2}
+              userPosition="Lead of UX/UI"
+              userNumber="9"
+              buyer={true}
+            />
+            <UserProfile
+              userName="Maryam Tariq"
+              profilePic={userFace3}
+              userPosition="Project manager"
+              userNumber="9"
+              buyer={true}
+            />
+            <UserProfile
+              userName="Maryam Tariq"
+              profilePic={userFace4}
+              userPosition="Lead of AI"
+              userNumber="9"
+              buyer={true}
+            />
+          </div>
+          <div className={styles.column}>
+            <UserProfile
+              userName="Maryam Tariq"
+              profilePic={userFace5}
+              userPosition="Intern of UX/UI"
+              userNumber="9"
+            />
+            <UserProfile
+              userName="Maryam Tariq"
+              profilePic={userFace6}
+              userPosition="Junior project manager"
+              userNumber="9"
+            />
+            <UserProfile
+              userName="Maryam Tariq"
+              profilePic={userFace7}
+              userPosition="Junior project manager"
+              userNumber="9"
+            />
+            <UserProfile
+              userName="Maryam Tariq"
+              profilePic={userFace8}
+              userPosition="AI Intern"
+              userNumber="9"
+            />
+          </div>
+          {/* <div className={styles.column}></div> */}
+        </div>
       </div>
     </>
   );
