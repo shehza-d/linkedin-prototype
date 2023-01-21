@@ -95,7 +95,10 @@ export default function Setup2() {
             size="large"
             sx={{ pl: 6, pr: 6, mr: 1, mt: { xs: 2 } }}
             onClick={() => {
-            state.setupScreenCounter++;
+              dispatch({
+                type: "COUNTER",
+                payload: ++state.setupScreenCounter,
+              });
             }}
           >
             Continue

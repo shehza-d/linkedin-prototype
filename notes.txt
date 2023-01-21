@@ -18,3 +18,5 @@ responsive
 total screens-14
 made 11
 responsive 8
+
+congrats page responsive

@@ -12,7 +12,6 @@ import { useState } from "react";
 
 export default function Dashboard() {
   const [counter, setCounter] = useState(1);
-  console.log(counter);
 
   return (
     <>

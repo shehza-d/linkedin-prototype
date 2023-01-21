@@ -45,9 +45,15 @@
   }
   .card{
     width:95%;
-    width:auto;
+    /* width:auto; */
     height: auto;
   }
 .ellipse {
 display: none;}
 }
+@media screen and (max-width: 430px) {
+  .container {
+    background-size: cover;
+    background-position: right;
+  }
+      }

@@ -5,7 +5,7 @@
   margin-top: 40px;
   margin-left: 20px;
   width: 70%;
-  border: 2px solid green;
+  /* border: 2px solid green; */
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
@@ -129,7 +129,7 @@
   background-color: #f7f7f7;
   box-shadow: 0px 4px 21px rgba(244, 244, 244, 0.19);
   border-radius: 18.8182px;
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 }
 .userDiv1 {
   margin-top: 15px;
@@ -161,3 +161,14 @@
   align-items: center;
 }
 /* User Component CSS */
+@media (max-device-width: 650px) {
+  .container {
+    flex-direction: column;
+  }
+  .rightSection {
+    margin-top: 80px;
+    /* padding-left: 40px;
+      padding-right: 40px; */
+    width: 100%;
+  }
+}

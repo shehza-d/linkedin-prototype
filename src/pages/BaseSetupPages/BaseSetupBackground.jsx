@@ -17,14 +17,14 @@ import arrow from "../../assets/basePages/arrow.svg";
 
 export default function BaseSetupBackground() {
   let { state, dispatch } = useContext(GlobalContext);
-  const [myVar, setMyVar] = useState(state.setupScreenCounter);
+  // const [myVar, setMyVar] = useState(state.setupScreenCounter);
   // dispatch({
   //   type: 'USER_LOGIN',
   //   payload: "response.data.profile"
   // })
   // console.log(state.testing);
   console.log(state.setupScreenCounter);
-  console.log(myVar);
+  // console.log(myVar);
   return (
     <>
       <img src={logo1} className={styles.logo1} alt="" />
@@ -57,11 +57,6 @@ export default function BaseSetupBackground() {
           </div>
           <div className={styles.card}>
             <img src={arrow} className={styles.arrow} alt="" />
-            {/* <Setup1 /> */}
-            {/* <Setup2/> */}
-            {/* <Setup3/> */}
-            {/* <Setup4/> */}
-            {/* <Setup5/> */}
 
             {state.setupScreenCounter === 1 ? <Setup1 /> : null}
             {state.setupScreenCounter === 2 ? <Setup2 /> : null}

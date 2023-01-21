@@ -89,8 +89,6 @@ export default function Screen3() {
             email={eachData?.email}
           />
         ))}
-        <Users />
-        <Users />
         {/*<Users /> */}
       </div>
 

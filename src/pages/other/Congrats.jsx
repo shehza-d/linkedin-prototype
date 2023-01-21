@@ -18,7 +18,7 @@ export default function Congrats() {
           sx={{
             color: "#1A5CB0",
             fontWeight: "600",
-            fontSize: { xs: 34 },
+            fontSize: { xs: 34, md: 64 },
             pb: { xs: 2 },
           }}
         >
@@ -31,6 +31,7 @@ export default function Congrats() {
             color: "#1A5CB0",
             fontSize: "28px",
             lineHeight: "32px",
+            ml: 1,
           }}
         >
           Your profile has been created!
@@ -50,9 +51,10 @@ export default function Congrats() {
           variant="contained"
           sx={{
             backgroundColor: "#1A5CB0",
-            mt: "42px",
-            py: "15px",
-            px: "84px",
+            mt: { xs: "20px", md: "42px" },
+            py: { xs: "10px", md: "15px" },
+            px: { xs: "50px", md: "84px" },
+            mb: { xs: "10px", md: 0 },
             textTransform: "none",
             fontWeight: "600",
           }}
