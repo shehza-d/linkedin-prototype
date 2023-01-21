@@ -9,7 +9,7 @@ import enterArrow from "../../assets/basePages/enterArrow.svg";
 import DropDown from "../../components/muiDropDown";
 import { useNavigate } from "react-router-dom";
 
-export default function Setup2() {
+export default function Setup3() {
   let { state, dispatch } = useContext(GlobalContext);
   const navigate = useNavigate();
 
@@ -37,9 +37,11 @@ export default function Setup2() {
             <DropDown label="Designation" disable={true} />
           </div>
           <div className={styles.flex}>
-            <DropDown label="Span of control" disable={true}
-            // sx={{display:{sm:"none"}}}
-             />
+            <DropDown
+              label="Span of control"
+              disable={true}
+              // sx={{display:{sm:"none"}}}
+            />
             <DropDown label="Decision Maker" disable={true} />
           </div>
         </div>
@@ -50,9 +52,11 @@ export default function Setup2() {
             size="large"
             sx={{ pl: 6, pr: 6, mr: 1 }}
             // onClick={() =>
-            onClick={async () => {
-              // await state.setupScreenCounter++;
-              navigate("/congrats");
+            onClick={() => {
+              dispatch({
+                type: "COUNTER",
+                payload: ++state.setupScreenCounter,
+              });
             }}
           >
             Continue

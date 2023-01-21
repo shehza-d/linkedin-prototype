@@ -11,8 +11,7 @@ import Button from "@mui/material/Button";
 import Setup1 from "./Setup1";
 import Setup2 from "./Setup2";
 import Setup3 from "./Setup3";
-// import Setup from "./Setup";
-// import Setup from "./Setup";
+import Setup4 from "./Setup4";
 import arrow from "../../assets/basePages/arrow.svg";
 
 export default function BaseSetupBackground() {
@@ -57,11 +56,12 @@ export default function BaseSetupBackground() {
           </div>
           <div className={styles.card}>
             <img src={arrow} className={styles.arrow} alt="" />
-
+            {/* <Setup4/> */}
             {state.setupScreenCounter === 1 ? <Setup1 /> : null}
             {state.setupScreenCounter === 2 ? <Setup2 /> : null}
             {state.setupScreenCounter === 3 ? <Setup3 /> : null}
-            {state.setupScreenCounter > 3 ? <Setup3 /> : null}
+            {state.setupScreenCounter === 4 ? <Setup4 /> : null}
+            {state.setupScreenCounter > 4 ? <Setup3 /> : null}
             {/*               
       {state.setupScreenCounter === 5 ? <Setup5 /> : null}
    */}

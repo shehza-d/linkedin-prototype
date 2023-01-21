@@ -44,6 +44,7 @@ export default function Setup2() {
               // sx={{ width: "180px", mr: 1, mb: 1 }}
               disablePortal
               id=""
+              disabled
               options={dropdownOptions}
               renderInput={(params) => (
                 <TextField {...params} label="Industry" />
@@ -56,6 +57,7 @@ export default function Setup2() {
               disablePortal
               id=""
               options={dropdownOptions}
+              disabled
               renderInput={(params) => (
                 <TextField {...params} label="Revenue Size" />
               )}

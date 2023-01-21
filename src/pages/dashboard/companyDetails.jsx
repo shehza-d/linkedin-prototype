@@ -41,12 +41,11 @@ export default function CompanyDetails({ setCounter }) {
             <Typography variant="h3" sx={{ fontWeight: 400, fontSize: "50px" }}>
               Huawei
             </Typography>
-            <a
-              href="www.huawei.com"
+            <span
               style={{ color: "#171717", textDecoration: "none" }}
             >
               www.huawei.com
-            </a>
+            </span>
           </Box>
           <Rating
             value={3}

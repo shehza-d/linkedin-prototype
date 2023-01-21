@@ -1,0 +1,96 @@
+.homeBtnDiv {
+  height: 43px;
+  width: 123px;
+  display: flex;
+  align-items: center;
+  /* margin-top: 45px; */
+  /* margin-left: 75px;
+    margin-left: 75px; */
+  border-radius: 50px;
+  border-radius: 23px;
+  background-color: #f1f1f1;
+}
+.homeCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 23px;
+  background-color: #1a5cb0;
+}
+.homeCircle > svg {
+  height: 25px;
+  width: 25px;
+  color: white;
+  fill: #f1f1f1;
+}
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 8px;
+  border-radius: 50px;
+  height: inherit;
+}
+
+.navigationContainer {
+  display: flex;
+  height: 115px;
+  margin-left: 75px;
+  margin-bottom: 25px;
+  align-items: center;
+  /* border: 2px solid red; */
+}
+.optionsDiv {
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.employeeContainer {
+  margin: 30px;
+  filter: drop-shadow(0px 7px 20px rgba(0, 0, 0, 0.25));
+  border-radius: 27.1267px;
+  width: 80%;
+  height: 80vh;
+  border: 2px solid brown;
+}
+
+/* UserProfile */
+.UserProfileContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 313.51px;
+  height: 136px;
+  background: #f0f0f0;
+  border-radius: 13.2468px;
+}
+.textt {
+}
+.btnss {
+  display: flex;
+  justify-content: space-around;
+}
+.num {
+  color: white;
+  box-sizing: border-box;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: rgba(26, 92, 176, 0.8);
+  border-radius: 7.32341px;
+}
+.buyerStatus {
+  color: white;
+  box-sizing: border-box;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #1a5cb0;
+  border-radius: 7.06494px;
+}
+/* UserProfile */

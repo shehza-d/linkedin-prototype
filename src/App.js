@@ -11,6 +11,7 @@ import BaseSetupBackground from "./pages/BaseSetupPages/BaseSetupBackground";
 import Congrats from "./pages/other/Congrats";
 import Dashboard from "./pages/dashboard";
 import Signup from "./pages/AuthPages/Signup";
+import EmployeeDetail from "./pages/dashboard/EmployeeDetail";
 
 
 export default function App() {
@@ -30,11 +31,10 @@ export default function App() {
           <Route path="welcome" element={<Welcome />} />
           <Route path="setup" element={<BaseSetupBackground />} />
           <Route path="congrats" element={<Congrats />} />
-          {/* <Route path="profile" element={<Profile />} /> */}
           <Route path="dashboard" element={<Dashboard />} />
+          <Route path="employees" element={<EmployeeDetail />} />
           {/* <Route path="/" element={<Dashboard />} /> */}
           <Route path="/" element={<AuthBase />} />
-
           {/* <Route path="*" element={<Navigate to="/" replace={true} />} /> */}
         </Routes>
       ) : (
