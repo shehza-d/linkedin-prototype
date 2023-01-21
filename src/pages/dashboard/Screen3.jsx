@@ -5,13 +5,14 @@ import photo3 from "../../assets/dashboard/userFace3.png";
 import photo4 from "../../assets/dashboard/userFace4.png";
 import star from "../../assets/dashboard/Star.svg";
 import mail from "../../assets/dashboard/mail.svg";
-import phone from "../../assets/dashboard/phone2.svg"; 
-import searchIcon from '../../assets/dashboard/search.svg'
+import phone from "../../assets/dashboard/phone2.svg";
+import searchIcon from "../../assets/dashboard/search.svg";
 // import profilePhoto from "../../assets/dashboard/userFace1.png";
 // import profilePhoto from "../../assets/dashboard/userFace1.png";
 // import profilePhoto from "../../assets/dashboard/userFace1.png";
 // import profilePhoto from "../../assets/dashboard/userFace1.png";
 // import profilePhoto from "../../assets/dashboard/userFace1.png";
+import { useNavigate } from "react-router-dom";
 
 const dataObj = [
   {
@@ -53,8 +54,9 @@ const dataObj = [
 ];
 
 function Users({ profilePhoto, userName, rank, company, text, number, email }) {
+  const navigate = useNavigate();
   return (
-    <div className={styles.user}>
+    <div className={styles.user} onClick={() => navigate("/employees")}>
       <div className={styles.userDiv1}>
         <img src={profilePhoto} alt="" width={52} height={52} />
         <div className={styles.userDiv2}>
