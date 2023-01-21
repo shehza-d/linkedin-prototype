@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Signup(props) {
   const navigate = useNavigate();
-  
+
   const { values, errors, handleBlur, handleChange, handleSubmit, touched } =
     useFormik({
       initialValues: {
@@ -82,6 +82,7 @@ export default function Signup(props) {
             backgroundColor: "#EFEFEF",
             marginBottom: "22px",
             marginTop: "42px",
+            width: { xs: "320px", md: "420px" },
           }}
           autoComplete="on"
           name="userName"
@@ -102,6 +103,7 @@ export default function Signup(props) {
           sx={{
             backgroundColor: "#EFEFEF",
             marginBottom: "22px",
+            width: { xs: "320px", md: "420px" },
           }}
           autoComplete="on"
           name="email"
@@ -118,7 +120,10 @@ export default function Signup(props) {
           helperText={touched.email && errors.email}
         />
         <TextField
-          sx={{ backgroundColor: "#EFEFEF" }}
+          sx={{
+            backgroundColor: "#EFEFEF",
+            width: { xs: "320px", md: "420px" },
+          }}
           autoComplete="on"
           name="password"
           margin="dense"
@@ -144,14 +149,14 @@ export default function Signup(props) {
         <Button
           type="submit"
           className="submitBtn"
-          sx={{ mb: "30px", py: "15px" }}
+          sx={{ mb: "30px", py: "15px", width: { xs: "320px", md: "420px" } }}
           variant="contained"
         >
           Sign Up
         </Button>
         <Button
           variant="outlined"
-          sx={{ mb: "23px", py: "15px" }}
+          sx={{ mb: "23px", py: "15px", width: { xs: "320px", md: "420px" } }}
           startIcon={<FcGoogle />}
         >
           Sign up with Google
@@ -161,9 +166,7 @@ export default function Signup(props) {
       <div className={styles.footer}>
         <span>Already have an account? </span>
 
-        <button onClick={() => props.setLoginOrSignup(true)}>
-          LogIn
-        </button>
+        <button onClick={() => props.setLoginOrSignup(true)}>LogIn</button>
       </div>
       {/* </div> */}
     </>

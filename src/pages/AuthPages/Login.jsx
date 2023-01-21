@@ -73,6 +73,7 @@ export default function Login(props) {
             backgroundColor: "#EFEFEF",
             marginBottom: "32px",
             marginTop: "52px",
+            width: { xs: "320px", md: "420px" },
           }}
           autoComplete="on"
           name="email"
@@ -89,7 +90,10 @@ export default function Login(props) {
           helperText={touched.email && errors.email}
         />
         <TextField
-          sx={{ backgroundColor: "#EFEFEF" }}
+          sx={{
+            backgroundColor: "#EFEFEF",
+            width: { xs: "320px", md: "420px" },
+          }}
           autoComplete="on"
           name="password"
           margin="dense"
@@ -115,14 +119,14 @@ export default function Login(props) {
         <Button
           type="submit"
           className="submitBtn"
-          sx={{ mb: "30px", py: "15px" }}
+          sx={{ mb: "30px", py: "15px", width: { xs: "320px", md: "420px" } }}
           variant="contained"
         >
           Sign In
         </Button>
         <Button
           variant="outlined"
-          sx={{ mb: "23px", py: "15px" }}
+          sx={{ mb: "23px", py: "15px", width: { xs: "320px", md: "420px" } }}
           startIcon={<FcGoogle />}
         >
           Login with Google
@@ -131,9 +135,7 @@ export default function Login(props) {
 
       <div className={styles.footer}>
         <span>Don't have an account? </span>
-        <button onClick={() => props.setLoginOrSignup(false)}>
-          Sign-Up
-        </button>
+        <button onClick={() => props.setLoginOrSignup(false)}>Sign-Up</button>
       </div>
       {/* </div> */}
     </>

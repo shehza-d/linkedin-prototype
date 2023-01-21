@@ -19,6 +19,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /* flex-direction: column; */
+  /* flex-wrap: wrap; */
 }
 .formOption > a {
   text-decoration: none;
