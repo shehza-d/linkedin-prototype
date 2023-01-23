@@ -6,7 +6,15 @@ export const GlobalContext = createContext("Initial Value");
 let data = {
   setupScreenCounter: 1,
   testing: "context is working globally",
-  setupFormData: { role: "", company: "", product: "" },
+  setupFormData: {
+    role: "",
+    company: "",
+    product: "",
+    industry: "",
+    revenueSize: "",
+    employee: "",
+    geography: "",
+  },
   darkTheme: true,
   user: {},
   isLogin: null,

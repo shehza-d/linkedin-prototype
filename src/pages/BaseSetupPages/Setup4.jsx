@@ -11,11 +11,37 @@ import { useNavigate } from "react-router-dom";
 
 export default function Setup4() {
   let { state, dispatch } = useContext(GlobalContext);
+  const [industryValue, setIndustryValue] = useState("");
+  const [revenueSizeValue, setRevenueSizeValue] = useState("");
+  const [employeeValue, setEmployeeValue] = useState("");
+  const [geographyValue, setGeographyValue] = useState("");
   const navigate = useNavigate();
 
   return (
     <>
       <div className={styles.container}>
+      <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            dispatch(
+              {
+                type: "SETUP_FORM_DATA",
+                payload: {
+                  ...state.setupFormData,
+                  industry: industryValue,
+                  revenueSize: revenueSizeValue,
+                  employee: employeeValue,
+                  geography: geographyValue,
+                  // product: inputValue,
+                },
+              },
+              {
+                type: "COUNTER",
+                payload: ++state.setupScreenCounter,
+              }
+            );
+          }}
+        >
         <div className={styles.form}>
           <Typography>Define your target profile 4</Typography>
 
@@ -65,7 +91,7 @@ export default function Setup4() {
             <img src={enterArrow} alt="" />
           </div>
         </div>
-        {/* </div> */}
+        </form>
       </div>
     </>
   );

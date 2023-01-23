@@ -77,13 +77,7 @@ export default function Setup3() {
               variant="contained"
               size="large"
               sx={{ pl: 6, pr: 6, mr: 1 }}
-              // onClick={() =>
-              onClick={() => {
-                dispatch({
-                  type: "COUNTER",
-                  payload: ++state.setupScreenCounter,
-                });
-              }}
+              type="submit"
             >
               Continue
             </Button>
