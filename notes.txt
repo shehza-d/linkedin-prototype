@@ -25,4 +25,5 @@ create companies in firebase
 search
 
 how to check condition on something that is not yet defined javascript
+SDLC
 

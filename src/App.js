@@ -14,7 +14,7 @@ import Signup from "./pages/AuthPages/Signup";
 import EmployeeDetail from "./pages/dashboard/EmployeeDetail";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
-import loaderImg from './assets/loader.webp'
+import loaderImg from "./assets/loader.webp";
 
 export default function App() {
   const [isLogin, setIsLogin] = useState(null);
@@ -35,12 +35,6 @@ export default function App() {
       // ...
     }
   });
-
-  // dispatch({
-  //   type: 'USER_LOGIN',
-  //   payload: "response.data.profile"
-  // })
-  // console.log(state.testi);
   return (
     <div className="App">
       {isLogin === true ? (
