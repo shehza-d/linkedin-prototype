@@ -1,3 +1,4 @@
+
 import { useState, useContext } from "react";
 import { GlobalContext } from "../../context/context.js";
 import styles from "../../styles/BasePages/setup2.module.css";
