@@ -1,18 +1,23 @@
 import styles from "../../styles/authPage/login.module.css";
-// import { Link } from "react-router-dom";
-// import axios from "axios";
-import { useFormik } from "formik";
-import * as yup from "yup";
-// import Box from "@mui/material/Box";
+// MUI
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Typography from "@mui/material/Typography";
+// import Box from "@mui/material/Box";
+// Auth
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"; //npm
+import { auth } from "../../firebase";
+// Other
 import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+// import { Link } from "react-router-dom";
+// import axios from "axios";
+import { useFormik } from "formik";
+import * as yup from "yup";
 
 export default function Login(props) {
   const navigate = useNavigate();
@@ -37,24 +42,32 @@ export default function Login(props) {
           .max(64, "Please enter within 64 characters "),
       }),
       onSubmit: async (values) => {
-        console.log(values);
-        navigate("/welcome");
-        // try {
-        //   const res = await axios.post(
-        //     `${baseURI}/login`,
-        //     {
-        //       email: values.email,
-        //       password: values.password,
-        //     },
-        //     { withCredentials: true }
-        //   );
-        //   console.log(res);
-        //   toast(`${res.data.message}`); //https://www.npmjs.com/package/react-toastify
-        //  } catch (err) {
-        //   console.log(err);
-        //   console.log(err.response.data.message);
-        //   toast(`${err.response.data.message}`);
-        // }
+        // console.log(values);
+        try {
+          const userCredential = await signInWithEmailAndPassword(
+            auth,
+            values.email,
+            values.password
+          );
+          // Signed in
+          console.log(userCredential);
+          // console.log(userCredential.user);
+          navigate("/welcome");
+          //   const res = await axios.post(
+          //     `${baseURI}/login`,
+          //     {
+          //       email: values.email,
+          //       password: values.password,
+          //     },
+          //     { withCredentials: true }
+          //   );
+          //   console.log(res);
+          //   toast(`${res.data.message}`); //https://www.npmjs.com/package/react-toastify
+        } catch (err) {
+          console.log(err);
+          //   console.log(err.response.data.message);
+          toast(`${err.code}`);
+        }
       },
     });
   return (
@@ -124,13 +137,13 @@ export default function Login(props) {
         >
           Sign In
         </Button>
-        <Button
+        {/* <Button
           variant="outlined"
           sx={{ mb: "23px", py: "15px", width: { xs: "320px", md: "420px" } }}
           startIcon={<FcGoogle />}
         >
           Login with Google
-        </Button>
+        </Button> */}
       </form>
 
       <div className={styles.footer}>

@@ -16,13 +16,14 @@ import arrow from "../../assets/basePages/arrow.svg";
 
 export default function BaseSetupBackground() {
   let { state, dispatch } = useContext(GlobalContext);
+  console.log(state.setupFormData);
   // const [myVar, setMyVar] = useState(state.setupScreenCounter);
   // dispatch({
   //   type: 'USER_LOGIN',
   //   payload: "response.data.profile"
   // })
   // console.log(state.testing);
-  console.log(state.setupScreenCounter);
+  // console.log(state.setupScreenCounter);
   // console.log(myVar);
   return (
     <>

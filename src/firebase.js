@@ -1,20 +1,16 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-//import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-
 import { getAuth } from "firebase/auth";
-//import { getAuth } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js'
 import { getFirestore } from "firebase/firestore";
-//import { getFirestore } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 // Web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCVZnu1Dgishw2o2eu_W0Al8tv25CTEYQI",
-  authDomain: "expense-tracker-4989b.firebaseapp.com",
-  projectId: "expense-tracker-4989b",
-  storageBucket: "expense-tracker-4989b.appspot.com",
-  messagingSenderId: "17893173019",
-  appId: "1:17893173019:web:29b3908b3ec4f99c4a15be",
+    apiKey: "AIzaSyCl1B6xxFjCUTTdrsyRj18oy83hhAIbEmc",
+    authDomain: "company-search-tzr.firebaseapp.com",
+    projectId: "company-search-tzr",
+    storageBucket: "company-search-tzr.appspot.com",
+    messagingSenderId: "817602003392",
+    appId: "1:817602003392:web:a15038e3efb0244c754825"
 };
 
 // Initialize Firebase

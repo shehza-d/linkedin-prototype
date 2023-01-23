@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Setup3() {
   let { state, dispatch } = useContext(GlobalContext);
+  const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
 
   return (

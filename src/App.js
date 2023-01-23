@@ -12,11 +12,29 @@ import Congrats from "./pages/other/Congrats";
 import Dashboard from "./pages/dashboard";
 import Signup from "./pages/AuthPages/Signup";
 import EmployeeDetail from "./pages/dashboard/EmployeeDetail";
-
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase";
+import loaderImg from './assets/loader.webp'
 
 export default function App() {
-  const [isLogin, setIsLogin] = useState(true);
-  let { state, dispatch } = useContext(GlobalContext);
+  const [isLogin, setIsLogin] = useState(null);
+  // let { state, dispatch } = useContext(GlobalContext);
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      console.log(user);
+      setIsLogin(true);
+      console.log("user is logged in");
+
+      // const uid = user.uid;
+    } else {
+      console.log("not logged in");
+      setIsLogin(false);
+      // User is signed out
+      // ...
+    }
+  });
 
   // dispatch({
   //   type: 'USER_LOGIN',
@@ -25,7 +43,7 @@ export default function App() {
   // console.log(state.testi);
   return (
     <div className="App">
-      {isLogin ? (
+      {isLogin === true ? (
         <Routes>
           {/* <Route path="auth" element={<AuthBase />} /> */}
           <Route path="welcome" element={<Welcome />} />
@@ -33,20 +51,28 @@ export default function App() {
           <Route path="congrats" element={<Congrats />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="employees" element={<EmployeeDetail />} />
-          {/* <Route path="/" element={<Dashboard />} /> */}
-          <Route path="/" element={<AuthBase />} />
-          {/* <Route path="*" element={<Navigate to="/" replace={true} />} /> */}
+          <Route path="/" element={<Dashboard />} />
+          <Route path="*" element={<Navigate to="/" replace={true} />} />
         </Routes>
-      ) : (
+      ) : null}
+      {isLogin === false ? (
         <Routes>
-          <Route path="/auth" element={<AuthBase />} />
-          {/* <Route
-            path="/login"
-            element={<Login isLogin={isLogin} setIsLogin={setIsLogin} />}
-          /> */}
+          <Route path="auth" element={<AuthBase />} />
           <Route path="*" element={<Navigate to="/auth" replace={true} />} />
         </Routes>
-      )}
+      ) : null}
+      {isLogin === null ? (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            minHeight: "100vh",
+          }}
+        >
+          <img width={300} src={loaderImg} alt="" />
+        </div>
+      ) : null}
     </div>
   );
 }
