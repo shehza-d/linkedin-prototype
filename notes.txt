@@ -20,3 +20,6 @@ made 11
 responsive 8
 
 congrats page responsive
+firebase login signup
+create companies in firebase 
+search
