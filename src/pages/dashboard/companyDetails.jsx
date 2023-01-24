@@ -1,6 +1,6 @@
 import styles from "../../styles/dashboard/companyDetails.module.css";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
+// import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid"; // Grid version 1
 // import Grid2 from '@mui/material/Unstable_Grid2'; // Grid version 2

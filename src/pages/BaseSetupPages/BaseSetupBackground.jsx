@@ -1,5 +1,5 @@
 import styles from "../../styles/BasePages/BaseSetupBackground.module.css";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { GlobalContext } from "../../context/context.js";
 // import styles from "../styles/welcome.module.css";
 // import aiSkull from "../assets/welcome/aiSkull.svg";
@@ -15,8 +15,8 @@ import Setup4 from "./Setup4";
 import arrow from "../../assets/basePages/arrow.svg";
 
 export default function BaseSetupBackground() {
-  const { state, dispatch } = useContext(GlobalContext);
-  console.log(state);
+  const { state } = useContext(GlobalContext);
+  // console.log(state);
   // const [myVar, setMyVar] = useState(state.setupScreenCounter);
   // dispatch({
   //   type: 'USER_LOGIN',
