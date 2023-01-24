@@ -3,11 +3,13 @@ import { GlobalContext } from "../../context/context.js";
 import styles from "../../styles/BasePages/setup2.module.css";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+// import FormControlLabel from "@mui/material/FormControlLabel";
+// import Checkbox from "@mui/material/Checkbox";
 import enterArrow from "../../assets/basePages/enterArrow.svg";
 import DropDown from "../../components/muiDropDown";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import Autocomplete from "@mui/material/Autocomplete";
+import TextField from "@mui/material/TextField";
 
 export default function Setup3() {
   let { state, dispatch } = useContext(GlobalContext);
@@ -15,7 +17,7 @@ export default function Setup3() {
   const [revenueSizeValue, setRevenueSizeValue] = useState("");
   const [employeeValue, setEmployeeValue] = useState("");
   const [geographyValue, setGeographyValue] = useState("");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <>
@@ -28,11 +30,12 @@ export default function Setup3() {
                 type: "SETUP_FORM_DATA",
                 payload: {
                   ...state.setupFormData,
-                  industry: industryValue,
-                  revenueSize: revenueSizeValue,
-                  employee: employeeValue,
-                  geography: geographyValue,
-                  // product: inputValue,
+                  targetMarketSegments: {
+                    industry: industryValue,
+                    revenueSize: revenueSizeValue,
+                    employee: employeeValue,
+                    geography: geographyValue,
+                  },
                 },
               },
               {
@@ -46,12 +49,109 @@ export default function Setup3() {
             <Typography>Define your target market segments?</Typography>
 
             <div className={styles.flex}>
-              <DropDown label="Industry" />
-              <DropDown label="Revenue Size" />
+              <Autocomplete
+                sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" }}
+                disablePortal
+                id=""
+                freeSolo
+                options={[
+                  { label: "IT Services" },
+                  { label: "Education" },
+                  { label: "Food" },
+                  { label: "Construction" },
+                ]}
+                renderInput={(params) => (
+                  <TextField {...params} label="Industry" />
+                )}
+                onChange={(e, val) => {
+                  try {
+                    if (val.label !== undefined) {
+                      setIndustryValue(val.label);
+                    } else {
+                      setIndustryValue(val);
+                    }
+                  } catch (err) {}
+                }}
+                size="small"
+              />
+              <Autocomplete
+                sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" }}
+                disablePortal
+                id=""
+                freeSolo
+                options={[
+                  { label: "10K-50K" },
+                  { label: "50K-100K" },
+                  { label: "100K-300K" },
+                  { label: "300K-1M" },
+                  { label: "1M-3M" },
+                ]}
+                renderInput={(params) => (
+                  <TextField {...params} label="Revenue Size" />
+                )}
+                onChange={(e, val) => {
+                  try {
+                    if (val.label !== undefined) {
+                      setRevenueSizeValue(val.label);
+                    } else {
+                      setRevenueSizeValue(val);
+                    }
+                  } catch (err) {}
+                }}
+                size="small"
+              />
             </div>
             <div className={styles.flex}>
-              <DropDown label="Employee" />
-              <DropDown label="Geography" />
+              <Autocomplete
+                sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" }}
+                disablePortal
+                id=""
+                freeSolo
+                options={[
+                  { label: "5-50" },
+                  { label: "50-100" },
+                  { label: "100-500" },
+                  { label: "500-3000" },
+                ]}
+                renderInput={(params) => (
+                  <TextField {...params} label="Employee" />
+                )}
+                onChange={(e, val) => {
+                  try {
+                    if (val.label !== undefined) {
+                      setEmployeeValue(val.label);
+                    } else {
+                      setEmployeeValue(val);
+                    }
+                  } catch (err) {}
+                }}
+                size="small"
+              />
+              <Autocomplete
+                sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" }}
+                disablePortal
+                id=""
+                freeSolo
+                options={[
+                  { label: "Option 1" },
+                  { label: "Option 2" },
+                  { label: "Option 3" },
+                  { label: "Option 4" },
+                ]}
+                renderInput={(params) => (
+                  <TextField {...params} label="Geography" />
+                )}
+                onChange={(e, val) => {
+                  try {
+                    if (val.label !== undefined) {
+                      setGeographyValue(val.label);
+                    } else {
+                      setGeographyValue(val);
+                    }
+                  } catch (err) {}
+                }}
+                size="small"
+              />
             </div>
 
             <Typography sx={{ color: "#C0C0C0", mb: 1 }}>

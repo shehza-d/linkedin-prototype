@@ -60,6 +60,8 @@ export default function Setup2() {
               // value={inputValue}
               freeSolo
               onChange={(e, val) => {
+                console.log('val ', val);
+
                 try {
                   if (val.label !== undefined) {
                     setInputValue(val.label);

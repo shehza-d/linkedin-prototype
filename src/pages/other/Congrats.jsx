@@ -4,9 +4,13 @@ import Button from "@mui/material/Button";
 import logoWhite from "../../assets/authPage/logoWhite.svg";
 import ellipse from "../../assets/congratsPage-Ellipse.png";
 import { useNavigate } from "react-router-dom";
+import { useState, useContext } from "react";
+import { GlobalContext } from "../../context/context.js";
 
 export default function Congrats() {
+  let { state, dispatch } = useContext(GlobalContext);
   const navigate = useNavigate();
+  console.log(state.setupFormData);
   return (
     <div className={styles.container}>
       <img src={logoWhite} className={styles.logoWhite} alt="" />
