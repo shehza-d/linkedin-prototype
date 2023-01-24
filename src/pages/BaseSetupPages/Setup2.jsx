@@ -7,11 +7,11 @@ import { GlobalContext } from "../../context/context.js";
 import { useState, useContext } from "react";
 // MUI
 import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 // import FormControlLabel from "@mui/material/FormControlLabel";
 // import Checkbox from "@mui/material/Checkbox";
-import Autocomplete from "@mui/material/Autocomplete";
+// import TextField from "@mui/material/TextField";
+// import Autocomplete from "@mui/material/Autocomplete";
 import enterArrow from "../../assets/basePages/enterArrow.svg";
 
 export default function Setup2() {
@@ -61,6 +61,7 @@ export default function Setup2() {
               freeSolo
               setState={setInputValue}
               label="Sale Product"
+              size="large"
             />
             {/*
             old code before shortning <Autocomplete

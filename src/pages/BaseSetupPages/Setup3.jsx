@@ -6,10 +6,11 @@ import Button from "@mui/material/Button";
 // import FormControlLabel from "@mui/material/FormControlLabel";
 // import Checkbox from "@mui/material/Checkbox";
 import enterArrow from "../../assets/basePages/enterArrow.svg";
+// My Custom Component to reduce/reuse code
 import DropDown from "../../components/muiDropDown";
 // import { useNavigate } from "react-router-dom";
-import Autocomplete from "@mui/material/Autocomplete";
-import TextField from "@mui/material/TextField";
+// import Autocomplete from "@mui/material/Autocomplete";
+// import TextField from "@mui/material/TextField";
 
 export default function Setup3() {
   let { state, dispatch } = useContext(GlobalContext);
@@ -70,7 +71,7 @@ export default function Setup3() {
                 ]}
                 freeSolo
                 setState={setRevenueSizeValue}
-                label="Industry"
+                label="Revenue size"
               />
             </div>
             <div className={styles.flex}>

@@ -7,11 +7,11 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Typography from "@mui/material/Typography";
 // Icons
-import { FcGoogle } from "react-icons/fc";
+// import { FcGoogle } from "react-icons/fc";
 // import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 // Auth
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"; //npm
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"; //npm
 import { auth } from "../../firebase";
 //Other
 import { ToastContainer, toast } from "react-toastify";
@@ -56,8 +56,10 @@ export default function Signup(props) {
             auth,
             values.email,
             values.password
-            // userName
           );
+          await updateProfile(auth.currentUser, {
+            displayName: values.userName,
+          });
           navigate("/welcome");
           //   const res = await axios.post(
           //     `${baseURI}/login`,

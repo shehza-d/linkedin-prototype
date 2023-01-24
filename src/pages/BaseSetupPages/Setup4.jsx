@@ -8,8 +8,28 @@ import Button from "@mui/material/Button";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import enterArrow from "../../assets/basePages/enterArrow.svg";
-import DropDown from "../../components/muiDropDown";
 import { useNavigate } from "react-router-dom";
+// My Custom Component to reduce/reuse code
+import DropDown from "../../components/muiDropDown";
+
+// Importing Firebase functions from the SDKs
+import { db } from "../../firebase.js";
+import {
+  getFirestore,
+  collection, //get reference to a collection
+  addDoc,
+  getDocs, //get all docs
+  getDoc, //get one doc
+  doc, //get reference to a document
+  onSnapshot,
+  query,
+  where,
+  serverTimestamp,
+  orderBy,
+  deleteDoc,
+  updateDoc,
+  limit,
+} from "firebase/firestore";
 
 export default function Setup4() {
   let { state, dispatch } = useContext(GlobalContext);
@@ -23,58 +43,42 @@ export default function Setup4() {
     <>
       <div className={styles.container}>
         <form
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
-            dispatch(
-              {
-                type: "SETUP_FORM_DATA",
-                payload: {
-                  ...state.setupFormData,
-                  targetProfile: {
-                    roleOfPerson: roleOfPersonValue,
-                    designation: designationValue,
-                    spanOfControl: spanOfControlValue,
-                    decisionMaker: decisionMakerValue,
-                  },
+            try {
+              //sending data to Firebase
+              const res = await addDoc(collection(db, "testing"), {
+                userID: state.userID,
+                ...state.setupFormData,
+                targetProfile: {
+                  roleOfPerson: roleOfPersonValue,
+                  designation: designationValue,
+                  spanOfControl: spanOfControlValue,
+                  decisionMaker: decisionMakerValue,
                 },
-              },
-              {
-                type: "COUNTER",
-                payload: ++state.setupScreenCounter,
-              }
-            );
+              });
+              console.log(res);
+              navigate("/congrats");
+            } catch (err) {
+              console.log(err);
+            }
           }}
         >
           <div className={styles.form}>
             <Typography>Define your target profile 4</Typography>
 
             <div className={styles.flex}>
-              <Autocomplete
-                sx={{ bgcolor: "#ffffffda", mb: 2, width: 180 }}
-                disablePortal
-                id=""
+              <DropDown
                 options={[
                   { label: "Development" },
                   { label: "Designing" },
                   { label: "Management" },
                   { label: "Hiring" },
                 ]}
-                required
-                // value={inputValue}
                 freeSolo
-                onChange={(e, val) => {
-                  try {
-                    if (val.label !== undefined)
-                      setRoleOfPersonValue(val.label);
-                  } catch (err) {}
-                }}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    onChange={(e) => setRoleOfPersonValue(e.target.value)}
-                    label="Role of person"
-                  />
-                )}
+                setState={setRoleOfPersonValue}
+                label="Role of person"
+                size="large"
               />
               <Autocomplete
                 sx={{ bgcolor: "#ffffffda", mb: 2, width: 180 }}
@@ -183,15 +187,16 @@ export default function Setup4() {
               variant="contained"
               size="large"
               sx={{ pl: 6, pr: 6, mr: 1 }}
+              type="submit"
               // onClick={() =>
-              onClick={async () => {
-                // await state.setupScreenCounter++;
-                navigate("/congrats");
-                // dispatch({
-                //   type: "COUNTER",
-                //   payload: ++state.setupScreenCounter,
-                // });
-              }}
+              // onClick={async () => {
+              // await state.setupScreenCounter++;
+              // navigate("/congrats");
+              // dispatch({
+              //   type: "COUNTER",
+              //   payload: ++state.setupScreenCounter,
+              // });
+              // }}
             >
               Continue
             </Button>

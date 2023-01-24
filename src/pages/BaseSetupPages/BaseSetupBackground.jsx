@@ -15,8 +15,8 @@ import Setup4 from "./Setup4";
 import arrow from "../../assets/basePages/arrow.svg";
 
 export default function BaseSetupBackground() {
-  let { state, dispatch } = useContext(GlobalContext);
-  console.log(state.setupFormData);
+  const { state, dispatch } = useContext(GlobalContext);
+  console.log(state);
   // const [myVar, setMyVar] = useState(state.setupScreenCounter);
   // dispatch({
   //   type: 'USER_LOGIN',

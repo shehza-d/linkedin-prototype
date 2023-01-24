@@ -3,8 +3,9 @@ import TextField from "@mui/material/TextField";
 
 export default function DropDown(props) {
   //Destructuring passed Props
-  const { disable, label, freeSolo, setState, options, width, ...other } =
+  const { disable, label, freeSolo, setState, options, size, width, ...other } =
     props;
+
   const dropdownOptions = [
     { label: "Option one" },
     { label: "Option two" },
@@ -43,7 +44,7 @@ export default function DropDown(props) {
           label={label}
         />
       )}
-      size="small"
+      size={size || "small"}
     />
   );
 }

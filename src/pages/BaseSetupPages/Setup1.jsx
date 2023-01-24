@@ -4,12 +4,12 @@ import { GlobalContext } from "../../context/context.js";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+// import FormControlLabel from "@mui/material/FormControlLabel";
+// import Checkbox from "@mui/material/Checkbox";
 import enterArrow from "../../assets/basePages/enterArrow.svg";
 
 export default function Setup1() {
-  let { state, dispatch } = useContext(GlobalContext);
+  const { state, dispatch } = useContext(GlobalContext);
   const [inputValue, setInputValue] = useState("");
   // console.log(inputValue);
   // console.log(state.setupScreenCounter);

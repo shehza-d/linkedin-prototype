@@ -15,6 +15,9 @@ export const reducer = (state, action) => {
     case "SETUP_FORM_DATA": {
       return { ...state, setupFormData: action.payload };
     }
+    case "SET_USER_ID": {
+      return { ...state, userID: action.payload };
+    }
     default: {
       return state;
     }
