@@ -39,7 +39,7 @@ export default function AllContent({ setCounter }) {
       .addEventListener("change", (e) => setMatches(e.matches));
   }, []);
   // let mediaQuery = window.matchMedia('(max-width: 768px)').matches
-  console.log(matches);
+  // console.log(matches);
 
   return (
     <div style={{ display: "flex" }}>

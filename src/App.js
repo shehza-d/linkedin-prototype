@@ -16,6 +16,24 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 import loaderImg from "./assets/loader.webp";
 
+// import { db } from "./firebase.js";
+// import {
+//   getFirestore,
+//   collection, //get reference to a collection
+//   addDoc,
+//   getDocs, //get all docs
+//   getDoc, //get one doc
+//   doc, //get reference to a document
+//   onSnapshot,
+//   query,
+//   where,
+//   serverTimestamp,
+//   orderBy,
+//   deleteDoc,
+//   updateDoc,
+//   limit,
+// } from "firebase/firestore";
+
 export default function App() {
   const [isLogin, setIsLogin] = useState(null);
   const { state, dispatch } = useContext(GlobalContext);
@@ -39,7 +57,16 @@ export default function App() {
       }
     });
   }, []);
-
+  // useEffect(() => {
+  //   addDoc(collection(db, "companies"), {
+  //     address:
+  //     contactNumber:
+  //     details:
+  //     logoURL
+  //     name:
+  //     rating:
+  //   });
+  // }, []);
   return (
     <div className="App">
       {isLogin === true ? (
