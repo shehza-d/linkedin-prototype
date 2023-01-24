@@ -1,8 +1,10 @@
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
-import { boolean } from "yup";
 
 export default function DropDown(props) {
+  //Destructuring passed Props
+  const { disable, label, freeSolo, setState, options, width, ...other } =
+    props;
   const dropdownOptions = [
     { label: "Option one" },
     { label: "Option two" },
@@ -11,13 +13,36 @@ export default function DropDown(props) {
   ];
   return (
     <Autocomplete
-      sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" }}
+      sx={{ bgcolor: "#ffffffda", mb: 2, width: width || 180 }}
       // sx={{ width: "180px", mr: 1 }}
       disablePortal
+      required
+      // value={inputValue}
+      freeSolo={freeSolo || false}
       id=""
-      disabled={props?.disable}
-      options={dropdownOptions}
-      renderInput={(params) => <TextField {...params} label={props.label} />}
+      disabled={disable || false}
+      options={options || dropdownOptions}
+      onChange={(e, val) => {
+        // console.log('val ', val);
+        // console.log('e ', e);
+        try {
+          if (val.label !== undefined) {
+            setState(val.label);
+          }
+        } catch (err) {}
+      }}
+      {...other}
+      renderInput={(params) => (
+        <TextField
+          {...params}
+          required
+          onChange={(e) => {
+            // console.log('val ', e.target.value);
+            setState(e.target.value);
+          }}
+          label={label}
+        />
+      )}
       size="small"
     />
   );

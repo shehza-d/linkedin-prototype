@@ -1,6 +1,11 @@
+// CSS
 import styles from "../../styles/BasePages/setup2.module.css";
-import { useState, useContext } from "react";
+// My Custom Component to reduce/reuse code
+import DropDown from "../../components/muiDropDown";
+// Context API
 import { GlobalContext } from "../../context/context.js";
+import { useState, useContext } from "react";
+// MUI
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -12,7 +17,6 @@ import enterArrow from "../../assets/basePages/enterArrow.svg";
 export default function Setup2() {
   let { state, dispatch } = useContext(GlobalContext);
   const [inputValue, setInputValue] = useState("");
-  // console.log(inputValue);
 
   const dropdownOptions = [
     { label: "IT services", value: 33 },
@@ -51,7 +55,15 @@ export default function Setup2() {
             <Typography>
               What kind of products is your company selling?
             </Typography>
-            <Autocomplete
+            <DropDown
+              width={275}
+              options={dropdownOptions}
+              freeSolo
+              setState={setInputValue}
+              label="Sale Product"
+            />
+            {/*
+            old code before shortning <Autocomplete
               sx={{ bgcolor: "#ffffffda", mb: 2, width: 275 }}
               disablePortal
               id=""
@@ -59,75 +71,39 @@ export default function Setup2() {
               required
               // value={inputValue}
               freeSolo
+              setState={setInputValue}
               onChange={(e, val) => {
-                console.log('val ', val);
-
+                // console.log('val ', val);
+                // console.log('e ', e);
                 try {
                   if (val.label !== undefined) {
                     setInputValue(val.label);
-                  } else {
-                    setInputValue(val);
                   }
                 } catch (err) {}
               }}
               renderInput={(params) => (
-                <TextField {...params} label="Sale Product" />
+                <TextField
+                  {...params}
+                  required
+                  onChange={(e) => {
+                    // console.log('val ', e.target.value);
+                    setInputValue(e.target.value);
+                  }}
+                  label="Sale Product"
+                />
               )}
-            />
+            /> */}
 
             <Typography sx={{ color: "#C0C0C0", mb: 1 }}>
               Define your target market segments?
             </Typography>
             <div className={styles.flex}>
-              <Autocomplete
-                sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" }}
-                // sx={{ width: "180px", mr: 1, mb: 1 }}
-                disablePortal
-                id=""
-                disabled
-                options={dropdownOptions}
-                renderInput={(params) => (
-                  <TextField {...params} label="Industry" />
-                )}
-                size="small"
-              />
-
-              <Autocomplete
-                sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" }}
-                disablePortal
-                id=""
-                options={dropdownOptions}
-                disabled
-                renderInput={(params) => (
-                  <TextField {...params} label="Revenue Size" />
-                )}
-                size="small"
-              />
+              <DropDown label="Industry" disable={true} />
+              <DropDown label="Revenue Size" disable={true} />
             </div>
             <div className={styles.flex}>
-              <Autocomplete
-                sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" }}
-                // sx={{ width: "180px", mr: 1 }}
-                disablePortal
-                id=""
-                disabled
-                options={dropdownOptions}
-                renderInput={(params) => (
-                  <TextField {...params} label="Employee" />
-                )}
-                size="small"
-              />
-              <Autocomplete
-                sx={{ bgcolor: "#ffffffda", width: "180px" }}
-                disablePortal
-                id=""
-                options={dropdownOptions}
-                disabled
-                renderInput={(params) => (
-                  <TextField {...params} label="Geography" />
-                )}
-                size="small"
-              />
+              <DropDown label="Employee" disable={true} />
+              <DropDown label="Geography" disable={true} />
             </div>
           </div>
           {/* <div className={styles.alignn}> */}

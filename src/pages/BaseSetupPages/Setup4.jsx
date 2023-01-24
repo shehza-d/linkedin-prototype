@@ -64,15 +64,16 @@ export default function Setup4() {
                 freeSolo
                 onChange={(e, val) => {
                   try {
-                    if (val.label !== undefined) {
+                    if (val.label !== undefined)
                       setRoleOfPersonValue(val.label);
-                    } else {
-                      setRoleOfPersonValue(val);
-                    }
                   } catch (err) {}
                 }}
                 renderInput={(params) => (
-                  <TextField {...params} label="Role of person" />
+                  <TextField
+                    {...params}
+                    onChange={(e) => setRoleOfPersonValue(e.target.value)}
+                    label="Role of person"
+                  />
                 )}
               />
               <Autocomplete
@@ -92,15 +93,15 @@ export default function Setup4() {
                 freeSolo
                 onChange={(e, val) => {
                   try {
-                    if (val.label !== undefined) {
-                      setDesignationValue(val.label);
-                    } else {
-                      setDesignationValue(val);
-                    }
+                    if (val.label !== undefined) setDesignationValue(val.label);
                   } catch (err) {}
                 }}
                 renderInput={(params) => (
-                  <TextField {...params} label="Designation" />
+                  <TextField
+                    {...params}
+                    onChange={(e) => setDesignationValue(e.target.value)}
+                    label="Designation"
+                  />
                 )}
               />
             </div>
@@ -120,15 +121,16 @@ export default function Setup4() {
                 freeSolo
                 onChange={(e, val) => {
                   try {
-                    if (val.label !== undefined) {
+                    if (val.label !== undefined)
                       setSpanOfControlValue(val.label);
-                    } else {
-                      setSpanOfControlValue(val);
-                    }
                   } catch (err) {}
                 }}
                 renderInput={(params) => (
-                  <TextField {...params} label="Span of control" />
+                  <TextField
+                    {...params}
+                    onChange={(e) => setSpanOfControlValue(e.target.value)}
+                    label="Span of control"
+                  />
                 )}
               />
               <Autocomplete
@@ -145,15 +147,16 @@ export default function Setup4() {
                 freeSolo
                 onChange={(e, val) => {
                   try {
-                    if (val.label !== undefined) {
+                    if (val.label !== undefined)
                       setDecisionMakerValue(val.label);
-                    } else {
-                      setDecisionMakerValue(val);
-                    }
                   } catch (err) {}
                 }}
                 renderInput={(params) => (
-                  <TextField {...params} label="Decision maker" />
+                  <TextField
+                    {...params}
+                    onChange={(e) => setDecisionMakerValue(e.target.value)}
+                    label="Decision maker"
+                  />
                 )}
               />
             </div>

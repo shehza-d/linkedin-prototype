@@ -46,39 +46,21 @@ export default function Setup3() {
           }}
         >
           <div className={styles.form}>
-            <Typography>Define your target market segments?</Typography>
+            <Typography>Define your target market segments? 3</Typography>
 
             <div className={styles.flex}>
-              <Autocomplete
-                sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" }}
-                disablePortal
-                id=""
-                freeSolo
+              <DropDown
                 options={[
                   { label: "IT Services" },
                   { label: "Education" },
                   { label: "Food" },
                   { label: "Construction" },
                 ]}
-                renderInput={(params) => (
-                  <TextField {...params} label="Industry" />
-                )}
-                onChange={(e, val) => {
-                  try {
-                    if (val.label !== undefined) {
-                      setIndustryValue(val.label);
-                    } else {
-                      setIndustryValue(val);
-                    }
-                  } catch (err) {}
-                }}
-                size="small"
-              />
-              <Autocomplete
-                sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" }}
-                disablePortal
-                id=""
                 freeSolo
+                setState={setIndustryValue}
+                label="Industry"
+              />
+              <DropDown
                 options={[
                   { label: "10K-50K" },
                   { label: "50K-100K" },
@@ -86,71 +68,34 @@ export default function Setup3() {
                   { label: "300K-1M" },
                   { label: "1M-3M" },
                 ]}
-                renderInput={(params) => (
-                  <TextField {...params} label="Revenue Size" />
-                )}
-                onChange={(e, val) => {
-                  try {
-                    if (val.label !== undefined) {
-                      setRevenueSizeValue(val.label);
-                    } else {
-                      setRevenueSizeValue(val);
-                    }
-                  } catch (err) {}
-                }}
-                size="small"
+                freeSolo
+                setState={setRevenueSizeValue}
+                label="Industry"
               />
             </div>
             <div className={styles.flex}>
-              <Autocomplete
-                sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" }}
-                disablePortal
-                id=""
-                freeSolo
+              <DropDown
                 options={[
                   { label: "5-50" },
                   { label: "50-100" },
                   { label: "100-500" },
                   { label: "500-3000" },
                 ]}
-                renderInput={(params) => (
-                  <TextField {...params} label="Employee" />
-                )}
-                onChange={(e, val) => {
-                  try {
-                    if (val.label !== undefined) {
-                      setEmployeeValue(val.label);
-                    } else {
-                      setEmployeeValue(val);
-                    }
-                  } catch (err) {}
-                }}
-                size="small"
-              />
-              <Autocomplete
-                sx={{ bgcolor: "#ffffffda", mb: 2, width: "180px" }}
-                disablePortal
-                id=""
                 freeSolo
+                setState={setEmployeeValue}
+                label="Employee"
+              />
+
+              <DropDown
                 options={[
                   { label: "Option 1" },
                   { label: "Option 2" },
                   { label: "Option 3" },
                   { label: "Option 4" },
                 ]}
-                renderInput={(params) => (
-                  <TextField {...params} label="Geography" />
-                )}
-                onChange={(e, val) => {
-                  try {
-                    if (val.label !== undefined) {
-                      setGeographyValue(val.label);
-                    } else {
-                      setGeographyValue(val);
-                    }
-                  } catch (err) {}
-                }}
-                size="small"
+                freeSolo
+                setState={setGeographyValue}
+                label="Geography"
               />
             </div>
 
@@ -163,11 +108,7 @@ export default function Setup3() {
               <DropDown label="Designation" disable={true} />
             </div>
             <div className={styles.flex}>
-              <DropDown
-                label="Span of control"
-                disable={true}
-                // sx={{display:{sm:"none"}}}
-              />
+              <DropDown label="Span of control" disable={true} />
               <DropDown label="Decision Maker" disable={true} />
             </div>
           </div>

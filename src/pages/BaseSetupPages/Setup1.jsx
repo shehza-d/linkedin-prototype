@@ -19,7 +19,6 @@ export default function Setup1() {
       <form
         onSubmit={async (e) => {
           e.preventDefault();
-          console.log("submit runnign");
           await dispatch(
             {
               type: "SETUP_FORM_DATA",
