@@ -9,12 +9,21 @@ let data = {
   setupFormData: {
     role: "",
     product: "",
-    // targetMarketSegments: {
-    //   industry: "",
-    //   revenueSize: "",
-    //   employee: "",
-    //   geography: "",
-    // },
+    targetMarketSegments: {
+      //   industry: "",
+      //   revenueSize: "",
+      //   employee: "",
+      //   geography: "",
+      // },
+      //  {
+      //   OperatesIn: "Eight countries",
+      //   FoundedOn: "September 15, 1987",
+      //   products: "20+",
+      //   employees: "5000+",
+      //   revenue: "¥636.8 billion (US$99.9 billion)",
+      //   stockPriceToday: "3.5900 (+2.57%)",
+      // },
+    },
   },
   darkTheme: true,
   userID: null,

@@ -6,8 +6,8 @@ import searchIcon from "../../assets/dashboard/search.svg";
 // import SearchCard from "./searchCard";
 // import SearchSuggestion from "./searchSuggestionBox";
 import AllContent from "./allContent";
-import CompanyDetails from "./companyDetails";
-import Screen3 from "./Screen3";
+// import CompanyDetails from "./companyDetails";
+// import EmployeeSearch from "./EmployeeSearch";
 import { useEffect, useState, useContext } from "react";
 import { GlobalContext } from "../../context/context.js";
 import { db } from "../../firebase.js";
@@ -56,6 +56,20 @@ export default function Dashboard() {
       });
     })();
   }, [searchQuery]);
+  useEffect(() => {
+    (async () => {
+      let tempArr = [];
+      const querySnapshot = await getDocs(collection(db, "companies"));
+      querySnapshot.forEach((doc) => {
+        tempArr.push({ ...doc.data(), id: doc.id });
+      });
+      console.log(tempArr);
+      dispatch({
+        type: "SET_CompanySearchQueryData",
+        payload: tempArr,
+      });
+    })();
+  }, []);
   // console.log(dataArr);
   console.log(state);
 
@@ -77,14 +91,14 @@ export default function Dashboard() {
         />
       </div>
 
-      {counter === 1 ? (
-        <AllContent setCounter={setCounter} searchQuery={searchQuery} />
-      ) : null}
+      {/* {counter === 1 ? ( */}
+      <AllContent setCounter={setCounter} />
+      {/* ) : null} */}
       {counter === 2 ? (
         <div>no data</div>
-        // <CompanyDetails setCounter={setCounter} searchQuery={searchQuery} />
-      ) : null}
-      {counter === 3 ? <Screen3 setCounter={setCounter} /> : null}
+      ) : // <CompanyDetails setCounter={setCounter} searchQuery={searchQuery} />
+      null}
+      {/* {counter === 3 ? <Screen3 setCounter={setCounter} /> : null} */}
     </>
   );
 }

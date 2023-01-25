@@ -10,49 +10,32 @@ import CompanySearchBar from "../../components/CompanySearchBar";
 import ExecutiveSearchBar from "../../components/ExecutiveSearchBar";
 import { useEffect, useState, useContext } from "react";
 import { GlobalContext } from "../../context/context.js";
-import { db } from "../../firebase.js";
-import {
-  getFirestore,
-  collection, //get reference to a collection
-  addDoc,
-  getDocs, //get all docs
-  getDoc, //get one doc
-  doc, //get reference to a document
-  onSnapshot,
-  query,
-  where,
-  serverTimestamp,
-  orderBy,
-  deleteDoc,
-  updateDoc,
-  limit,
-} from "firebase/firestore";
 
-const dataObj = [
-  {
-    img: earth,
-    logo: huawei,
-    heading: "Huawei",
-    text: "Huawei Technologies Co., Ltd. is a Chinese multinational technology corporation headquartered in Shenzhen, Guangdong, China. It designs, develops, produces and sells telecommunications equipment, consumer electronics and various smart devices.",
-    number: "03994033044",
-    address: "Huawei Base, Bantian,...",
-  },
-  {
-    img: mail,
-    logo: samsung,
-    heading: "Samsung",
-    text: `Samsung Electronics Co., Ltd. is a South Korean multinational electronics corporation headquartered in Yeongtong-gu, Suwon, South Korea. It is the pinnacle of the Samsung chaebol, accounting for 70% of the group's revenue in 2012`,
-    number: "03994033044",
-    address: "Huawei Base, Bantian,...",
-  },
-];
+// const dataObj = [
+//   {
+//     img: earth,
+//     logo: huawei,
+//     heading: "Huawei",
+//     text: "Huawei Technologies Co., Ltd. is a Chinese multinational technology corporation headquartered in Shenzhen, Guangdong, China. It designs, develops, produces and sells telecommunications equipment, consumer electronics and various smart devices.",
+//     number: "03994033044",
+//     address: "Huawei Base, Bantian,...",
+//   },
+//   {
+//     img: mail,
+//     logo: samsung,
+//     heading: "Samsung",
+//     text: `Samsung Electronics Co., Ltd. is a South Korean multinational electronics corporation headquartered in Yeongtong-gu, Suwon, South Korea. It is the pinnacle of the Samsung chaebol, accounting for 70% of the group's revenue in 2012`,
+//     number: "03994033044",
+//     address: "Huawei Base, Bantian,...",
+//   },
+// ];
 
-export default function AllContent({ setCounter, searchQuery }) {
+export default function AllContent({ setCounter }) {
   const { state, dispatch } = useContext(GlobalContext);
   const [companyExecutiveState, setCompanyExecutiveState] = useState(true);
   // const [dataArr, setDataArr] = useState([]);
-  const [matches, setMatches] =useState();
-    // window.matchMedia("(min-width: 768px)").matches
+  const [matches, setMatches] = useState();
+  // window.matchMedia("(min-width: 768px)").matches
   useEffect(() => {
     window
       .matchMedia("(min-width: 768px)")
@@ -61,33 +44,13 @@ export default function AllContent({ setCounter, searchQuery }) {
   // let mediaQuery = window.matchMedia('(max-width: 768px)').matches
   // console.log(matches);
 
-  // useEffect(() => {
-  //   (async () => {
-  //     let tempArr = [];
-  //     const q = query(
-  //       collection(db, "companies"),
-  //       where("name", "==", searchQuery),
-  //       //   orderBy("createdOn", "desc"),
-  //       limit(60)
-  //     );
-  //     const querySnapshot = await getDocs(q);
-  //     querySnapshot.forEach((doc) => {
-  //       // doc.data() is never undefined for query doc snapshots
-  //       tempArr.push({ ...doc.data(), id: doc.id });
-  //     });
-  //     setDataArr(tempArr);
-  //   })();
-  // }, [searchQuery]);
-
-  // console.log(dataArr);
-
   return (
     <div style={{ display: "flex" }}>
       <div className={styles.cardContainer}>
         {state?.companySearchQueryData?.map((eachData, i) => (
           <SearchCard
             key={i}
-            setCounter={setCounter}
+            // setCounter={setCounter}
             heading={eachData?.name}
             text={eachData?.details}
             img={eachData?.img}

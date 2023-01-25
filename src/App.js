@@ -16,6 +16,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 import loaderImg from "./assets/loader.webp";
 import CompanyDetails from "./pages/dashboard/companyDetails";
+import EmployeeSearch from "./pages/dashboard/EmployeeSearch";
 
 // import { db } from "./firebase.js";
 // import {
@@ -78,6 +79,8 @@ export default function App() {
           <Route path="congrats" element={<Congrats />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="employees" element={<EmployeeDetail />} />
+          <Route path="employees" element={<EmployeeSearch />} />
+      {/* <Screen3  />  */}
           <Route path="company-details" element={<CompanyDetails />} />
           <Route path="/" element={<Dashboard />} />
           

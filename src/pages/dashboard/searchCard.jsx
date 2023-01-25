@@ -3,7 +3,7 @@ import star from "../../assets/dashboard/Star.svg";
 import { useNavigate } from "react-router-dom";
 
 export default function SearchCard(props) {
-  const { heading, text, img, logo, phoneNumber, address, setCounter } = props;
+  const { heading, text, img, logo, phoneNumber, address } = props;
   const navigate = useNavigate();
 
   return (

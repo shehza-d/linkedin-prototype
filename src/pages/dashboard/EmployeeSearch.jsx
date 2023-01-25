@@ -78,7 +78,7 @@ function Users({ profilePhoto, userName, rank, company, text, number, email }) {
   );
 }
 
-export default function Screen3() {
+export default function EmployeeSearch() {
   const [companyExecutiveState, setCompanyExecutiveState] = useState(true);
 
   return (
