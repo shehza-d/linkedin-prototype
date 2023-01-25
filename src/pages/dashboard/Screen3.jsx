@@ -4,15 +4,18 @@ import photo2 from "../../assets/dashboard/userFace2.png";
 import photo3 from "../../assets/dashboard/userFace3.png";
 import photo4 from "../../assets/dashboard/userFace4.png";
 import star from "../../assets/dashboard/Star.svg";
-import mail from "../../assets/dashboard/mail.svg";
-import phone from "../../assets/dashboard/phone2.svg";
-import searchIcon from "../../assets/dashboard/search.svg";
+// import mail from "../../assets/dashboard/mail.svg";
+// import phone from "../../assets/dashboard/phone2.svg";
+// import searchIcon from "../../assets/dashboard/search.svg";
 // import profilePhoto from "../../assets/dashboard/userFace1.png";
 // import profilePhoto from "../../assets/dashboard/userFace1.png";
 // import profilePhoto from "../../assets/dashboard/userFace1.png";
 // import profilePhoto from "../../assets/dashboard/userFace1.png";
 // import profilePhoto from "../../assets/dashboard/userFace1.png";
 import { useNavigate } from "react-router-dom";
+import ExecutiveSearchBar from "../../components/ExecutiveSearchBar";
+import { useState } from "react";
+import CompanySearchBar from "../../components/CompanySearchBar";
 
 const dataObj = [
   {
@@ -76,6 +79,8 @@ function Users({ profilePhoto, userName, rank, company, text, number, email }) {
 }
 
 export default function Screen3() {
+  const [companyExecutiveState, setCompanyExecutiveState] = useState(true);
+
   return (
     <div className={styles.container}>
       <div className={styles.leftUsersSection}>
@@ -93,48 +98,11 @@ export default function Screen3() {
         ))}
         {/*<Users /> */}
       </div>
-
-      <div className={styles.rightSection}>
-        <div>
-          <button className={styles.btn2}>Company</button>
-          <button className={styles.btn1}>Executive</button>
-        </div>
-
-        <div className={styles.formOptions}>
-          <p>Target Executive Profile</p>
-          <button>Clear</button>
-        </div>
-
-        <div className={styles.searchBarDiv2}>
-          <img src={searchIcon} alt="" />
-          <input type="search" placeholder="Search industries" />
-        </div>
-
-        <div className={styles.allBtns}>
-          <button className={`${styles.btn} ${styles.blueBtn}`}>
-            Business Executives
-          </button>
-          <button className={`${styles.btn} ${styles.whiteBtn}`}>
-            Human Resources
-          </button>
-        </div>
-        <div className={styles.formOptions}>
-          <p>Alumni of </p>
-          <button>Clear</button>
-        </div>
-        <div className={styles.searchBarDiv2}>
-          <img src={searchIcon} alt="" />
-          <input type="search" placeholder="Search industries" />
-        </div>
-        <div className={styles.formOptions}>
-          <p>Industry</p>
-          <button>Clear</button>
-        </div>
-        <div className={styles.searchBarDiv2}>
-          <img src={searchIcon} alt="" />
-          <input type="search" placeholder="Search industries" />
-        </div>
-      </div>
+      {companyExecutiveState ? (
+        <CompanySearchBar state={setCompanyExecutiveState} />
+      ) : (
+        <ExecutiveSearchBar state={setCompanyExecutiveState} />
+      )}
     </div>
   );
 }

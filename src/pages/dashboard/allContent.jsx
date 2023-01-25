@@ -1,14 +1,31 @@
 import styles from "../../styles/dashboard/allContent.module.css";
-import SearchSuggestion from "./searchSuggestionBox";
+// import SearchSuggestion from "./searchSuggestionBox";
 import SearchCard from "./searchCard";
 import earth from "../../assets/dashboard/earth.png";
 import huawei from "../../assets/dashboard/huawei.png";
 import mail from "../../assets/dashboard/mail.png";
 import samsung from "../../assets/dashboard/samsung.png";
 // import earth from '../../assets/dashboard'
-import rock from "../../assets/dashboard/Rock.png";
-import searchIcon from "../../assets/dashboard/search.svg";
 import React, { useState, useEffect } from "react";
+import CompanySearchBar from "../../components/CompanySearchBar";
+import ExecutiveSearchBar from "../../components/ExecutiveSearchBar";
+import { db } from "../../firebase.js";
+import {
+  getFirestore,
+  collection, //get reference to a collection
+  addDoc,
+  getDocs, //get all docs
+  getDoc, //get one doc
+  doc, //get reference to a document
+  onSnapshot,
+  query,
+  where,
+  serverTimestamp,
+  orderBy,
+  deleteDoc,
+  updateDoc,
+  limit,
+} from "firebase/firestore";
 
 const dataObj = [
   {
@@ -29,9 +46,11 @@ const dataObj = [
   },
 ];
 
-export default function AllContent({ setCounter }) {
+export default function AllContent({ setCounter, searchQuery }) {
+  const [companyExecutiveState, setCompanyExecutiveState] = useState(true);
+  const [dataArr, setDataArr] = useState([]);
   const [matches, setMatches] = useState(
-    window.matchMedia("(min-width: 768px)").matches
+    // window.matchMedia("(min-width: 768px)").matches
   );
   useEffect(() => {
     window
@@ -41,24 +60,44 @@ export default function AllContent({ setCounter }) {
   // let mediaQuery = window.matchMedia('(max-width: 768px)').matches
   // console.log(matches);
 
+  useEffect(() => {
+    (async () => {
+      let tempArr = [];
+      const q = query(
+        collection(db, "companies"),
+        where("name", "==", searchQuery),
+        //   orderBy("createdOn", "desc"),
+        limit(60)
+      );
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        tempArr.push({ ...doc.data(), id: doc.id });
+      });
+      setDataArr(tempArr);
+    })();
+  }, [searchQuery]);
+
+  console.log(dataArr);
+
   return (
     <div style={{ display: "flex" }}>
       <div className={styles.cardContainer}>
-        {dataObj?.map((eachData, i) => (
+        {dataArr?.map((eachData, i) => (
           <SearchCard
             key={i}
             setCounter={setCounter}
-            heading={eachData?.heading}
-            text={eachData?.text}
+            heading={eachData?.name}
+            text={eachData?.details}
             img={eachData?.img}
-            logo={eachData?.logo}
-            phoneNumber={eachData?.number}
+            logo={eachData?.logoURL}
+            phoneNumber={eachData?.contactNumber}
             address={eachData?.address}
             // postDate={eachData?.createdOn}
           />
         ))}
         {/* <SearchCard /> */}
-        {matches ? <SearchSuggestion /> : null}
+        {/* {matches ? <SearchSuggestion /> : null} */}
         {/* to remove */}
         <p></p>
         <br />
@@ -68,59 +107,11 @@ export default function AllContent({ setCounter }) {
         <br />
         {/* to remove */}
       </div>
-
-      <div className={styles.rightCompanyContainer}>
-        <div>
-          <button className={styles.btn1}>Company</button>
-          <button className={styles.btn2}>Executive</button>
-        </div>
-
-        <div className={styles.formOptions}>
-          <p>Industry</p>
-          <button>Clear</button>
-        </div>
-
-        <div className={styles.searchBarDiv2}>
-          <img src={searchIcon} alt="" />
-          <input type="search" placeholder="Search industries" />
-        </div>
-
-        <div className={styles.allBtns}>
-          <button className={`${styles.btn} ${styles.blueBtn}`}>
-            AeroSpace
-          </button>
-          <button className={`${styles.btn} ${styles.blueBtn}`}>Retail</button>
-          <button className={`${styles.btn} ${styles.blueBtn}`}>Media</button>
-          <div
-            className={styles.bgRockImg}
-            style={{ backgroundImage: `url(${rock}` }}
-          ></div>
-          <button className={`${styles.btn} ${styles.blueBtn}`}>
-            Computer
-          </button>
-          <button className={`${styles.btn} ${styles.whiteBtn}`}>Mobile</button>
-          <button className={`${styles.btn} ${styles.whiteBtn}`}>
-            Insurance
-          </button>
-          <button className={`${styles.btn} ${styles.whiteBtn}`}>
-            Computer IT
-          </button>
-          <button className={`${styles.btn} ${styles.whiteBtn}`}>Media</button>
-          <button className={styles.btn} style={{ border: "none" }}>
-            View all
-          </button>
-        </div>
-        <div className={styles.formOptions}>
-          <p>Revenue of a company</p>
-          <button>Clear</button>
-        </div>
-        <input type="range" name="revenue" id="" />
-        <div className={styles.formOptions}>
-          <p>Employee</p>
-          <button>Clear</button>
-        </div>
-        <input type="range" name="employeeCount" id="" />
-      </div>
+      {companyExecutiveState ? (
+        <CompanySearchBar state={setCompanyExecutiveState} />
+      ) : (
+        <ExecutiveSearchBar state={setCompanyExecutiveState} />
+      )}
     </div>
   );
 }

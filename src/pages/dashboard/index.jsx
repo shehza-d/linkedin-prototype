@@ -29,38 +29,7 @@ import {
 
 export default function Dashboard() {
   const [counter, setCounter] = useState(1);
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    let unsubscribe;
-    (() => {
-      const q = query(
-        collection(db, "companies"),
-        where("name", "==", "Samsu"),
-      //   orderBy("createdOn", "desc"),
-        limit(60),
-      );
-
-      // get all collection data Realtime
-      unsubscribe = onSnapshot(
-        q,
-        // collection(db, "companies"),
-        (myDataSnapShot) => {
-          //this call back function is going to fire every time there is a change in collection and send us back the a new snapshot
-          //we can also pass in query reference here instead of collection reference to only bring queried items
-          let myData = [];
-          myDataSnapShot.docs.forEach((doc) => {
-            myData.push({ ...doc.data(), id: doc.id });
-          });
-          console.log(myData);
-        }
-      );
-    })();
-    //this is useEffect cleanup and is called when i leave this useEffect
-    return () => {
-      unsubscribe();
-    };
-  }, []);
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <>
@@ -73,10 +42,14 @@ export default function Dashboard() {
       </div>
       <div className={styles.searchBarDiv}>
         <img src={searchIcon} alt="" />
-        <input type="search" placeholder="Search" />
+        <input
+          type="search"
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Search"
+        />
       </div>
 
-      {counter === 1 ? <AllContent setCounter={setCounter} /> : null}
+      {counter === 1 ? <AllContent setCounter={setCounter} searchQuery={searchQuery}/> : null}
       {counter === 2 ? <CompanyDetails setCounter={setCounter} /> : null}
       {counter === 3 ? <Screen3 setCounter={setCounter} /> : null}
     </>

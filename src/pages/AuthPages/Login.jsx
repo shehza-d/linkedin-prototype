@@ -52,7 +52,7 @@ export default function Login(props) {
           // Signed in
           console.log(userCredential);
           // console.log(userCredential.user);
-          navigate("/welcome");
+          navigate("/dashboard");
           //   const res = await axios.post(
           //     `${baseURI}/login`,
           //     {

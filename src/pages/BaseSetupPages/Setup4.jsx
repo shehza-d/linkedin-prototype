@@ -47,7 +47,7 @@ export default function Setup4() {
             e.preventDefault();
             try {
               //sending data to Firebase
-              const res = await addDoc(collection(db, "testing"), {
+              const res = await addDoc(collection(db, "users"), {
                 userID: state.userID,
                 ...state.setupFormData,
                 targetProfile: {
