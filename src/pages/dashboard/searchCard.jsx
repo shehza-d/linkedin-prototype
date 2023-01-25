@@ -1,20 +1,16 @@
 import styles from "../../styles/dashboard/searchCard.module.css";
 import star from "../../assets/dashboard/Star.svg";
+import { useNavigate } from "react-router-dom";
 
-export default function SearchCard({
-  heading,
-  text,
-  img,
-  logo,
-  phoneNumber,
-  address,
-  setCounter,
-}) {
+export default function SearchCard(props) {
+  const { heading, text, img, logo, phoneNumber, address, setCounter } = props;
+  const navigate = useNavigate();
+
   return (
     <div
       className={styles.card}
       style={{ backgroundImage: `url(${img}` }}
-      onClick={() => setCounter((prev) => prev + 1)}
+      onClick={() => navigate("/company-details")}
     >
       <div className={styles.content}>
         <div className={styles.cardHeader}>

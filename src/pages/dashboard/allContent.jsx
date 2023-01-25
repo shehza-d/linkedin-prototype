@@ -6,9 +6,10 @@ import huawei from "../../assets/dashboard/huawei.png";
 import mail from "../../assets/dashboard/mail.png";
 import samsung from "../../assets/dashboard/samsung.png";
 // import earth from '../../assets/dashboard'
-import React, { useState, useEffect } from "react";
 import CompanySearchBar from "../../components/CompanySearchBar";
 import ExecutiveSearchBar from "../../components/ExecutiveSearchBar";
+import { useEffect, useState, useContext } from "react";
+import { GlobalContext } from "../../context/context.js";
 import { db } from "../../firebase.js";
 import {
   getFirestore,
@@ -47,11 +48,11 @@ const dataObj = [
 ];
 
 export default function AllContent({ setCounter, searchQuery }) {
+  const { state, dispatch } = useContext(GlobalContext);
   const [companyExecutiveState, setCompanyExecutiveState] = useState(true);
-  const [dataArr, setDataArr] = useState([]);
-  const [matches, setMatches] = useState(
+  // const [dataArr, setDataArr] = useState([]);
+  const [matches, setMatches] =useState();
     // window.matchMedia("(min-width: 768px)").matches
-  );
   useEffect(() => {
     window
       .matchMedia("(min-width: 768px)")
@@ -60,30 +61,30 @@ export default function AllContent({ setCounter, searchQuery }) {
   // let mediaQuery = window.matchMedia('(max-width: 768px)').matches
   // console.log(matches);
 
-  useEffect(() => {
-    (async () => {
-      let tempArr = [];
-      const q = query(
-        collection(db, "companies"),
-        where("name", "==", searchQuery),
-        //   orderBy("createdOn", "desc"),
-        limit(60)
-      );
-      const querySnapshot = await getDocs(q);
-      querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        tempArr.push({ ...doc.data(), id: doc.id });
-      });
-      setDataArr(tempArr);
-    })();
-  }, [searchQuery]);
+  // useEffect(() => {
+  //   (async () => {
+  //     let tempArr = [];
+  //     const q = query(
+  //       collection(db, "companies"),
+  //       where("name", "==", searchQuery),
+  //       //   orderBy("createdOn", "desc"),
+  //       limit(60)
+  //     );
+  //     const querySnapshot = await getDocs(q);
+  //     querySnapshot.forEach((doc) => {
+  //       // doc.data() is never undefined for query doc snapshots
+  //       tempArr.push({ ...doc.data(), id: doc.id });
+  //     });
+  //     setDataArr(tempArr);
+  //   })();
+  // }, [searchQuery]);
 
-  console.log(dataArr);
+  // console.log(dataArr);
 
   return (
     <div style={{ display: "flex" }}>
       <div className={styles.cardContainer}>
-        {dataArr?.map((eachData, i) => (
+        {state?.companySearchQueryData?.map((eachData, i) => (
           <SearchCard
             key={i}
             setCounter={setCounter}
@@ -99,9 +100,7 @@ export default function AllContent({ setCounter, searchQuery }) {
         {/* <SearchCard /> */}
         {/* {matches ? <SearchSuggestion /> : null} */}
         {/* to remove */}
-        <p></p>
         <br />
-        <p></p>
         <br />
         <p></p>
         <br />

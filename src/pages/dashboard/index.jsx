@@ -8,7 +8,8 @@ import searchIcon from "../../assets/dashboard/search.svg";
 import AllContent from "./allContent";
 import CompanyDetails from "./companyDetails";
 import Screen3 from "./Screen3";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { GlobalContext } from "../../context/context.js";
 import { db } from "../../firebase.js";
 import {
   getFirestore,
@@ -28,8 +29,35 @@ import {
 } from "firebase/firestore";
 
 export default function Dashboard() {
+  const { state, dispatch } = useContext(GlobalContext);
   const [counter, setCounter] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
+  const [dataArr, setDataArr] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      let tempArr = [];
+      const q = query(
+        collection(db, "companies"),
+        where("name", "==", searchQuery),
+        //   orderBy("createdOn", "desc"),
+        limit(60)
+      );
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        tempArr.push({ ...doc.data(), id: doc.id });
+      });
+      // console.log(tempArr);
+      // setDataArr(tempArr);
+      dispatch({
+        type: "SET_CompanySearchQueryData",
+        payload: tempArr,
+      });
+    })();
+  }, [searchQuery]);
+  // console.log(dataArr);
+  console.log(state);
 
   return (
     <>
@@ -49,8 +77,13 @@ export default function Dashboard() {
         />
       </div>
 
-      {counter === 1 ? <AllContent setCounter={setCounter} searchQuery={searchQuery}/> : null}
-      {counter === 2 ? <CompanyDetails setCounter={setCounter} /> : null}
+      {counter === 1 ? (
+        <AllContent setCounter={setCounter} searchQuery={searchQuery} />
+      ) : null}
+      {counter === 2 ? (
+        <div>no data</div>
+        // <CompanyDetails setCounter={setCounter} searchQuery={searchQuery} />
+      ) : null}
       {counter === 3 ? <Screen3 setCounter={setCounter} /> : null}
     </>
   );

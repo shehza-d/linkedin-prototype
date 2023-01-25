@@ -5,7 +5,6 @@ import { useState } from "react";
 
 export default function CompanySearchBar({ state }) {
   const [searchh, setSearchh] = useState("");
-  console.log(searchh);
   return (
     <div className={styles.rightCompanyContainer}>
       <div>

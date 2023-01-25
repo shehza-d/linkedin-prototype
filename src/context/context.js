@@ -18,6 +18,7 @@ let data = {
   },
   darkTheme: true,
   userID: null,
+  companySearchQueryData: [],
   isLogin: null,
   baseUrl: window.location.href.includes("localhost")
     ? `http://localhost:5001/api/v1`

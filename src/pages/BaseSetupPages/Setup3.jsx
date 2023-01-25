@@ -13,7 +13,7 @@ import DropDown from "../../components/muiDropDown";
 // import TextField from "@mui/material/TextField";
 
 export default function Setup3() {
-  let { state, dispatch } = useContext(GlobalContext);
+  const { state, dispatch } = useContext(GlobalContext);
   const [industryValue, setIndustryValue] = useState("");
   const [revenueSizeValue, setRevenueSizeValue] = useState("");
   const [employeeValue, setEmployeeValue] = useState("");

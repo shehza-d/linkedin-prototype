@@ -18,6 +18,9 @@ export const reducer = (state, action) => {
     case "SET_USER_ID": {
       return { ...state, userID: action.payload };
     }
+    case "SET_CompanySearchQueryData": {
+      return { ...state, companySearchQueryData: action.payload };
+    }
     default: {
       return state;
     }

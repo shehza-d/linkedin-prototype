@@ -19,11 +19,13 @@
   color: #262626;
 }
 .flex {
+  padding-top: 60px;
   display: flex;
   margin: 0;
 }
 @media (max-device-width: 650px) {
   .flex {
+    padding-top: 25px;
     flex-direction: column;
     margin: 0;
   }
