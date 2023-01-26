@@ -44,7 +44,7 @@ export default function CompanyDetails({ setCounter, name, searchQuery }) {
             }}
           >
             {/* <img src= {huawei} alt="" /> */}
-            <img src={data.logoURL} alt="" />
+            <img src={data?.logoURL} alt="" />
             <Box
               sx={{ pl: { xs: "8px", md: 4 }, pr: { xs: "4px", md: 1 } }}
               // onClick={() => setCounter((prev) => prev + 1)}

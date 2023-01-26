@@ -160,6 +160,23 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+.userTitle{
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.userRank{
+  font-weight: 400;
+}
+.userCompany{
+  font-weight: 400;
+}
+
+
+
+
+
+
 /* User Component CSS */
 @media (max-device-width: 650px) {
   .container {

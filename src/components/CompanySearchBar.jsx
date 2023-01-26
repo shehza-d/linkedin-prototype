@@ -2,16 +2,31 @@ import styles from "../styles/dashboard/allContent.module.css";
 import rock from "../assets/dashboard/Rock.png";
 import searchIcon from "../assets/dashboard/search.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CompanySearchBar({ state }) {
   const [searchh, setSearchh] = useState("");
+  const navigate = useNavigate();
+
   return (
     <div className={styles.rightCompanyContainer}>
       <div>
-        <button className={styles.btn1} onClick={() => state(true)}>
+        <button
+          className={styles.btn1}
+          onClick={() => {
+            state(true);
+            navigate("/dashboard");
+          }}
+        >
           Company
         </button>
-        <button className={styles.btn2} onClick={() => state(false)}>
+        <button
+          className={styles.btn2}
+          onClick={() => {
+            navigate("/employees");
+            state(false);
+          }}
+        >
           Executive
         </button>
       </div>

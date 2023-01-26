@@ -65,8 +65,11 @@ export default function Login(props) {
           //   toast(`${res.data.message}`); //https://www.npmjs.com/package/react-toastify
         } catch (err) {
           console.log(err);
+          toast(`Wrong Email or Password`);
+          if (err.code === 'auth/wrong-password'){
+            console.log('cosom');
+          }
           //   console.log(err.response.data.message);
-          toast(`${err.code}`);
         }
       },
     });

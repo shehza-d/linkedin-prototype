@@ -74,8 +74,9 @@ export default function Signup(props) {
           console.log(userCredential);
           //   toast(`${res.data.message}`); //https://www.npmjs.com/package/react-toastify
         } catch (err) {
-          console.log(err);
-          toast(`${err.message}`);
+          console.log(err);   
+          toast(`User already exists`);
+
         }
       },
     });
