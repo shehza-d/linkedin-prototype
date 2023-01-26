@@ -60,7 +60,7 @@ export default function Signup(props) {
           await updateProfile(auth.currentUser, {
             displayName: values.userName,
           });
-          navigate("/welcome");
+          navigate("/welcome", { replace: true });
           //   const res = await axios.post(
           //     `${baseURI}/login`,
           //     {

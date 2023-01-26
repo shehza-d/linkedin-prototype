@@ -58,7 +58,7 @@ export default function Setup4() {
                 },
               });
               console.log(res);
-              navigate("/congrats");
+              navigate("/congrats", { replace: true });
             } catch (err) {
               console.log(err);
             }

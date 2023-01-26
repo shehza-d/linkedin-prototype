@@ -16,7 +16,7 @@ let data = {
       //   geography: "",
       // },
       //  {
-      //   OperatesIn: "Eight countries",
+      //   OperatesIn: "Seventeen countries",
       //   FoundedOn: "September 15, 1987",
       //   products: "20+",
       //   employees: "5000+",

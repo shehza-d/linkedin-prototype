@@ -1,10 +1,10 @@
 import styles from "../../styles/dashboard/allContent.module.css";
 // import SearchSuggestion from "./searchSuggestionBox";
 import SearchCard from "./searchCard";
-import earth from "../../assets/dashboard/earth.png";
-import huawei from "../../assets/dashboard/huawei.png";
-import mail from "../../assets/dashboard/mail.png";
-import samsung from "../../assets/dashboard/samsung.png";
+// import earth from "../../assets/dashboard/earth.png";
+// import huawei from "../../assets/dashboard/huawei.png";
+// import mail from "../../assets/dashboard/mail.png";
+// import samsung from "../../assets/dashboard/samsung.png";
 // import earth from '../../assets/dashboard'
 import CompanySearchBar from "../../components/CompanySearchBar";
 import ExecutiveSearchBar from "../../components/ExecutiveSearchBar";
@@ -31,7 +31,7 @@ import { GlobalContext } from "../../context/context.js";
 // ];
 
 export default function AllContent({ setCounter }) {
-  const { state, dispatch } = useContext(GlobalContext);
+  const { state } = useContext(GlobalContext);
   const [companyExecutiveState, setCompanyExecutiveState] = useState(true);
   // const [dataArr, setDataArr] = useState([]);
   const [matches, setMatches] = useState();
@@ -49,7 +49,8 @@ export default function AllContent({ setCounter }) {
       <div className={styles.cardContainer}>
         {state?.companySearchQueryData?.map((eachData, i) => (
           <SearchCard
-            key={i}
+            key={eachData.id}
+            id={eachData.id}
             // setCounter={setCounter}
             heading={eachData?.name}
             text={eachData?.details}
