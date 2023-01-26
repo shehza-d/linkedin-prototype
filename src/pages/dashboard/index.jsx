@@ -63,7 +63,7 @@ export default function Dashboard() {
       querySnapshot.forEach((doc) => {
         tempArr.push({ ...doc.data(), id: doc.id });
       });
-      console.log(tempArr);
+      // console.log(tempArr);
       dispatch({
         type: "SET_CompanySearchQueryData",
         payload: tempArr,
@@ -71,7 +71,7 @@ export default function Dashboard() {
     })();
   }, []);
   // console.log(dataArr);
-  console.log(state);
+  // console.log(state);
 
   return (
     <>

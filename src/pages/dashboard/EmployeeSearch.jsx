@@ -21,7 +21,7 @@ const dataObj = [
   {
     userName: "Maryam Tariq",
     profilePhoto: photo1,
-    rank: "Chair and Chief Executive Officer ",
+    rank: "Chair and Chief Executive Officer",
     company: "@ General Motors",
     text: `Lorem ipsum dolor sit amet, consectetur adilit. Duis quam ex, maximus quis nisl ut, sollic, imperdiet lacus. Integer iaculis volutpat dapi,    tristique at augue.`,
     number: "03994033044",
@@ -56,7 +56,8 @@ const dataObj = [
   },
 ];
 
-function Users({ profilePhoto, userName, rank, company, text, number, email }) {
+function Users(props) {
+  const  { profilePhoto, userName, rank, company, text, number, email } = props
   const navigate = useNavigate();
   return (
     <div className={styles.user} onClick={() => navigate("/employees")}>

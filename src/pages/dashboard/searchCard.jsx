@@ -13,7 +13,7 @@ export default function SearchCard(props) {
       style={{ backgroundImage: `url(${img}` }}
       onClick={() => {
         // console.log(props.id);
-        // navigate("/company-details", { idd: { myID: props?.id } });
+        navigate("company-details", { state: { id: props?.id } });
         // navigate("/company-details", props?.id);
       }}
     >
