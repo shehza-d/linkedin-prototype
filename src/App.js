@@ -81,11 +81,10 @@ export default function App() {
           <Route path="employees" element={<EmployeeDetail />} />
           <Route path="employees" element={<EmployeeSearch />} />
       {/* <Screen3  />  */}
-          <Route path="company-details" element={<CompanyDetails />} />
+          <Route path="company-details/:id" element={<CompanyDetails />} />
           <Route path="/" element={<Dashboard />} />
           
-          
-          <Route path="*" element={<Navigate to="/" replace={true} />} />
+           <Route path="*" element={<Navigate to="/" replace={true} />} />
         </Routes>
       ) : null}
       {isLogin === false ? (
