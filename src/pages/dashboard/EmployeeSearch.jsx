@@ -98,9 +98,10 @@ export default function EmployeeSearch() {
   //   })();
   // }, [searchQuery]);
 
+  let tempArr = [];
+
   useEffect(() => {
     (async () => {
-      let tempArr = [];
       const querySnapshot = await getDocs(collection(db, "employees"));
       querySnapshot.forEach((doc) => {
         tempArr.push({ ...doc.data(), id: doc.id });
@@ -117,10 +118,12 @@ export default function EmployeeSearch() {
     const quiredData = data.filter((i) => i.name === searchQuery);
     if (quiredData.length > 0) {
       setData(quiredData);
+    } else {
+      setData(tempArr);
     }
   }, [searchQuery]);
 
-  console.table(data);
+  console.log(data);
 
   return (
     <>
