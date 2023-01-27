@@ -28,3 +28,5 @@ how to check condition on something that is not yet defined javascript
 SDLC
 
 employee flow
+
+first get values from modal form 

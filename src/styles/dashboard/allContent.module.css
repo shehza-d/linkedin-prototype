@@ -111,7 +111,18 @@
   background-size: contain;
   background-position: right;
 }
-
+.tag {
+  margin: 7px;
+  border: 2px solid #b6b6b6;
+  color: #535353;
+  padding: 6px;
+  border-radius: 8px;
+}
+.checkedTag{
+  border: 2px solid #3265a8;
+  color: #3049b8;
+  background-color: #3265a83b;
+}
 @media (max-device-width: 650px) {
   .rightCompanyContainer {
     display: none;

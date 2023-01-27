@@ -16,17 +16,30 @@ const style = {
   width: 400,
   bgcolor: "background.paper",
   // border: "2px solid #000",
-  borderRadius:"20px",
+  borderRadius: "20px",
   boxShadow: 24,
   p: 4,
 };
 
 export default function CompanySearchBar({ state }) {
   const [searchh, setSearchh] = useState("");
+  const [tags, setTags] = useState([]);
   const navigate = useNavigate();
   //MUI
   const [open, setOpen] = useState(false);
   const handleOpenClose = () => setOpen(!open);
+
+  const handleTagsInputs = (e) => {
+    e.preventDefault();
+    const { value, checked } = e.target;
+    console.log(`${value} is ${checked}`);
+    // if (checked) {
+    //   setTags([...tags, value]);
+    // } else {
+    //   setTags(tags.filter((e) => e !== value));
+    // }
+    // console.log(e);
+  };
 
   return (
     <div className={styles.rightCompanyContainer}>
@@ -38,16 +51,36 @@ export default function CompanySearchBar({ state }) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-           Industry     
+            Industry
           </Typography>
-         <input type="text" />
+          <input type="search" />
 
-        <Box>
-
-<h1>dfhdf</h1>
-
-
-        </Box>
+          <Box sx={{pt:2}}>
+            <form onSubmit={handleTagsInputs}>
+              <label
+                name="one"
+                className={`${styles.tag} ${styles.checkedTag}`}
+              >
+                one
+                <input type="checkbox" name="one" id="" value="onee" hidden />
+              </label>
+              <label
+                name="two"
+                className={`${styles.tag} `}
+              >
+                two
+                <input type="checkbox" name="two" id="" value="twoo" hidden />
+              </label>
+              <label
+                name="three"
+                className={`${styles.tag} ${styles.checkedTag}`}
+              >
+                three
+                <input type="checkbox" name="three" value="threee" hidden />
+              </label>
+              <button type="submit">sfdffffffffff</button>
+            </form>
+          </Box>
         </Box>
       </Modal>
       <div>
@@ -73,7 +106,7 @@ export default function CompanySearchBar({ state }) {
 
       <div className={styles.formOptions}>
         <p>Industry</p>
-        <button>Clear</button>
+        <button onClick={() => setSearchh("")}>Clear</button>
       </div>
 
       <div className={styles.searchBarDiv2}>
