@@ -159,8 +159,9 @@ export default function Signup(props) {
         <div className={styles.formOption}>
           {/* <Checkbox label="Remember me" sx={{ color: "#422D6F" }} /> */}
           <FormControlLabel
-            control={<Checkbox sx={{ color: "#422D6F" }} />}
+            control={<Checkbox required sx={{ color: "#422D6F" }} />}
             label="I agree to the"
+            required
           />
           <a href="www.facebook.com">Terms & Conditions</a>
         </div>

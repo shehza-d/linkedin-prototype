@@ -73,6 +73,7 @@ export default function EmployeeSearch() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchQueryData, setSearchQueryData] = useState(null);
   const [data, setData] = useState([]);
+  const [refresh, setRefresh] = useState(false);
   // useEffect(() => {
   //   (async () => {
   //     let tempArr = [];
@@ -107,16 +108,19 @@ export default function EmployeeSearch() {
       // console.log(tempArr);
       setData(tempArr);
     })();
-  }, []);
+  }, [refresh]);
 
+  // if (searchQuery.length === 0) {
+  //   setRefresh(true);
+  // }
   useEffect(() => {
     const quiredData = data.filter((i) => i.name === searchQuery);
-    if (quiredData.length > 1) {
+    if (quiredData.length > 0) {
       setData(quiredData);
     }
   }, [searchQuery]);
 
-  console.log(data);
+  console.table(data);
 
   return (
     <>

@@ -12,7 +12,7 @@ import Congrats from "./pages/other/Congrats";
 import Dashboard from "./pages/dashboard";
 // import Signup from "./pages/AuthPages/Signup";
 import EmployeeDetail from "./pages/dashboard/EmployeeDetail";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "./firebase";
 import loaderImg from "./assets/loader.webp";
 import CompanyDetails from "./pages/dashboard/companyDetails";
@@ -41,23 +41,27 @@ export default function App() {
   const { state, dispatch } = useContext(GlobalContext);
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        // console.log(user);
-        setIsLogin(true);
-        // console.log("user is logged in");
-        dispatch({
-          type: "SET_USER_ID",
-          payload: user.uid,
-        });
-      } else {
-        console.log("not logged in");
-        setIsLogin(false);
-        // User is signed out
-        // ...
-      }
-    });
+    try {
+      //  signOut(auth);
+
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          // console.log(user);
+          setIsLogin(true);
+          // console.log("user is logged in");
+          dispatch({
+            type: "SET_USER_ID",
+            payload: user.uid,
+          });
+        } else {
+          console.log("not logged in");
+          setIsLogin(false);
+          // User is signed out
+          // ...
+        }
+      });
+    } catch (err) {}
   }, []);
   // useEffect(() => {
   //   addDoc(collection(db, "companies"), {
@@ -80,11 +84,11 @@ export default function App() {
           <Route path="dashboard" element={<Dashboard />} />
           {/* <Route path="employees" element={<EmployeeDetail />} /> */}
           <Route path="employees" element={<EmployeeSearch />} />
-      {/* <Screen3  />  */}
+          {/* <Screen3  />  */}
           <Route path="company-details" element={<CompanyDetails />} />
           <Route path="/" element={<Dashboard />} />
-          
-           <Route path="*" element={<Navigate to="/" replace={true} />} />
+
+          <Route path="*" element={<Navigate to="/" replace={true} />} />
         </Routes>
       ) : null}
       {isLogin === false ? (
