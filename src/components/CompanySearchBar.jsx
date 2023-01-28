@@ -30,9 +30,9 @@ export default function CompanySearchBar({ state }) {
   const handleOpenClose = () => setOpen(!open);
 
   const handleTagsInputs = (e) => {
-    e.preventDefault();
-    const { value, checked } = e.target;
-    console.log(`${value} is ${checked}`);
+    // e.preventDefault();
+    // const { value, checked } = e.target;
+    // console.log(`${value} is ${checked}`);
     // if (checked) {
     //   setTags([...tags, value]);
     // } else {
@@ -40,7 +40,7 @@ export default function CompanySearchBar({ state }) {
     // }
     // console.log(e);
   };
-
+  // console.log(tags);
   return (
     <div className={styles.rightCompanyContainer}>
       <Modal
@@ -55,8 +55,46 @@ export default function CompanySearchBar({ state }) {
           </Typography>
           <input type="search" />
 
-          <Box sx={{pt:2}}>
-            <form onSubmit={handleTagsInputs}>
+          <Box sx={{ pt: 2 }}>
+            <button
+              className={`${styles.tag} ${styles.checkedTag}`}
+              onClick={() =>
+                setTags((prev) => {
+                  if (prev.includes("one")) {
+                    //remove one from arr
+
+                    console.log(prev);
+                    const index = prev.indexOf("one");
+                    if (index > -1) {
+                      prev.splice(index, 1);
+                    }
+                    console.log(prev);
+                    return [...prev];
+                  } else {
+                    console.log('prevv',prev);
+                    return [...prev, "one"];
+                  }
+
+                  // console.log(prev.includes("one"));
+                  // return [...prev, "one"];
+                })
+              }
+            >
+              one
+            </button>
+            <button
+              className={`${styles.tag} `}
+              onClick={() => setTags((prev) => [...prev, "two"])}
+            >
+              two{" "}
+            </button>
+            <button
+              className={`${styles.tag} `}
+              onClick={() => setTags((prev) => [...prev, "three"])}
+            >
+              three{" "}
+            </button>
+            {/* <form onSubmit={handleTagsInputs}>
               <label
                 name="one"
                 className={`${styles.tag} ${styles.checkedTag}`}
@@ -79,7 +117,7 @@ export default function CompanySearchBar({ state }) {
                 <input type="checkbox" name="three" value="threee" hidden />
               </label>
               <button type="submit">sfdffffffffff</button>
-            </form>
+            </form> */}
           </Box>
         </Box>
       </Modal>

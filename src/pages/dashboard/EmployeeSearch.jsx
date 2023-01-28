@@ -99,14 +99,12 @@ export default function EmployeeSearch() {
   // }, [searchQuery]);
 
   let tempArr = [];
-
   useEffect(() => {
     (async () => {
       const querySnapshot = await getDocs(collection(db, "employees"));
       querySnapshot.forEach((doc) => {
         tempArr.push({ ...doc.data(), id: doc.id });
       });
-      // console.log(tempArr);
       setData(tempArr);
     })();
   }, [refresh]);
@@ -122,8 +120,8 @@ export default function EmployeeSearch() {
       setData(tempArr);
     }
   }, [searchQuery]);
-
-  console.log(data);
+  console.log("tempArrt ", tempArr);
+  console.log("data ", data);
 
   return (
     <>

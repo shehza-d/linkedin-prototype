@@ -3,7 +3,7 @@
   margin-bottom: 7px;
   height: 8%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background: linear-gradient(
     90.27deg,
@@ -17,6 +17,24 @@
   align-items: center;
   justify-content: center;
 }
+
+.right > button {
+  /* logout btn */
+  margin-right: 10px;
+  padding: 7px;
+  border: 2px solid #1a5cb0;
+  color: #1a5cb0;
+  backdrop-filter: blur(10px);
+  background-color: #73f8f8e8;
+  border-radius: 10px;
+}
+.right > button:hover {
+  cursor: pointer;
+  background-color: #9afcfcf6;
+
+  /* transition: 1000ms;
+  padding: 8px; */
+}
 .logo {
   opacity: 0.7;
   margin-left: 25px;
@@ -27,6 +45,9 @@
 }
 
 @media screen and (max-width: 430px) {
+  .nav {
+    justify-content: space-around;
+  }
   .logo {
     width: 40px;
     margin-left: 8px;
@@ -34,5 +55,8 @@
   .userImg {
     margin-left: 5px;
     margin-right: 5px;
+  }
+  .right > button {
+    margin-right: 6px;
   }
 }

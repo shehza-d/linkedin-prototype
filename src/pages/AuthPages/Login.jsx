@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 import { signInWithEmailAndPassword } from "firebase/auth"; //npm
 import { auth } from "../../firebase";
 // Other
-// import { FcGoogle } from "react-icons/fc";
+// import { FcGoogle } from "react-icons/fc"; <FcGoogle />
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
