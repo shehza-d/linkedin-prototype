@@ -117,6 +117,7 @@
   color: #535353;
   padding: 6px;
   border-radius: 8px;
+  text-transform: capitalize;
 }
 .checkedTag{
   border: 2px solid #3265a8;

@@ -7,13 +7,14 @@ import Box from "@mui/material/Box";
 // import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import TagBtn from "./tagBtn";
 
 const style = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 700,
   bgcolor: "background.paper",
   // border: "2px solid #000",
   borderRadius: "20px",
@@ -40,7 +41,7 @@ export default function CompanySearchBar({ state }) {
     // }
     // console.log(e);
   };
-  // console.log(tags);
+  console.log(tags);
   return (
     <div className={styles.rightCompanyContainer}>
       <Modal
@@ -56,44 +57,52 @@ export default function CompanySearchBar({ state }) {
           <input type="search" />
 
           <Box sx={{ pt: 2 }}>
-            <button
-              className={`${styles.tag} ${styles.checkedTag}`}
-              onClick={() =>
-                setTags((prev) => {
-                  if (prev.includes("one")) {
-                    //remove one from arr
+            <TagBtn label="aerospace" setTags={setTags} />
+            <TagBtn label="telecommunication" setTags={setTags} />
+            <TagBtn label="food" setTags={setTags} />
+            <TagBtn label="entertainment" setTags={setTags} />
+            <TagBtn label="health care" setTags={setTags} />
+            <TagBtn label="pharmaceutical" setTags={setTags} />
+            <TagBtn label="education" setTags={setTags} />
+            <TagBtn label="computer" setTags={setTags} />
+            <TagBtn label="construction" setTags={setTags} />
+            <TagBtn label="agriculture" setTags={setTags} />
+            <TagBtn label="hospitality" setTags={setTags} />
+            <TagBtn label="transport" setTags={setTags} />
+            <TagBtn label="media" setTags={setTags} />
+            <TagBtn label="economics" setTags={setTags} />
+            <TagBtn label="computers and information technology" setTags={setTags}/>
+            <TagBtn label="health care" setTags={setTags} />
+            <TagBtn label="financial technology" setTags={setTags} />
+            <TagBtn label="financial services" setTags={setTags} />
+            <TagBtn label="mining" setTags={setTags} />
+            <TagBtn label="retail" setTags={setTags} />
+            <TagBtn label="rail transport" setTags={setTags} />
+            <TagBtn label="aerospace" setTags={setTags} />
+            <TagBtn label="biotechnology" setTags={setTags} />
+            <TagBtn label="forestry" setTags={setTags} />
+            <TagBtn label="insurance" setTags={setTags} />
+            <TagBtn label="pharmacy" setTags={setTags} />
+            <TagBtn label="fashion design" setTags={setTags} />
+            <TagBtn label="accounting" setTags={setTags} />
+            <TagBtn label="building material" setTags={setTags} />
+            <TagBtn label="music" setTags={setTags} />
+            <TagBtn label="distribution" setTags={setTags} />
+            <TagBtn label="credit" setTags={setTags} />
+            <TagBtn label="nuclear power" setTags={setTags} />
+            <TagBtn label="real estate" setTags={setTags} />
+            <TagBtn label="energy" setTags={setTags} />
+            <TagBtn label="financial" setTags={setTags} />
+            <TagBtn label="health care" setTags={setTags} />
+            <TagBtn label="financial services" setTags={setTags} />
+            <TagBtn label="corporation" setTags={setTags} />
+            <TagBtn label="rail transport" setTags={setTags} />
+            <TagBtn label="retail" setTags={setTags} />
+            <TagBtn label="music" setTags={setTags} />
+            <TagBtn label="credit" setTags={setTags} />
 
-                    console.log(prev);
-                    const index = prev.indexOf("one");
-                    if (index > -1) {
-                      prev.splice(index, 1);
-                    }
-                    console.log(prev);
-                    return [...prev];
-                  } else {
-                    console.log('prevv',prev);
-                    return [...prev, "one"];
-                  }
+            {/* <TagBtn label="Computer" setTags={setTags} /> */}
 
-                  // console.log(prev.includes("one"));
-                  // return [...prev, "one"];
-                })
-              }
-            >
-              one
-            </button>
-            <button
-              className={`${styles.tag} `}
-              onClick={() => setTags((prev) => [...prev, "two"])}
-            >
-              two{" "}
-            </button>
-            <button
-              className={`${styles.tag} `}
-              onClick={() => setTags((prev) => [...prev, "three"])}
-            >
-              three{" "}
-            </button>
             {/* <form onSubmit={handleTagsInputs}>
               <label
                 name="one"

@@ -10,7 +10,7 @@ import { theme } from "./styles/muiTheme";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <ContextProvider>
       <BrowserRouter>
         <ThemeProvider theme={theme}>
@@ -18,7 +18,7 @@ root.render(
         </ThemeProvider>
       </BrowserRouter>
     </ContextProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
