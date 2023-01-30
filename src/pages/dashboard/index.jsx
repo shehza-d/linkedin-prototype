@@ -34,28 +34,28 @@ export default function Dashboard() {
   const [searchQuery, setSearchQuery] = useState("");
   const [dataArr, setDataArr] = useState([]);
 
-  useEffect(() => {
-    (async () => {
-      let tempArr = [];
-      const q = query(
-        collection(db, "companies"),
-        where("name", "==", searchQuery),
-        //   orderBy("createdOn", "desc"),
-        limit(60)
-      );
-      const querySnapshot = await getDocs(q);
-      querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        tempArr.push({ ...doc.data(), id: doc.id });
-      });
-      // console.log(tempArr);
-      // setDataArr(tempArr);
-      dispatch({
-        type: "SET_CompanySearchQueryData",
-        payload: tempArr,
-      });
-    })();
-  }, [searchQuery]);
+  // useEffect(() => {
+  //   (async () => {
+  //     let tempArr = [];
+  //     const q = query(
+  //       collection(db, "companies"),
+  //       where("name", "==", searchQuery),
+  //       //   orderBy("createdOn", "desc"),
+  //       limit(60)
+  //     );
+  //     const querySnapshot = await getDocs(q);
+  //     querySnapshot.forEach((doc) => {
+  //       // doc.data() is never undefined for query doc snapshots
+  //       tempArr.push({ ...doc.data(), id: doc.id });
+  //     });
+  //     // console.log(tempArr);
+  //     // setDataArr(tempArr);
+  //     dispatch({
+  //       type: "SET_CompanySearchQueryData",
+  //       payload: tempArr,
+  //     });
+  //   })();
+  // }, [searchQuery]);
   useEffect(() => {
     (async () => {
       let tempArr = [];

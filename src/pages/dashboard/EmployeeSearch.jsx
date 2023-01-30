@@ -100,13 +100,14 @@ export default function EmployeeSearch() {
 
   // video on searchs https://youtu.be/MY6ZZIn93V8
   // https://github.com/safak/youtube/tree/react-search
-  let tempArr = [];
   useEffect(() => {
     (async () => {
+      let tempArr = [];
       const querySnapshot = await getDocs(collection(db, "employees"));
       querySnapshot.forEach((doc) => {
         tempArr.push({ ...doc.data(), id: doc.id });
       });
+      console.log(tempArr);
       setData(tempArr);
     })();
   }, [refresh]);
@@ -114,15 +115,22 @@ export default function EmployeeSearch() {
   // if (searchQuery.length === 0) {
   //   setRefresh(true);
   // }
-  useEffect(() => {
-    const quiredData = data.filter((i) => i.name === searchQuery);
-    if (quiredData.length > 0) {
-      setData(quiredData);
-    } else {
-      setData(tempArr);
-    }
-  }, [searchQuery]);
-  console.log("tempArrt ", tempArr);
+  const searchFun = () => {
+    return data.filter(
+      (item) =>
+        item.name.toLowerCase().includes(searchQuery) ||
+        item.company.toLowerCase().includes(searchQuery) ||
+        item.email.toLowerCase().includes(searchQuery) ||
+        item.rank.toLowerCase().includes(searchQuery)
+    );
+    //quiredData
+    // if (quiredData.length > 0) {
+    //   setData(quiredData);
+    // } else {
+    //   setData(tempArr);
+    // }
+  };
+  // console.log("tempArrt ", tempArr);
   console.log("data ", data);
 
   return (
@@ -138,7 +146,7 @@ export default function EmployeeSearch() {
       </div>
       <div className={styles.container}>
         <div className={styles.leftUsersSection}>
-          {data?.map((eachData, i) => (
+          {searchFun()?.map((eachData, i) => (
             <Users
               key={i}
               userName={eachData?.name}
