@@ -98,6 +98,8 @@ export default function EmployeeSearch() {
   //   })();
   // }, [searchQuery]);
 
+  // video on searchs https://youtu.be/MY6ZZIn93V8
+  // https://github.com/safak/youtube/tree/react-search
   let tempArr = [];
   useEffect(() => {
     (async () => {

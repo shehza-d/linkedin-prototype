@@ -54,6 +54,9 @@
   background-color: transparent;
   border: none;
 }
+/* .searchBarDiv::placeholder{
+  color: green;
+} */
 .searchBarDiv > input:focus {
   border: none;
   /* background-color: green; */
