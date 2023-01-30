@@ -86,9 +86,15 @@ export default function EmployeeDetail() {
         />
         <div className={styles.employeeContainer}>
           <div className={styles.column}>
-            <Button variant="contained" sx={{mx:4}}>GM Financial</Button>
-            <Button variant="contained" sx={{mx:4}}>Global Communications</Button>
-            <Button variant="contained" sx={{mx:4}}>Global Manufacturing</Button>
+            <Button variant="contained" sx={{ mx: 4 }}>
+              GM Financial
+            </Button>
+            <Button variant="contained" sx={{ mx: 4 }}>
+              Global Communications
+            </Button>
+            <Button variant="contained" sx={{ mx: 4 }}>
+              Global Manufacturing
+            </Button>
           </div>
           <div className={styles.column}>
             <UserProfile

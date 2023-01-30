@@ -34,7 +34,8 @@ export default function Dashboard() {
   const [searchQuery, setSearchQuery] = useState("");
   const [dataArr, setDataArr] = useState([]);
 
-  // useEffect(() => {
+ 
+      // useEffect(() => {
   //   (async () => {
   //     let tempArr = [];
   //     const q = query(
@@ -92,7 +93,7 @@ export default function Dashboard() {
       </div>
 
       {/* {counter === 1 ? ( */}
-      <AllContent setCounter={setCounter} />
+      <AllContent setCounter={setCounter} searchQuery={searchQuery}/>
       {/* ) : null} */}
       {counter === 2 ? (
         <div>no data</div>

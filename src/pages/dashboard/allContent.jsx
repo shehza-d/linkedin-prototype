@@ -30,7 +30,7 @@ import { GlobalContext } from "../../context/context.js";
 //   },
 // ];
 
-export default function AllContent({ setCounter }) {
+export default function AllContent({ setCounter, searchQuery }) {
   const { state } = useContext(GlobalContext);
   const [companyExecutiveState, setCompanyExecutiveState] = useState(true);
   // const [dataArr, setDataArr] = useState([]);
@@ -43,11 +43,21 @@ export default function AllContent({ setCounter }) {
   }, []);
   // let mediaQuery = window.matchMedia('(max-width: 768px)').matches
   // console.log(matches);
+  console.log(searchQuery);
+  console.log(state?.companySearchQueryData);
+  const searchFun = (data) => {
+    return data.filter(
+      (item) =>
+        item.name.toLowerCase().includes(searchQuery) ||
+        item.details.toLowerCase().includes(searchQuery) ||
+        item.address.toLowerCase().includes(searchQuery)
+    );
+  };
 
   return (
     <div style={{ display: "flex" }}>
       <div className={styles.cardContainer}>
-        {state?.companySearchQueryData?.map((eachData, i) => (
+        {searchFun(state?.companySearchQueryData)?.map((eachData, i) => (
           <SearchCard
             key={eachData.id}
             id={eachData.id}

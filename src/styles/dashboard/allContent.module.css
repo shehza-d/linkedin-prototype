@@ -75,9 +75,11 @@
   font-family: inherit;
   background-color: transparent;
   border: none;
+  outline: none;
 }
 .searchBarDiv2 > input:focus {
   border: none;
+  outline: none;
 }
 .allBtns {
   padding-left: 25px;

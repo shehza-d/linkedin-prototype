@@ -80,9 +80,11 @@
   font-family: inherit;
   background-color: transparent;
   border: none;
+  outline: none;
 }
 .searchBarDiv2 > input:focus {
-  border: none;
+  border: none; 
+  outline: none;
 }
 .allBtns {
   display: flex;

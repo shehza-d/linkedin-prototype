@@ -10,17 +10,20 @@
 	border-Radius: 12px;
 	padding: 3px;
 }
+
 .inputContainer:focus {
 	border: 3px solid red;
 
 }
+
 .input {
 	height: 49px;
 	width: 288px;
 	color: black;
 	/* backgroundColor: " rgba(0, 0, 0, 0.633)", */
-		 border: none;
-		/* textAlign: " center", */
+	border: none;
+	/* textAlign: " center", */
+	outline: none;
 	border-Radius: 12px;
 	font-Size: 30px;
 	backdrop-Filter: blur(10px);
@@ -31,6 +34,7 @@
 	border: 3px solid rgb(20, 239, 20);
 	border: none;
 }
+
 .input:focus {
 	border: 3px solid rgb(239, 217, 20);
 	border: none;
@@ -38,6 +42,6 @@
 }
 
 ::placeholder {
-    /* color: rgb(255, 255, 255); */
-    /* text-align: center; */
+	/* color: rgb(255, 255, 255); */
+	/* text-align: center; */
 }

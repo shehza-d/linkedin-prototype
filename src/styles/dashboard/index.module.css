@@ -53,12 +53,14 @@
   font-family: inherit;
   background-color: transparent;
   border: none;
+  outline: none;
 }
 /* .searchBarDiv::placeholder{
   color: green;
 } */
 .searchBarDiv > input:focus {
   border: none;
+  outline: none;
   /* background-color: green; */
 }
 .cardContainer {
