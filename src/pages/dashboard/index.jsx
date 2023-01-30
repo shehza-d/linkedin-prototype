@@ -11,31 +11,15 @@ import AllContent from "./allContent";
 import { useEffect, useState, useContext } from "react";
 import { GlobalContext } from "../../context/context.js";
 import { db } from "../../firebase.js";
-import {
-  getFirestore,
-  collection, //get reference to a collection
-  addDoc,
-  getDocs, //get all docs
-  getDoc, //get one doc
-  doc, //get reference to a document
-  onSnapshot,
-  query,
-  where,
-  serverTimestamp,
-  orderBy,
-  deleteDoc,
-  updateDoc,
-  limit,
-} from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 export default function Dashboard() {
-  const { state, dispatch } = useContext(GlobalContext);
+  const {  dispatch } = useContext(GlobalContext);
   const [counter, setCounter] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
-  const [dataArr, setDataArr] = useState([]);
+  // const [dataArr, setDataArr] = useState([]);
 
- 
-      // useEffect(() => {
+  // useEffect(() => {
   //   (async () => {
   //     let tempArr = [];
   //     const q = query(
@@ -93,7 +77,7 @@ export default function Dashboard() {
       </div>
 
       {/* {counter === 1 ? ( */}
-      <AllContent setCounter={setCounter} searchQuery={searchQuery}/>
+      <AllContent setCounter={setCounter} searchQuery={searchQuery} />
       {/* ) : null} */}
       {counter === 2 ? (
         <div>no data</div>

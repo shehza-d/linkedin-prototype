@@ -34,13 +34,13 @@ export default function AllContent({ setCounter, searchQuery }) {
   const { state } = useContext(GlobalContext);
   const [companyExecutiveState, setCompanyExecutiveState] = useState(true);
   // const [dataArr, setDataArr] = useState([]);
-  const [matches, setMatches] = useState();
+  const [setMatches] = useState();
   // window.matchMedia("(min-width: 768px)").matches
   useEffect(() => {
     window
       .matchMedia("(min-width: 768px)")
       .addEventListener("change", (e) => setMatches(e.matches));
-  }, []);
+  }, [setMatches]);
   // let mediaQuery = window.matchMedia('(max-width: 768px)').matches
   // console.log(matches);
   console.log(searchQuery);

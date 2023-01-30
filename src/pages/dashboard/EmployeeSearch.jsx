@@ -16,28 +16,12 @@ import star from "../../assets/dashboard/Star.svg";
 import { useNavigate } from "react-router-dom";
 import ExecutiveSearchBar from "../../components/ExecutiveSearchBar";
 import CompanySearchBar from "../../components/CompanySearchBar";
-import { useEffect, useState, useContext } from "react";
-import { GlobalContext } from "../../context/context.js";
+import { useEffect, useState } from "react";
+// import { GlobalContext } from "../../context/context.js";
 // import { RiHome5Line } from "react-icons/ri";
 import searchIcon from "../../assets/dashboard/search.svg";
 import { db } from "../../firebase.js";
-import {
-  getFirestore,
-  collection, //get reference to a collection
-  addDoc,
-  getDocs, //get all docs
-  getDoc, //get one doc
-  doc, //get reference to a document
-  onSnapshot,
-  query,
-  where,
-  serverTimestamp,
-  orderBy,
-  deleteDoc,
-  updateDoc,
-  limit,
-  startAt,
-} from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import NavBar from "../../components/NavBar";
 
 function Users(props) {
@@ -68,12 +52,12 @@ function Users(props) {
 }
 
 export default function EmployeeSearch() {
-  const { state, dispatch } = useContext(GlobalContext);
+  // const { state, dispatch } = useContext(GlobalContext);
   const [companyExecutiveState, setCompanyExecutiveState] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchQueryData, setSearchQueryData] = useState(null);
+  // const [searchQueryData, setSearchQueryData] = useState(null);
   const [data, setData] = useState([]);
-  const [refresh, setRefresh] = useState(false);
+  const [refresh] = useState(false);
   // useEffect(() => {
   //   (async () => {
   //     let tempArr = [];

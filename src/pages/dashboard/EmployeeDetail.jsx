@@ -4,7 +4,7 @@ import styles from "../../styles/dashboard/EmployeeDetail.module.css";
 import NavBar from "../../components/NavBar";
 // MUI
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
+// import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 // Assests
 import userSearch from "../../assets/dashboard/userSearch.svg";
